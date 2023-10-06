@@ -28,7 +28,7 @@
                     <input type="text">
                     <i class="fa-solid fa-magnifying-glass search_button"></i>
                 </div>
-                <h1 class="logo">삼김</h1>
+                <h1 class="logo">삼김3</h1>
             </div>
         </div>
         <div class="menu">
