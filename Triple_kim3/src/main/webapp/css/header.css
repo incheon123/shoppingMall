@@ -1,0 +1,129 @@
+html{
+    width: 100%;
+    height: 100%;
+    font-family: 'Nanum Gothic Coding', cursive;
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+    태그
+*/
+
+a{
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+}
+
+/*
+    클래스
+*/
+
+.header{
+    width: 100%;
+    height: 30%;
+    border: 1px solid red;
+}
+.account_menu{
+    width: 100%;
+    height: 20%;
+    border: 1px solid black;
+    position: relative;
+}
+.button_group{
+    width: fit-content;
+    /* background-color: aqua; */
+    position: absolute;
+    right: 0;
+    top: 50%;   
+    transform: translateY(-50%);
+}
+.button_group a{
+    margin-right: 20px;
+    color: black;
+    font-size: 14px;
+}
+.search_logo{
+    width: 100%;
+    height: 50%;
+    border: 1px solid brown;
+}
+
+.logo_group{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search_box{
+    width: 20%;
+    position: absolute;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 30px;
+    left: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(212, 212, 212);
+}
+.search_box input{
+    width: 100%;
+    height: 40px;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 20px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    background-color: rgb(212, 212, 212);
+}
+.search_button{
+    /*position: 다른 요소에 영향 안미침*/
+    display: inline-block;
+    /*돋보기 크기*/
+    font-size: 25px;
+    color:rgb(116, 116, 116);
+}
+
+.search_button:hover{
+    cursor:grab;
+}
+.search_button:focus{
+    color: aqua;
+}
+
+.logo{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 53px;
+}
+
+.menu{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.inner_menu{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu_item{
+    color: rgb(104, 104, 104);
+}
