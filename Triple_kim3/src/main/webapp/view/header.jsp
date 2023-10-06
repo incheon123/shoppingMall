@@ -38,7 +38,6 @@
                 <a href="#" class="menu_item">ready to wear</a>
                 <a href="#" class="menu_item">bag</a>
                 <a href="#" class="menu_item">contact us</a>
-                <a href="#" class="menu_item">don't use this text</a>
             </div>
         </div>
     </header>
