@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <link rel="stylesheet" href="../css/Footer.css">
 <title>Insert title here</title>
 </head>
@@ -15,11 +14,10 @@
   <div class="line3"></div>
   <div class="elipse1"></div>
   <div class="rect3"></div>
-  <div class="company">ȸ��Ұ�</div>
-  <div class="tag1">�̿���</div>
-  <div class="tag2">��������ó����ħ</div>
-  <div class="tag3">�̿�ȳ�</div>
-  <div class="tag4">��������</div>
-
+  <div class="company">회사소개</div>
+  <div class="tag1">이용약관</div>
+  <div class="tag2">개인정보처리방침</div>
+  <div class="tag3">이용안내</div>
+  <div class="tag4">광고문의</div>
 </body>
 </html>
