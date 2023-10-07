@@ -1,0 +1,145 @@
+
+    /* Rectangle 2 */
+    .rect2{
+        position: absolute;
+        width: 100%;
+        height: 224px;
+        left: 0px;
+        top: 912px;
+        
+        background: #404040;
+    }
+
+    /* SEARCH */
+    .search{
+        position: absolute;
+        width: 49px;
+        height: 15px;
+        left: 825px;
+        top: 1008px;
+        
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height */
+        
+        color: #FFFFFF;
+    }
+
+    /* TRIPLE KIM */
+    .logo{
+        position: absolute;
+        width: 265px;
+        height: 58px;
+        left: 50px;
+        top: 993px;
+        
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 58px;
+        /* identical to box height */
+        
+        color: #FFFFFF;
+    }
+
+    /* Rectangle 1 */
+    .rect1{
+        position: absolute;
+        width: 306px;
+        height: 58px;
+        left: 878px;
+        top: 986px;
+        
+        background: #F1F1F1;
+        backdrop-filter: blur(2px);
+        /* Note: backdrop-filter has minimal browser support */
+        border-radius: 50px;
+    }
+
+    /* Line 3 */
+    .line3{
+        position: absolute;
+        width: 8.94px;
+        height: 0px;
+        left: 1154px;
+        top: 1015.5px;
+        
+        border: 1px solid #717171;
+        transform: rotate(26.57deg);
+    }
+
+    /* Ellipse 1 */
+    .elipse1{
+        box-sizing: border-box;
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        left: 1138px;
+        top: 1003px;
+        
+        background: #F1F1F1;
+        border: 1px solid rgba(0, 0, 0, 0.53);
+    }
+
+    /* 하단 회사소개 */
+    .company{
+        position: absolute;
+        width: 1318px;
+        height: 37px;
+        left: 30px;
+        top: 1136px;
+    }
+    .tag1{
+    position: absolute;
+    width: 80px;
+    height: 17px;
+    left: 120px;
+    top: 1136px;
+    }
+    .tag2{
+    position: absolute;
+    width: 130px;
+    height: 17px;
+    left: 210px;
+    top: 1136px;
+    }
+    .tag3{position: absolute;
+    width: 100px;
+    height: 17px;
+    left: 360px;
+    top: 1136px;
+    }
+    .tag4{position: absolute;
+    width: 100px;
+    height: 17px;
+    left: 450px;
+    top: 1136px;
+    }
+
+    /* Line 4 */
+    .line4{
+        position: absolute;
+        width: 155px;
+        height: 0px;
+        left: 280.24px;
+        top: 1359px;
+        
+        border: 1px solid #B9B8B8;
+        transform: rotate(-90deg);
+    }
+
+    /* Rectangle 3 */
+    .rect3{
+        position: absolute;
+        width: 100%px;
+        height: 37px;
+        left: 0px;
+        top: 1136px;
+        
+        background: #EDEDED;
+    }
+   
