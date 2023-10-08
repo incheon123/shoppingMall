@@ -26,7 +26,7 @@
 			</div>
         </section>
     </main>
-    <!-- <jsp:include page="Footer.jsp" flush="false" /> -->
+    <jsp:include page="Footer.jsp" flush="false" />
     <script src="../js/index.js"></script>
 </body>
 </html>
