@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<!-- 추후에 스크립트 태그를 추가하세요 -->
   <div class="rect2"></div>
   <div class="search">SEARCH</div>
   <div class="logo">TRIPLE KIM</div>
