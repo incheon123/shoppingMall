@@ -1,0 +1,735 @@
+/* Line 1 */
+.line1{
+    position: relative;
+    width: 1101px;
+    height: 0px;
+    left: 108px;
+    top: 343.9px;
+    
+    border: 1px solid #000000;}
+
+
+
+/* 프로필 */
+.profile{position: absolute;
+    width: 79px;
+    height: 21px;
+    left: 108px;
+    top: 320px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;
+    }
+
+
+
+/* Rectangle 1 */
+.rec1{position: absolute;
+    width: 196px;
+    height: 267px;
+    left: 434px;
+    top: 458px;
+    
+    background: #F8F8F8;}
+
+
+
+/* Line 2 */
+.line2{position: absolute;
+    width: 699px;
+    height: 0px;
+    left: 434px;
+    top: 458px;
+    
+    border: 1px solid #1C1B1B;}
+
+
+
+/* Line 3 */
+.line3{position: absolute;
+    width: 699px;
+    height: 0px;
+    left: 434px;
+    top: 502px;
+    
+    border: 0.5px solid #A2A2A2;}
+
+
+
+/* Line 4 */
+.line4{position: absolute;
+    width: 699px;
+    height: 0px;
+    left: 434px;
+    top: 546px;
+    
+    border: 0.5px solid #A2A2A2;}
+
+
+
+/* Line 5 */
+.line5{position: absolute;
+    width: 699px;
+    height: 0px;
+    left: 434px;
+    top: 590px;
+    
+    border: 0.5px solid #A2A2A2;}
+
+
+
+/* 아이디 */
+.id{position: absolute;
+    width: 48px;
+    height: 15px;
+    left: 451px;
+    top: 473px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    
+    color: #000000;}
+
+
+
+
+/* 이름 */
+.name{position: absolute;
+    width: 59px;
+    height: 15px;
+    left: 451px;
+    top: 517px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    
+    color: #000000;}
+
+
+
+
+/* 전화번호 */
+.phone{position: absolute;
+    width: 84px;
+    height: 15px;
+    left: 451px;
+    top: 560px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    
+    color: #000000;}
+
+
+
+
+/* 이메일 */
+.email{position: absolute;
+    width: 37px;
+    height: 15px;
+    left: 451px;
+    top: 604px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    
+    color: #000000;}
+
+
+
+
+/* 주소 */
+.address{position: absolute;
+    width: 37px;
+    height: 15px;
+    left: 451px;
+    top: 674px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    
+    color: #000000;}
+
+
+
+
+/* Line 6 */
+.line6{position: absolute;
+    width: 699px;
+    height: 0px;
+    left: 434px;
+    top: 634px;
+
+    
+    border: 0.5px solid #A2A2A2;}
+
+
+
+/* Line 7 */
+.line7{position: absolute;
+    width: 699px;
+    height: 0px;
+    left: 434px;
+    top: 724px;
+    
+    border: 0.5px solid #A2A2A2;}
+
+
+
+/* 계정 */
+.account{position: absolute;
+    width: 60px;
+    height: 24px;
+    left: 438px;
+    top: 428px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;
+    }
+
+
+
+/* Rectangle 2 */
+.rec2{box-sizing: border-box;
+
+    position: absolute;
+    width: 408px;
+    height: 20px;
+    left: 640px;
+    top: 473px;
+
+    
+    background: #FDFDFD;
+    border: 0.5px solid #D3D3D3;}
+
+
+
+/* Rectangle 3 */
+.rec3{box-sizing: border-box;
+
+    position: absolute;
+    width: 151px;
+    height: 20px;
+    left: 640px;
+    top: 515px;
+
+    
+    background: #FDFDFD;
+    border: 0.5px solid #D3D3D3;}
+
+
+
+/* Rectangle 4 */
+.rec4{box-sizing: border-box;
+
+    position: absolute;
+    width: 201px;
+    height: 20px;
+    left: 640px;
+    top: 639px;
+    
+    background: #FDFDFD;
+    border: 0.5px solid #D3D3D3;}
+
+
+
+/* Rectangle 23 */
+.rec5{box-sizing: border-box;
+
+    position: absolute;
+    width: 274px;
+    height: 20px;
+    left: 640px;
+    top: 602px;
+    
+    background: #FDFDFD;
+    border: 0.5px solid #D3D3D3;}
+
+
+
+/* Rectangle 13 */
+.rec6{box-sizing: border-box;
+
+    position: absolute;
+    width: 408px;
+    height: 20px;
+    left: 640px;
+    top: 698px;
+    
+    background: #FDFDFD;
+    border: 0.5px solid #D3D3D3;}
+
+
+
+/* Rectangle 14 */
+.rec7{box-sizing: border-box;
+
+    position: absolute;
+    width: 408px;
+    height: 20px;
+    left: 640px;
+    top: 668px;
+    
+    background: #FDFDFD;
+    border: 0.5px solid #D3D3D3;}
+
+
+
+/* Rectangle 18 */
+.rec8{box-sizing: border-box;
+
+    position: absolute;
+    width: 84px;
+    height: 20px;
+    left: 850px;
+    top: 639px;
+
+    
+    background: #FDFDFD;
+    border: 0.5px solid #121212;}
+
+
+
+/* Rectangle 19 */
+.rec10{box-sizing: border-box;
+
+    position: absolute;
+    width: 72px;
+    height: 20px;
+    left: 644px;
+    top: 560px;
+
+    
+    background: #FDFDFD;
+    border: 0.5px solid #D3D3D3;}
+
+
+
+/* Rectangle 21 */
+.rec11{box-sizing: border-box;
+
+    position: absolute;
+    width: 72px;
+    height: 20px;
+    left: 759px;
+    top: 561px;
+
+    
+    background: #FDFDFD;
+    border: 0.5px solid #D3D3D3;}
+
+
+
+/* Rectangle 22 */
+.rec12{box-sizing: border-box;
+
+    position: absolute;
+    width: 72px;
+    height: 20px;
+    left: 874px;
+    top: 561px;
+    
+    background: #FDFDFD;
+    border: 0.5px solid #D3D3D3;}
+
+
+
+/* Rectangle 20 */
+.rec13{box-sizing: border-box;
+
+    position: absolute;
+    width: 119px;
+    height: 20px;
+    left: 918px;
+    top: 602px;
+
+    
+    background: #FDFDFD;
+    border: 0.5px solid #D3D3D3;}
+
+
+
+/* @naver.com */
+.naver{position: absolute;
+    width: 69px;
+    height: 14px;
+    left: 922px;
+    top: 605px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    
+    color: #828181;}
+
+
+
+
+/* Polygon 2 */
+.poly{box-sizing: border-box;
+    clip-path: polygon(18px 0px, 18px 0px,18px 0px);
+    position: absolute;
+    width: 18px;
+    height: 16px;
+    left: 1016px;
+    top: 619px;
+    
+    border: 1px solid #9A9A9A;
+    transform: matrix(1, 0, 0, -1, 0, 0);}
+
+
+
+/* 우편번호 검색 */
+.text1{position: absolute;
+    width: 90px;
+    height: 14px;
+    left: 857px;
+    top: 642px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    
+    color: #2D2D2D;}
+
+
+
+
+/* - */
+.dash1{position: absolute;
+    width: 5px;
+    height: 19px;
+    left: 734px;
+    top: 561px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    
+    color: #000000;}
+
+
+
+
+/* - */
+.dash2{position: absolute;
+    width: 5px;
+    height: 19px;
+    left: 851px;
+    top: 561px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    
+    color: #000000;}
+
+
+
+
+/* Rectangle 43 */
+.rect14{position: absolute;
+    width: 116px;
+    height: 24px;
+    left: 1005px;
+    top: 741px;
+    
+    background: #C5C5C5;
+    border-radius: 10px;}
+
+
+
+/* 수정하기 */
+.edit{position: absolute;
+    width: 80px;
+    height: 18px;
+    left: 1034px;
+    top: 744px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #2C2C2C;}
+
+
+
+
+/* Rectangle 52 */
+.rect15{position: absolute;
+    width: 192px;
+    height: 632px;
+    left: 147px;
+    top: 413px;
+    
+    background: #F2F2F2;
+    border-radius: 10px;}
+
+
+
+/* 주문확인 */
+.text2{position: absolute;
+    width: 144px;
+    height: 29px;
+    left: 171px;
+    top: 468px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;}
+
+
+
+
+/* 내 리뷰 */
+.text3{position: absolute;
+    width: 144px;
+    height: 29px;
+    left: 170px;
+    top: 572px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;}
+
+
+
+
+/* 회원 탈퇴 */
+.text4{position: absolute;
+    width: 144px;
+    height: 29px;
+    left: 171px;
+    top: 779px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;}
+
+
+
+
+/* Rectangle 53 */
+.rect16{position: absolute;
+    width: 126px;
+    height: 32px;
+    left: 180px;
+    top: 941px;
+
+    
+    background: #FF9595;
+    border-radius: 10px;}
+
+
+
+/* 로그아웃 */
+.text5{position: absolute;
+    width: 90px;
+    height: 23px;
+    left: 206px;
+    top: 946px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;}
+
+
+
+
+/* 주문확인하기 */
+.text6{position: absolute;
+    width: 98px;
+    height: 17px;
+    left: 197px;
+    top: 497px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 19px;
+    /* or 119% */
+    
+    color: #5A5A5A;
+    
+    mix-blend-mode: normal;}
+
+
+
+/* 내 리뷰 조회하기 */
+.text7{position: absolute;
+    width: 130px;
+    height: 17px;
+    left: 197px;
+    top: 601px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 19px;
+    /* or 119% */
+    
+    color: #5A5A5A;
+    
+    mix-blend-mode: normal;}
+
+
+
+/* 회원 탈퇴 하기 */
+.text8{position: absolute;
+    width: 127px;
+    height: 17px;
+    left: 197px;
+    top: 808px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 19px;
+    /* or 119% */
+    
+    color: #5A5A5A;
+    
+    mix-blend-mode: normal;}
+
+
+
+/* Rectangle 54 */
+.rect17{position: absolute;
+    width: 4px;
+    height: 4px;
+    left: 163px;
+    top: 478px;
+
+    
+    background: #6C6C6C;}
+
+
+
+/* Rectangle 55 */
+.rect18{position: absolute;
+    width: 4px;
+    height: 4px;
+    left: 163px;
+    top: 582px;
+    
+    background: #6C6C6C;}
+
+
+
+/* Rectangle 56 */
+.rect19{position: absolute;
+    width: 4px;
+    height: 4px;
+    left: 163px;
+    top: 789px;
+    
+    background: #6C6C6C;}
+
+
+
+/* 내 문의 */
+.text9{position: absolute;
+    width: 144px;
+    height: 29px;
+    left: 171px;
+    top: 675px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;}
+
+
+
+
+/* 내 문의 조회하기 */
+.text10{position: absolute;
+    width: 127px;
+    height: 17px;
+    left: 197px;
+    top: 704px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 19px;
+    /* or 119% */
+    
+    color: #5A5A5A;
+    
+    mix-blend-mode: normal;
+    }
+
+
+/* Rectangle 57 */
+.rect20{position: absolute;
+    width: 4px;
+    height: 4px;
+    left: 163px;
+    top: 685px;
+    
+    background: #6C6C6C;}
+

@@ -1,0 +1,351 @@
+/* Line 17 */
+.line1{
+    position: absolute;
+    width: 1101px;
+    height: 0px;
+    left: 108px;
+    top: 343.9px;
+    
+    border: 1px solid #000000;}
+
+
+
+/* 회원탈퇴 */
+.delete{position: absolute;
+    width: 100px;
+    height: 21px;
+    left: 108px;
+    top: 320px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;}
+
+
+
+/* Rectangle 37 */
+.rect1{position: absolute;
+    width: 192px;
+    height: 632px;
+    left: 147px;
+    top: 413px;
+    
+    background: #F2F2F2;
+    border-radius: 10px;
+    }
+
+
+/* 주문확인 */
+.conf{position: absolute;
+    width: 144px;
+    height: 29px;
+    left: 171px;
+    top: 468px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;}
+.conf:hover{color: #ff0000;}
+
+
+
+
+/* 내 리뷰 */
+.myrev{position: absolute;
+    width: 144px;
+    height: 29px;
+    left: 170px;
+    top: 572px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;}
+
+
+
+
+/* 회원 탈퇴 */
+.deleteac{position: absolute;
+    width: 180px;
+    height: 29px;
+    left: 171px;
+    top: 779px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #ff0000;}
+
+
+
+
+/* Rectangle 38 */
+rect2{position: absolute;
+    width: 126px;
+    height: 32px;
+    left: 180px;
+    top: 941px;
+    
+    background: #FF9595;
+    border-radius: 10px;}
+
+
+
+/* 로그아웃 */
+.logout{position: absolute;
+    width: 100px;
+    height: 23px;
+    left: 206px;
+    top: 946px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;}
+
+
+
+
+/* 주문확인하기 */
+.orderconf{position: absolute;
+    width: 98px;
+    height: 17px;
+    left: 197px;
+    top: 497px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 19px;
+    /* or 119% */
+    
+    color: #5A5A5A;
+    
+    mix-blend-mode: normal;}
+
+
+
+/* 내 리뷰 조회하기 */
+.myreview{position: absolute;
+    width: 130px;
+    height: 17px;
+    left: 197px;
+    top: 601px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 19px;
+    /* or 119% */
+    
+    color: #5A5A5A;
+    
+    mix-blend-mode: normal;}
+
+
+
+/* 회원 탈퇴 하기 */
+.deleteaccount{position: absolute;
+    width: 127px;
+    height: 17px;
+    left: 197px;
+    top: 808px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 19px;
+    /* or 119% */
+    
+    color: #5A5A5A;
+    
+    mix-blend-mode: normal;}
+
+
+
+/* Rectangle 40 */
+.rect3{position: absolute;
+    width: 4px;
+    height: 4px;
+    left: 163px;
+    top: 478px;
+    
+    background: #6C6C6C;}
+
+
+
+/* Rectangle 41 */
+.rect4{position: absolute;
+    width: 4px;
+    height: 4px;
+    left: 163px;
+    top: 582px;
+    
+    background: #6C6C6C;}
+
+
+
+/* Rectangle 42 */
+.rect5{position: absolute;
+    width: 4px;
+    height: 4px;
+    left: 163px;
+    top: 789px;
+    
+    background: #6C6C6C;}
+
+
+
+/* 내 문의 */
+.myinquire{position: absolute;
+    width: 144px;
+    height: 29px;
+    left: 171px;
+    top: 675px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;
+    }
+
+
+
+/* 내 문의 조회하기 */
+.myinquirecheck{position: absolute;
+    width: 127px;
+    height: 17px;
+    left: 197px;
+    top: 704px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 19px;
+    /* or 119% */
+    
+    color: #5A5A5A;
+    
+    mix-blend-mode: normal;}
+
+
+
+/* Rectangle 43 */
+.rect6{position: absolute;
+    width: 4px;
+    height: 4px;
+    left: 163px;
+    top: 685px;
+    
+    background: #6C6C6C;}
+
+
+
+/* 탈퇴를 원하시면 비밀번호를 입력해주세요. */
+.txt1{position: absolute;
+    width: 400px;
+    height: 23px;
+    left: 434px;
+    top: 432px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;}
+
+
+
+
+/* Line 18 */
+.line2{position: absolute;
+    width: 110px;
+    height: 0px;
+    left: 191px;
+    top: 830px;
+    
+    border: 1px solid #000000;
+    }
+
+
+/* Rectangle 58 */
+.rect7{position: absolute;
+    width: 246px;
+    height: 39px;
+    left: 434px;
+    top: 493px;
+    
+    background: #D9D9D9;
+    border-radius: 10px;}
+
+
+
+/* Rectangle 59 */
+.rect8{position: absolute;
+    width: 109px;
+    height: 39px;
+    left: 739px;
+    top: 493px;
+    
+    background: #FF9292;
+    border-radius: 10px;}
+
+
+
+/* 비밀번호 */
+.pw{position: absolute;
+    width: 224px;
+    height: 24px;
+    left: 440px;
+    top: 500px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #929292;
+    }
+
+
+
+/* 탈퇴 */
+.out{position: absolute;
+    width: 80px;
+    height: 24px;
+    left: 774px;
+    top: 500px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #505050;}
+
+
