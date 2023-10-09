@@ -10,6 +10,7 @@
 <title>상품</title>
 </head>
 <body>
+	<!-- 추후에 스크립트 태그를 추가하세요 -->
 	<jsp:include page="./header.jsp" flush="false" />
 	<main>
         <div class="option_container">

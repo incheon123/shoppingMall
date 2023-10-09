@@ -12,6 +12,7 @@
     <title>삼김</title>
 </head>
 <body>
+	<!-- 추후에 스크립트 태그를 추가하세요 -->
     <header class="header">
         <div class="account_menu">
             <div class="button_group">

@@ -1,11 +1,8 @@
 
     /* Rectangle 2 */
     .rect2{
-        position: absolute;
         width: 100%;
         height: 224px;
-        left: 0px;
-        top: 912px;
         
         background: #404040;
     }
@@ -85,7 +82,7 @@
         border: 1px solid rgba(0, 0, 0, 0.53);
     }
 
-    /* 하단 회사소개 */
+    /* �븯�떒 �쉶�궗�냼媛� */
     .company{
         position: absolute;
         width: 1318px;

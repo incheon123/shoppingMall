@@ -1,4 +1,13 @@
 
+
+/**
+	임시로 만든 js파일입니다
+	백엔드와 연결되어있지 않기 때문에 자바스크립트로 만들었습니다
+	추후에 스크립트 태그로 db와 jsp 페이지를 연결해서 사용할겁니다
+ */
+
+
+
 function createA(){
     let link = document.createElement("a");
     return link;
