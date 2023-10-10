@@ -13,13 +13,13 @@ main{
     display: flex;
     width: 90%;
     height: 600px;
-    background-color: yellow;
+    /*background-color: yellow;*/
 }
 .s2_product_img{
     display: flex;
     width: 90%;
     height: 700px;
-    background-color: brown;
+    /*background-color: brown;*/
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -30,7 +30,7 @@ main{
     align-items: center;
     flex-wrap: wrap;
     flex-grow: 1;
-    background-color: aqua;
+    /*background-color: aqua;*/
 }
 .s1_img{
     width: 100%;

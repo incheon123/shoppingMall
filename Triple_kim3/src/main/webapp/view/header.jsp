@@ -3,13 +3,12 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/header.css" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/1c9b8c0219.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
-    <title>삼김</title>
 </head>
 <body>
 	<!-- 추후에 스크립트 태그를 추가하세요 -->

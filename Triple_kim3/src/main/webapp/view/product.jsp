@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<jsp:include page="./header.jsp" flush="false" />
 <link rel="stylesheet" href="../css/product.css">
 <title>상품상세페이지</title>
 </head>
 <body>
-	<jsp:include page="./header.jsp" flush="false" />
+	<!-- 추후에 스크립트 태그를 추가하세요 -->
 	<main>
         <form class="product" action="#" method="GET">
             <div class="img_container">

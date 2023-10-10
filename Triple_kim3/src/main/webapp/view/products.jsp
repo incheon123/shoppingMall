@@ -4,14 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../css/products.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+<jsp:include page="./header.jsp" flush="false" />
 <title>상품</title>
 </head>
 <body>
 	<!-- 추후에 스크립트 태그를 추가하세요 -->
-	<jsp:include page="./header.jsp" flush="false" />
 	<main>
         <div class="option_container">
             <div class="category_container">

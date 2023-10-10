@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../css/Footer.css">
-<title>Insert title here</title>
 </head>
 <body>
 	<!-- 추후에 스크립트 태그를 추가하세요 -->

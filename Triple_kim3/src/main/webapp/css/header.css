@@ -27,17 +27,14 @@ a{
 .header{
     width: 100%;
     height: 30%;
-    border: 1px solid red;
 }
 .account_menu{
     width: 100%;
     height: 20%;
-    border: 1px solid black;
     position: relative;
 }
 .button_group{
     width: fit-content;
-    /* background-color: aqua; */
     position: absolute;
     right: 0;
     top: 50%;   
@@ -51,7 +48,6 @@ a{
 .search_logo{
     width: 100%;
     height: 50%;
-    border: 1px solid brown;
 }
 
 .logo_group{
