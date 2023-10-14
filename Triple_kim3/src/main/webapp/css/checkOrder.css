@@ -1,0 +1,232 @@
+@charset "UTF-8";
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+h1,h2,h3,h4,h5,p{
+  margin: 0;
+  padding: 0;
+}
+a{
+  list-style-type: none;
+  color: black;
+  text-decoration: none;
+}
+
+/**
+  main안의 큰 그룹
+*/
+main {
+  /* 뷰포트(스크롤바 너비포함) - 스크롤바 너비 = 스크롤바 너비를 제외한 실화면크기*/
+  width: calc(100vw - 10px);
+  height: 100%;
+  display:table;
+  margin-top: 40px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-button {
+  background: #ccc
+}
+::-webkit-scrollbar-track-piece {
+  background-image: linear-gradient(to bottom, rgb(102, 0, 255), rgb(255, 0, 200));
+}
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, red, blue);
+  background-image: -moz-linear-gradient(to bottom, red, blue);
+}
+main .inner_main{
+  width: 80%;
+  height: 100%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+}
+main .inner_main h2{
+  width: 100%;
+  flex: 1;
+  padding-top: 10px;
+}
+main .inner_main h2::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+
+main .inner_main .content{
+  width: 100%;
+  flex: 6;
+  padding: 40px;
+  box-sizing: border-box;
+}
+.content .inner_content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+}
+.flex_left{
+  flex: 1;
+  display: flex;
+  justify-content: start;
+  position: relative;
+}
+.flex_right{
+  flex: 2;
+  padding-bottom: 40px;
+}
+.flex_left nav{
+  position: absolute;
+  background-color: rgb(230, 230, 230);
+  width: 300px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.above{
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 30px;
+}
+.above li p{
+  font-size: 22px;
+}
+.above li a{
+  margin-left: 30px;
+  color: rgb(116, 116, 116);
+}
+.active{
+  color: red;
+}
+.underline{
+  position: relative;
+}
+.underline::after{
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-left: 30px;
+  margin-top: 3px;
+  background-color: black;
+}
+.bottom{
+  flex: 1;
+  position: relative;
+}
+.bottom input{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgb(255, 150, 150);
+  border-radius: 30px;
+  width: 250px;
+  height: 50px;
+  background-image: linear-gradient(to left, rgb(68, 255, 171), rgb(0, 255, 221), rgb(0, 115, 86), rgb(255, 21, 235));
+  background-size: 300%;
+  background-position: 0 0;
+  -webkit-appearance: none !important;
+  font-size: 18px;
+  transition: all ease 0.5s;
+}
+.bottom input:hover{
+  background-position: 50% 0;
+  box-shadow: 4px 5px 25px blue;
+  cursor: pointer;
+}
+.flex_right form{
+  width: 700px;
+  height: 200px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(221, 221, 221);
+  border-radius: 10px;
+}
+.search_date input{
+  width: 150px;
+  text-align: center;
+}
+.search_order input{
+  width: 170px;
+  padding-left: 20px;
+}
+.search_addr input{
+  width: 400px;
+  padding-left: 20px;
+}
+.search input{
+  border: none;
+  outline: none;
+  height: 30px;
+  background-color:rgb(224, 224, 224);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.search span{
+  display: inline-block;
+  width: 160px;
+  margin-left: 30px;
+}
+.flexForSubmit{
+  display: flex;
+  justify-content: flex-end;
+}
+#search{
+  width: 15%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  height: 35px;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: 0.7s ease;
+}
+#search:hover{
+  transition: 0.7s ease;
+  margin-bottom: 20px;
+}
+
+.order_historys{
+  width: 80%;
+  border-collapse: collapse;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 40px;
+}
+tr{
+  /*background-image: linear-gradient(to right, rgb(0, 229, 255), rgb(255, 121, 255));*/
+}
+th{
+  text-align:unset;
+  border-bottom: 1px solid black;
+  padding: 15px 30px 15px 15px;
+  background-image: linear-gradient(to right, rgb(0, 229, 255), rgb(255, 121, 255));
+}
+td{
+  padding: 15px 30px 15px 16px;
+  background-color: lightblue;
+}
+.goOrder{
+  padding: 2px 10px 2px 10px;
+  border-radius: 10px;
+  background-color: rgb(255, 128, 128);
+}
