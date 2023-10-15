@@ -28,29 +28,29 @@ a{
     width: 100%;
     height: 30%;
 }
-.account_menu{
+.header .account_menu{
     width: 100%;
     height: 20%;
     position: relative;
 }
-.button_group{
+.account_menu .button_group{
     width: fit-content;
     position: absolute;
     right: 0;
     top: 50%;   
     transform: translateY(-50%);
 }
-.button_group a{
+.account_menu .button_group a{
     margin-right: 20px;
     color: black;
     font-size: 14px;
 }
-.search_logo{
+.header .search_logo{
     width: 100%;
     height: 50%;
 }
 
-.logo_group{
+.search_logo .logo_group{
     width: 100%;
     height: 100%;
     display: flex;
@@ -58,7 +58,7 @@ a{
     position: relative;
 }
 
-.search_box{
+.logo_group .search_box{
     width: 20%;
     position: absolute;
     padding-left: 20px;
@@ -72,7 +72,7 @@ a{
     align-items: center;
     background-color: rgb(212, 212, 212);
 }
-.search_box input{
+.logo_group .search_box input{
     width: 100%;
     height: 40px;
     display: inline-block;
@@ -83,20 +83,6 @@ a{
     border: none;
     background-color: rgb(212, 212, 212);
 }
-.search_button{
-    /*position: 다른 요소에 영향 안미침*/
-    display: inline-block;
-    /*돋보기 크기*/
-    font-size: 25px;
-    color:rgb(116, 116, 116);
-}
-
-.search_button:hover{
-    cursor:grab;
-}
-.search_button:focus{
-    color: aqua;
-}
 
 .logo{
     display: inline-block;
@@ -106,7 +92,7 @@ a{
     font-size: 53px;
 }
 
-.menu{
+.header .menu{
     width: 100%;
     height: 30%;
     display: flex;
