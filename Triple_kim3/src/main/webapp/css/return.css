@@ -1,0 +1,711 @@
+.rec41 input[type="radio"]:checked + label {
+  color: #900020;
+}
+
+
+
+
+/* Rectangle 37 */
+.rec37{
+    position: absolute;
+    width: 858px;
+    height: 43px;
+    left: 231px;
+    top: 505px;
+    
+    display: flex;
+    background: #F0F0F0;
+    }
+
+
+/* Line 21 */
+.line21{
+    position: absolute;
+    width: 856px;
+    height: 0px;
+    left: 231px;
+    top: 505px;
+    
+    border: 1px solid #D0D0D0;}
+
+
+
+/* Line 22 */
+.line22{
+    position: absolute;
+    width: 856px;
+    height: 0px;
+    left: 231px;
+    top: 547px;
+    
+    border: 1px solid #C1C1C1;}
+
+
+
+/* Rectangle 41 */
+.rec41{
+    box-sizing: border-box;
+    
+    display: flex;
+    position: relative;
+    width: 855px;
+    height: 77px;
+    left: 231px;
+    top: 293px;
+    
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    background: #FFFFFF;
+    border: 3px solid #BFBFBF;}
+
+
+
+/* 주문취소/반품/교환 */
+.text1{
+    
+    position: absolute;
+    width: 160px;
+    height: 19px;
+    left: 231px;
+    top: 274px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #000000;}
+
+
+
+
+/* Rectangle 42 */
+.rec42{
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 55px;
+    height: 29px;
+    left: 320px;
+    top: 318px;
+    
+    background: #FFFFFF;
+    border: 0.5px solid #DBDBDB;}
+
+
+
+/* Rectangle 44 */
+.rec44{
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 55px;
+    height: 29px;
+    left: 374px;
+    top: 318px;
+    
+    background: #FFFFFF;
+    border: 0.5px solid #DBDBDB;}
+
+
+
+/* Rectangle 45 */
+.rec45{
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 55px;
+    height: 29px;
+    left: 428px;
+    top: 318px;
+    
+    background: #FFFFFF;
+    border: 0.5px solid #DBDBDB;
+    }
+
+
+/* Rectangle 46 */
+.rec46{
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 55px;
+    height: 29px;
+    left: 482px;
+    top: 318px;
+    
+    background: #FFFFFF;
+    border: 0.5px solid #DBDBDB;}
+
+
+
+/* Rectangle 47 */
+.rec47{
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 55px;
+    height: 29px;
+    left: 535px;
+    top: 318px;
+    
+    background: #FFFFFF;
+    border: 0.5px solid #DBDBDB;}
+
+
+
+/* Rectangle 48 */
+.rec48{
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 55px;
+    height: 29px;
+    left: 588px;
+    top: 318px;
+    
+    background: #FFFFFF;
+    border: 0.5px solid #DBDBDB;}
+
+
+
+/* Rectangle 43 
+.rec9{
+    position: absolute;
+    width: 76px;
+    height: 29px;
+    left: 337px;
+    top: 316px;}*/
+
+
+
+
+/* Rectangle 49 */
+.rec49{
+    box-sizing: border-box;
+
+    
+    width: 147px;
+    height: 29px;
+    left: 666px;
+    top: 318px;
+    
+    background: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    input[type="date"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: none;
+        cursor: pointer;
+        display: block;
+    }
+}
+
+
+/* Rectangle 50 */
+.rec50{
+    box-sizing: border-box;
+
+    
+    width: 147px;
+    height: 29px;
+    left: 833px;
+    top: 318px;
+    
+    background: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    input[type="date"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: none;
+        cursor: pointer;
+        display: block;
+    }
+}
+
+
+/* Rectangle 51 */
+.rec51{
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 29px;
+    left: 1000px;
+    top: 317px;
+    
+    background: #000000;
+    border: 1px solid #000000;}
+
+
+
+/* 조회 */
+.text2{
+    
+    width: 50px;
+    height: 19px;
+    left: 1013px;
+    top: 323px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #FFFFFF;}
+
+
+
+
+/* 조회기간 */
+.text3{
+    
+    width: 70px;
+    height: 19px;
+    left: 257px;
+    top: 321px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #656363;}
+
+
+
+
+/* 오늘 */
+.text4{
+    
+    width: 50px;
+    height: 19px;
+    left: 333px;
+    top: 322px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #787878;}
+
+
+
+
+/* 7일 */
+.text5{
+    width: 40px;
+    height: 19px;
+    left: 387px;
+    top: 322px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #787878;}
+
+
+
+
+/* 15일 */
+.text6{
+    
+    width: 32px;
+    height: 19px;
+    left: 439px;
+    top: 323px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #787878;}
+
+
+
+
+/* 1개월 */
+.text7{
+    
+    width: 50px;
+    height: 19px;
+    left: 491px;
+    top: 323px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #787878;}
+
+
+
+
+/* 3개월 */
+.text8{
+    
+    width: 50px;
+    height: 19px;
+    left: 543px;
+    top: 323px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #787878;
+    }
+
+
+
+/* 1년 */
+.text9{
+    
+    width: 30px;
+    height: 19px;
+    left: 605px;
+    top: 323px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #787878;}
+
+
+
+
+/* ~ */
+.text10{
+    
+    width: 11px;
+    height: 19px;
+    left: 817px;
+    top: 323px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #000000;}
+
+
+
+
+/* Rectangle 52 */
+.rec52{
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    width: 198px;
+    height: 55px;
+    left: 231px;
+    top: 419px;
+    
+    background: #FFFFFF;
+    border: 2px solid #9A9A9A;}
+
+
+
+/* Line 23 */
+.line23{
+    position: absolute;
+    width: 660px;
+    height: 0px;
+    left: 428px;
+    top: 472px;
+    
+    border: 1px solid #9A9A9A;}
+
+
+
+/* Line 24 */
+.line24{
+    position: absolute;
+    width: 196px;
+    height: 0px;
+    left: 229px;
+    top: 472px;
+    
+    border: 1px solid #FFFFFF;}
+
+
+
+/* Line 25 */
+.line25{
+    position: absolute;
+    width: 197px;
+    height: 0px;
+    left: 429px;
+    top: 427px;
+    
+    border: 1px solid #D3D3D3;}
+
+
+
+/* Line 26 */
+.line26{
+    position: absolute;
+    width: 43px;
+    height: 0px;
+    left: 606px;
+    top: 448.5px;
+    
+    border: 1px solid #D3D3D3;
+    transform: rotate(90deg);}
+
+
+
+/* 취소/반품/교환 신청 내역 */
+.text11{
+    
+    width: 190px;
+    height: 19px;
+    left: 249px;
+    top: 440px;
+    
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #000000;}
+
+
+
+
+/* 취소/반품/교환 처리 현황 */
+.text12{
+    position: absolute;
+    width: 190px;
+    height: 19px;
+    left: 444px;
+    top: 441px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #CBCBCB;}
+
+
+
+
+/* 취소/반품/교환 내역 총 0건 */
+.text13{
+    position: absolute;
+    width: 160px;
+    height: 16px;
+    left: 231px;
+    top: 486px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    /* identical to box height */
+    
+    color: #605D5D;}
+
+
+
+
+/* 날짜/주문번호 */
+.text14{
+    position: absolute;
+    width: 85px;
+    height: 16px;
+    left: 268px;
+    top: 518px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    /* identical to box height */
+    
+    color: #000000;}
+
+
+
+
+/* 배송지 */
+.text15{
+    position: absolute;
+    width: 45px;
+    height: 16px;
+    left: 392px;
+    top: 518px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    /* identical to box height */
+    
+    color: #000000;}
+
+
+
+
+/* 상품명/옵션 */
+.text16{
+    position: absolute;
+    width: 80px;
+    height: 16px;
+    left: 530px;
+    top: 517px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    /* identical to box height */
+    
+    color: #000000;}
+
+
+
+
+/* 상품금액/수량 */
+.text17{
+    position: absolute;
+    width: 90px;
+    height: 16px;
+    left: 718px;
+    top: 518px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    /* identical to box height */
+    
+    color: #000000;}
+
+
+
+
+/* 주문상태 */
+.text18{
+    position: absolute;
+    width: 60px;
+    height: 16px;
+    left: 907px;
+    top: 518px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    /* identical to box height */
+    
+    color: #000000;}
+
+
+
+
+/* 확인/리뷰 */
+.text19{
+    position: absolute;
+    width: 70px;
+    height: 16px;
+    left: 1013px;
+    top: 517px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    /* identical to box height */
+    
+    color: #000000;}
+
+
+
+
+/* Line 27 */
+.line27{
+    position: absolute;
+    width: 861px;
+    height: 0px;
+    left: 226px;
+    top: 729px;
+    
+    border: 1px solid #919191;
+    }
+
+
+/* 조회내역이 없습니다. */
+.text20{
+    position: absolute;
+    width: 130px;
+    height: 16px;
+    left: calc(50% - 115px/2 + 0.5px);
+    top: 633px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    /* identical to box height */
+    
+    color: #707070;}
+
+
