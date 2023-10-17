@@ -1,0 +1,55 @@
+/* 이용안내 */
+.service_guide{
+    position: absolute;
+    width: 1300px;
+    height: 799px;
+    left: 100px;
+top: 416px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 17px;
+
+color: #000000;
+}
+
+
+ /* 이용안내 헤드라인 */
+ .headline{position: absolute;
+    width: 1101px;
+    height: 37.9px;
+    left: 100px;
+    top: 306px;}
+
+
+
+
+/* 이용약관 */
+.head_text{
+    width: 119px;
+    height: 36px;
+    left: 100px;
+    top: 306px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 30px;
+    line-height: 36px;
+    
+    color: #000000;}
+
+
+
+
+/* Line 5 */
+.line{
+    width: 1101px;
+    height: 0px;
+    left: 100px;
+    top: 343.9px;
+    
+    border: 2px solid #ACACAC;}
+
