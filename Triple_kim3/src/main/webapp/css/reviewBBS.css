@@ -20,7 +20,6 @@ main{
 
 .rows{
     width: 50vw;
-    height: 60vw;
     margin-left: 50%;
     transform: translateX(-50%);
     margin-top: 1%;

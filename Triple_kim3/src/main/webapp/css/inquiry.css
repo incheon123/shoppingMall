@@ -1,0 +1,178 @@
+@charset "UTF-8";
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+main{
+    width:100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.review_container{
+    width: 50%;
+    height: 90%;
+}
+.review_container h2{
+    margin: 0;
+    padding: 0;
+}
+form{
+    width: 100%;
+    height: 90%;
+    border: 1px solid rgb(201, 201, 201);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.first{
+    width: 90%;
+    height: 10%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title_container{
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 20px;
+    align-items: center;
+    width: 70%;
+    height: 70%;
+    border-radius: 10px;
+    background-color:rgb(224, 224, 224);
+}
+.title_inner_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.title_inner_container h3{
+    margin-right: 20px;
+    color: rgb(91, 91, 91);
+}
+.title_container input{
+    outline: none;
+    background-color: rgb(224, 224, 224);
+    border-radius: 10px;
+    border: 1px solid rgb(180, 180, 180);
+    font-size: 20px;
+    width: 80%;
+    height: 70%;
+}
+.name_container{
+    width: 23%;
+    height: 70%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(224, 224, 224);
+}
+
+.second{
+    width: 90%;
+    height: 8%;
+    background-color: rgb(224, 224, 224);
+    border-radius: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+.second_inner_container{
+    width: 70%;
+    display: flex;
+    
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+.second_ele_container{
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+.second_ele_container h3{
+    margin-right: 20px;
+    color: rgb(91, 91, 91);
+}
+
+.select_container{
+    width: 300px;
+    text-align: center;
+    height: 30px;
+    outline: none;
+    background-color: rgb(224, 224, 224);
+    border: 0.5px solid black;
+    transition: 0.2s ease;
+}
+.select_container:hover{
+    box-shadow: 1px 1px 3px rgb(59, 59, 59);
+    transition: 0.2s ease;
+}
+
+
+.third{
+    width: 90%;
+    height: 60%;
+    background-color: rgb(224, 224, 224);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.third textarea{
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: rgb(224, 224, 224);
+    font-size: 24px;
+    resize: none;
+}
+.file_upload{
+    display: block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+}
+
+.button_container{
+    width: 90%;
+    height: 5%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+input[type="submit"]{
+    width:72%;
+    outline: none;
+    background-color: #BBFFEB;
+    border: 1px solid #00FFB3;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+input[type="button"]{
+    width: 25%;
+    outline: none;
+    background-color: #FFC7C7;
+    border: 1px solid #FF0000;
+    border-radius: 20px;
+    font-size: 20px;
+}
