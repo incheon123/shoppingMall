@@ -46,5 +46,6 @@
         <div class="pw">ºñ¹Ð¹øÈ£</div>
         <div class="out">Å»Åð</div>
     </div>
+    <jsp:include page="./footer.jsp" />
 </body>
 </html>

@@ -365,5 +365,6 @@
         <br>
         1. 이 약관은 2023년 06월 13일부터 적용됩니다.
     </div>
+    <jsp:include page="./footer.jsp" />
 </body>
 </html>

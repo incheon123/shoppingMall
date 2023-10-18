@@ -107,5 +107,6 @@
         <br>
         반송을 하실 때에는 주문번호, 회원번호를 메모하여 보내주시면 보다 신속한 처리에 도움이 됩니다.
     </div>
+    <jsp:include page="./footer.jsp" />
 </body>
 </html>

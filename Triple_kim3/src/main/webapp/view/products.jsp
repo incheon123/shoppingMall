@@ -38,6 +38,7 @@
         <div class="s3_product_container">
         </div>
     </section>
-    <script src="../js/products.js"></script>
+    <jsp:include page="./footer.jsp" />
 </body>
+<script src="../js/products.js"></script>
 </html>

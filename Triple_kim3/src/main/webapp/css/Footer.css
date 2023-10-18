@@ -1,142 +1,110 @@
+@charset "UTF-8";
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gabarito', sans-serif;
+}
+footer{
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 100px;
+    margin-bottom: 500px;
+    background-color: #bbd9d7;
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 70px;
+}
+li{
+    margin-right: 30px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.up{
+    height: max-content;
+}
 
-    /* Rectangle 2 */
-    .rect2{
+    .container{
         width: 100%;
-        height: 224px;
-        
-        background: #404040;
-    }
-
-    /* SEARCH */
-    .search{
-        position: absolute;
-        width: 49px;
-        height: 15px;
-        left: 825px;
-        top: 1008px;
-        
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 15px;
-        /* identical to box height */
-        
-        color: #FFFFFF;
-    }
-
-    /* TRIPLE KIM */
-    .logo{
-        position: absolute;
-        width: 265px;
-        height: 58px;
-        left: 50px;
-        top: 993px;
-        
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 48px;
-        line-height: 58px;
-        /* identical to box height */
-        
-        color: #FFFFFF;
-    }
-
-    /* Rectangle 1 */
-    .rect1{
-        position: absolute;
-        width: 306px;
-        height: 58px;
-        left: 878px;
-        top: 986px;
-        
-        background: #F1F1F1;
-        backdrop-filter: blur(2px);
-        /* Note: backdrop-filter has minimal browser support */
-        border-radius: 50px;
-    }
-
-    /* Line 3 */
-    .line3{
-        position: absolute;
-        width: 8.94px;
-        height: 0px;
-        left: 1154px;
-        top: 1015.5px;
-        
-        border: 1px solid #717171;
-        transform: rotate(26.57deg);
-    }
-
-    /* Ellipse 1 */
-    .elipse1{
+        height: 200px;
+        background-color: rgb(63, 63, 63);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
         box-sizing: border-box;
-        position: absolute;
-        width: 17px;
-        height: 17px;
-        left: 1138px;
-        top: 1003px;
-        
-        background: #F1F1F1;
-        border: 1px solid rgba(0, 0, 0, 0.53);
     }
+        .inner-container{
+            width: 80%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+.search-container{
+    width: 30%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(212, 212, 212);
+    box-sizing: border-box;
+}
+.search-container input{
+    width: 100%;
+    height: 40px;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 20px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    background-color: rgb(212, 212, 212);
+}
 
-    /* �븯�떒 �쉶�궗�냼媛� */
-    .company{
-        position: absolute;
-        width: 1318px;
-        height: 37px;
-        left: 30px;
-        top: 1136px;
-    }
-    .tag1{
-    position: absolute;
-    width: 80px;
-    height: 17px;
-    left: 120px;
-    top: 1136px;
-    }
-    .tag2{
-    position: absolute;
-    width: 130px;
-    height: 17px;
-    left: 210px;
-    top: 1136px;
-    }
-    .tag3{position: absolute;
-    width: 100px;
-    height: 17px;
-    left: 360px;
-    top: 1136px;
-    }
-    .tag4{position: absolute;
-    width: 100px;
-    height: 17px;
-    left: 450px;
-    top: 1136px;
-    }
 
-    /* Line 4 */
-    .line4{
-        position: absolute;
-        width: 155px;
-        height: 0px;
-        left: 280.24px;
-        top: 1359px;
-        
-        border: 1px solid #B9B8B8;
-        transform: rotate(-90deg);
-    }
+.bottom{
+    display: flex;
+    height: 230px;
+    margin: 0;
+    margin-top: 30px;
+    padding-left: 40px;
+}
+.left{
+    width: 270px;
+    height: 170px;
+    border-right: 1px solid rgb(234, 234, 234);
+    display: flex;
+}
+.right{
+    width: 270px;
+    height: 170px;
+    display: flex;
+}
 
-    /* Rectangle 3 */
-    .rect3{
-        position: absolute;
-        width: 100%px;
-        height: 37px;
-        left: 0px;
-        top: 1136px;
-        
-        background: #EDEDED;
+.info{
+    display: flex;
+    flex: 1;
+    height: 80%;
+    flex-direction: column;
+    align-items: start;
+    box-sizing: border-box;
+    padding-left: 30px;
+    margin-top: 5px;
+}
+.inforight{
+    padding-left: 40px;
+}
+    .info span{
+        margin-bottom: 20px;
     }
-   

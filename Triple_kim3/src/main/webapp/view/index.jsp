@@ -26,6 +26,7 @@
 			</div>
         </section>
     </main>
-    <script src="../js/index.js"></script>
+    <jsp:include page="./footer.jsp" />
 </body>
+<script src="../js/index.js"></script>
 </html>

@@ -80,5 +80,6 @@
     <div class="line25"></div>
     <div class="line26"></div>
     <div class="text12">취소/반품/교환 처리 현황</div>
+    <jsp:include page="./footer.jsp" />
 </body>
 </html>

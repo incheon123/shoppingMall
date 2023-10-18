@@ -82,5 +82,6 @@
         <div class="text10">내 문의 조회하기</div>
         <div class="rect20"></div>
     </div>
+    <jsp:include page="./footer.jsp" />
 </body>
 </html>
