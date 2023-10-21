@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/policy.css">
+    <link rel="stylesheet" href="../../css/policy.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/1c9b8c0219.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +13,7 @@
     <title>Document</title>
 </head>
 <body>
+	<jsp:include page="../component/header.jsp" flush="false"/>
 	<div class="headline">
         <a class="head_text">이용약관</a>
         <div class="line"></div>
@@ -365,6 +366,6 @@
         <br>
         1. 이 약관은 2023년 06월 13일부터 적용됩니다.
     </div>
-    <jsp:include page="./footer.jsp" />
+    <jsp:include page="../component/footer.jsp" />
 </body>
 </html>
