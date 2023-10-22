@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../css/inquiry.css">
+<link rel="stylesheet" href="../../css/writeinquiry.css">
 <title>문의작성</title>
 </head>
 <body>
-	<jsp:include page="./header.jsp" />
+	<jsp:include page="../modules/header.jsp" />
 	<main>
         <div class="review_container">
             <h2>문의 작성</h2>
@@ -49,6 +49,6 @@
             </form>
         </div>
     </main>
-    <jsp:include page="./footer.jsp" />
+    <jsp:include page="../modules/footer.jsp" />
 </body>
 </html>

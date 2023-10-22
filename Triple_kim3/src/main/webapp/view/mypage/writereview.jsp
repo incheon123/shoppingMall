@@ -2,11 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../css/writeReview.css">
-<jsp:include page="./header.jsp" flush="false" />
+	<link rel="stylesheet" href="../../css/writereview.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>리뷰작성</title>
 </head>
 <body>
+	<jsp:include page="../modules/header.jsp" />
 	<main>
         <div class="review_container">
             <h2>리뷰 작성</h2>
@@ -47,6 +48,6 @@
             </form>
         </div>
     </main>
-    <jsp:include page="./footer.jsp" />
+    <jsp:include page="../modules/footer.jsp" />
 </body>
 </html>

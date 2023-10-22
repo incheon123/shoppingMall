@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/deleteaccount.css">
+    <link rel="stylesheet" href="../../css/deleteaccount.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/1c9b8c0219.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +13,7 @@
 <title>È¸¿øÅ»Åð</title>
 </head>
 <body>
+	<jsp:include page="../modules/header.jsp" />
 	<div class="h1">
         <div class="line1"></div>
         <div class="delete">È¸¿øÅ»Åð</div>
@@ -46,6 +47,6 @@
         <div class="pw">ºñ¹Ð¹øÈ£</div>
         <div class="out">Å»Åð</div>
     </div>
-    <jsp:include page="./footer.jsp" />
+    <jsp:include page="../modules/footer.jsp" />
 </body>
 </html>

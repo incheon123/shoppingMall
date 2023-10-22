@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<link rel="stylesheet" href="../css/reviewDetail.css">
+<link rel="stylesheet" href="../css/review.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="./header.jsp" />
+	<jsp:include page="./modules/header.jsp" />
 	<div class="container">
         <div class="title box"> <!-- 첫번째 박스-->
             this is title
@@ -58,7 +58,7 @@
         </div>
         <!-- 좋아요 기능 추가하기 -->
     </div>
-    <jsp:include page="./footer.jsp" />
+    <jsp:include page="./modules/footer.jsp" />
 </body>
 <script>
 

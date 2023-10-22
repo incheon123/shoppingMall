@@ -3,7 +3,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-    <link rel="stylesheet" href="../../css/header.css" >
+    <link rel="stylesheet" type="text/css" runat="server" href="../../css/header.css" >
+    <link rel="stylesheet" type="text/css" runat="server" href="../css/header.css" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/1c9b8c0219.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +20,7 @@
                 <a href="">회원가입</a>
                 <!-- 장바구니(0)으로 교체 -->
                 <a href="">장바구니</a>
-                <a href="">마이페이지</a>
+                <a href="${pageContext.request.contextPath}/view/mypage/profile.jsp">마이페이지</a>
             </div>
         </div>
         <div class="search_logo">

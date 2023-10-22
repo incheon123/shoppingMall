@@ -4,10 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../css/products.css">
-<jsp:include page="./header.jsp" flush="false" />
 <title>상품</title>
 </head>
 <body>
+	<jsp:include page="./modules/header.jsp" />
 	<!-- 추후에 스크립트 태그를 추가하세요 -->
 	<main>
         <div class="option_container">
@@ -38,7 +38,7 @@
         <div class="s3_product_container">
         </div>
     </section>
-    <jsp:include page="./footer.jsp" />
+    <jsp:include page="./modules/footer.jsp" />
 </body>
 <script src="../js/products.js"></script>
 </html>
