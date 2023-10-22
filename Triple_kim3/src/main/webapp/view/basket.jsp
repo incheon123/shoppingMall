@@ -8,6 +8,7 @@
 <title>장바구니</title>
 </head>
 <body>
+	<jsp:include page="./modules/header.jsp" />
     <section class="cart">
         <div class="cart__information">
             <ul>
@@ -81,5 +82,6 @@
             <button class="cart__bigorderbtn right">주문하기</button>
         </div>
     </section>
+    <jsp:include page="./modules/footer.jsp" />
 </body>
 </html>

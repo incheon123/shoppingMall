@@ -8,7 +8,7 @@
 <title>회원가입</title>
 </head>
 <body>
-    <form action="doJoin" method="POST" class="joinForm" onsubmit="DoJoinForm__submit(this); return false;">
+    <form action="" method="POST" class="joinForm" onsubmit="DoJoinForm__submit(this); return false;">
         <h2>회원가입</h2>
         <div class="textForm">
             <input name="loginId" type="text" class="id" placeholder="아이디"></input>

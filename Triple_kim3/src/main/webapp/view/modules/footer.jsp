@@ -30,10 +30,10 @@
                         <a href="https://www.naver.com">회사소개</a>
                     </li>
                     <li>
-                        <a href="https://www.naver.com">이용안내</a>
+                        <a href="${pageContext.request.contextPath}/view/Agreement/use.jsp">이용안내</a>
                     </li>
                     <li>
-                        <a href="https://www.naver.com">약관안내</a>
+                        <a href="${pageContext.request.contextPath}/view/Agreement/policy.jsp">약관안내</a>
                     </li>
                 </ul>
             </div>

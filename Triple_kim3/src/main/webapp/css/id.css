@@ -9,24 +9,15 @@
   body {
     background-image:#34495e;
   }
-  /* .box{
-    box-sizing: border-box;
-    width:700px;
-    height:800px;
-    border: 1px solid black;
-    margin-top: 5%;
-    margin-left: 32%;
-    
-  } */
   .joinForm {
-    position:absolute;
+    display: block;
     width:400px;
     height:400px;
     padding: 20px, 10px;
     background-color:#FFFFFF;
     text-align:center;
-    top:40%;
-    left:50%;
+    margin-left: 50%;
+    transform: translateX(-50%);
     transform: translate(-50%,-50%);
     border-radius: 15px;
     border: 1px solid black;

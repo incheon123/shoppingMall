@@ -16,10 +16,10 @@
     <header class="header">
         <div class="account_menu">
             <div class="button_group">
-                <a href="">로그인</a>
-                <a href="">회원가입</a>
+                <a href="${pageContext.request.contextPath}/view/login.jsp">로그인</a>
+                <a href="${pageContext.request.contextPath}/view/membership.jsp">회원가입</a>
                 <!-- 장바구니(0)으로 교체 -->
-                <a href="">장바구니</a>
+                <a href="${pageContext.request.contextPath}/view/basket.jsp">장바구니</a>
                 <a href="${pageContext.request.contextPath}/view/mypage/profile.jsp">마이페이지</a>
             </div>
         </div>
