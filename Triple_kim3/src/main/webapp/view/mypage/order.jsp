@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../css/checkOrder.css">
+<link rel="stylesheet" href="../../css/order.css">
 <title>주문확인페이지</title>
 </head>
 <body>
-	<jsp:include page="./header.jsp" />
+	<jsp:include page="../modules/header.jsp" />
 	<main>
         <div class="inner_main">
             <h2>주문확인</h2>
@@ -117,6 +117,6 @@
             </div>
         </div>
     </main>
-    <jsp:include page="./footer.jsp" />
+    <jsp:include page="../modules/footer.jsp" />
 </body>
 </html>

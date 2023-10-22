@@ -3,10 +3,10 @@
 <html>
 <head>
 <link rel="stylesheet" href="../css/index.css">
-<jsp:include page="header.jsp" flush="false" />
 <title>Triple</title>
 </head>
 <body>
+	<jsp:include page="./modules/header.jsp" />
 	<!-- 추후에 스크립트 태그를 추가하세요 -->
 	<main id="main">
         <section class="s1_product_img">
@@ -26,7 +26,7 @@
 			</div>
         </section>
     </main>
-    <jsp:include page="./footer.jsp" />
+    <jsp:include page="./modules/footer.jsp" />
 </body>
 <script src="../js/index.js"></script>
 </html>

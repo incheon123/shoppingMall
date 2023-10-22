@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../css/reviewBBS.css">
+<link rel="stylesheet" href="../css/reviews.css">
 <title>리뷰게시판</title>
 </head>
 <body>
-	<jsp:include page="./header.jsp" />
+	<jsp:include page="./modules/header.jsp" />
 	<main>
         <h3>리뷰게시판</h3>
         <div class="rows">
@@ -54,7 +54,7 @@
         <div class="page_number">
             <div class="page_number_inner_container">
                 <a href="">
-                    <div class="left"><</div>
+                    <div class="left"> < </div>
                 </a>
                 <span class="number_group">
                     <a href="#">1</a>
@@ -82,6 +82,6 @@
             </form>
         </div>
     </main>
-    <jsp:include page="./footer.jsp" />
+    <jsp:include page="./modules/footer.jsp" />
 </body>
 </html>
