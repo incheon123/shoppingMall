@@ -4,8 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="../../css/footer.css" >
-	<link rel="stylesheet" type="text/css" href="../css/footer.css" >
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/footer.css">
 	<script src="https://kit.fontawesome.com/1c9b8c0219.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
