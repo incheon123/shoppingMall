@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ProcessHeaderMenuController
  */
-@WebServlet("/ProcessHeaderMenuController")
 public class ProcessHeaderMenuController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

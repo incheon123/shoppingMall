@@ -41,4 +41,16 @@
 	  <servlet-name>mypage</servlet-name>
 	  <url-pattern>/view/mypage/profile</url-pattern>
   </servlet-mapping>
+  
+  
+  
+  
+  <servlet>
+	  <servlet-name>loginDo</servlet-name>
+	  <servlet-class>ProcessAccountController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>loginDo</servlet-name>
+	  <url-pattern>/view/login.do</url-pattern>
+  </servlet-mapping>
 </web-app>
