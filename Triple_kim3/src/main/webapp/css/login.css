@@ -9,7 +9,7 @@ body{
 }
 
 /*
-    ÅÂ±×
+    ï¿½Â±ï¿½
 */
 
 .login-wrapper{
@@ -23,6 +23,7 @@ body{
     border: 1px solid black;
     box-sizing: border-box;
     text-align: center;
+    margin-bottom: 500px;
 }
 
 .login-wrapper > h2{
@@ -66,7 +67,7 @@ body{
 }
 
 /*
-    Å¬·¡½º
+    Å¬ï¿½ï¿½ï¿½ï¿½
 */
 
 #login-form > input[type="checkbox"]{

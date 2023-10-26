@@ -9,4 +9,48 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+	  <servlet-name>login</servlet-name>
+	  <servlet-class>ProcessHeaderMenuController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>login</servlet-name>
+	  <url-pattern>/view/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	  <servlet-name>membership</servlet-name>
+	  <servlet-class>ProcessHeaderMenuController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>membership</servlet-name>
+	  <url-pattern>/view/membership</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	  <servlet-name>basket</servlet-name>
+	  <servlet-class>ProcessHeaderMenuController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>basket</servlet-name>
+	  <url-pattern>/view/basket</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	  <servlet-name>mypage</servlet-name>
+	  <servlet-class>ProcessHeaderMenuController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>mypage</servlet-name>
+	  <url-pattern>/view/mypage/profile</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  <servlet>
+	  <servlet-name>loginDo</servlet-name>
+	  <servlet-class>ProcessAccountController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>loginDo</servlet-name>
+	  <url-pattern>/view/login.do</url-pattern>
+  </servlet-mapping>
 </web-app>

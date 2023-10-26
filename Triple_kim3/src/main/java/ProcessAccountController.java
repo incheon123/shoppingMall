@@ -7,17 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ProcessController
- */
-@WebServlet("/ProcessController")
-public class ProcessController extends HttpServlet {
+
+public class ProcessAccountController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProcessController() {
+    public ProcessAccountController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,8 +31,12 @@ public class ProcessController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		
+		String id = request.getParameter("userName");
+		String pw = request.getParameter("userPassword");
+		
+		System.out.println(id + " : " + pw);
 	}
 
 }

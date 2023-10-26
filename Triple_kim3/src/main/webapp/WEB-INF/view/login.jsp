@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,19 +12,19 @@
 	<jsp:include page="./modules/header.jsp" />
     <div class="login-wrapper">
        	<h2>Login</h2>
-         <form method="post" action="¼­¹öÀÇurl" id="login-form">
+         <form method="post" action="login.do" id="login-form">
              <input type="text" name="userName" placeholder="Email">
              <input type="password" name="userPassword" placeholder="Password">
              <label for="remember-check">
-                 <input type="checkbox" id="remember-check">¾ÆÀÌµð ÀúÀåÇÏ±â
+                 <input type="checkbox" id="remember-check">ì•„ì´ë”” ì €ìž¥í•˜ê¸°
              </label>
              <input type="submit" value="Login">
          </form>
          <form action="./id.jsp" id ="id_search">
-             <input type="submit" value="¾ÆÀÌµð Ã£±â">
+             <input type="submit" value="ì•„ì´ë”” ì°¾ê¸°">
          </form>
          <form action="./password.jsp" id = "password_search">
-             <input type="submit" value="ºñ¹Ð¹øÈ£ Ã£±â">
+             <input type="submit" value="ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°">
          </form>
      </div>
      <jsp:include page="./modules/footer.jsp" />

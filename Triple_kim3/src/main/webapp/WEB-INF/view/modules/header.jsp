@@ -14,11 +14,19 @@
     <header class="header">
         <div class="account_menu">
             <div class="button_group">
+<<<<<<< HEAD
                 <a href="login">로그인</a>
                 <a href="">회원가입</a>
                 <!-- 장바구니(0)으로 교체 -->
                 <a href="">장바구니</a>
                 <a href="">마이페이지</a>
+=======
+                <a href="${pageContext.request.contextPath}/view/login">로그인</a>
+                <a href="${pageContext.request.contextPath}/view/membership">회원가입</a>
+                <!-- 장바구니(0)으로 교체 -->
+                <a href="${pageContext.request.contextPath}/view/basket">장바구니</a>
+                <a href="${pageContext.request.contextPath}/view/mypage/profile">마이페이지</a>
+>>>>>>> 72c562a684b77fde60da6b72c5f0b1ba8dab5dae
             </div>
         </div>
         <div class="search_logo">
