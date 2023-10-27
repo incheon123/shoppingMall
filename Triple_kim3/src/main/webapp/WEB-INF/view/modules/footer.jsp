@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Footer.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/footer.css">
 	<script src="https://kit.fontawesome.com/1c9b8c0219.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,43 +13,31 @@
 </head>
 <body>
 	<footer>
-        <div class="up">
-            <div class="container">
-                <div class="inner-container">
-                    <h1>TRIPLEKIM</h1>
-                    <div class="search-container">
-                        <input type="text" placeholder="search">
-                        <i class="fa-solid fa-magnifying-glass search_button"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-nav">
-                <ul>
-                    <li>
-                        <a href="https://www.naver.com">회사소개</a>
-                    </li>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/view/Agreement/use.jsp">이용안내</a>
-                    </li>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/view/Agreement/policy.jsp">약관안내</a>
-                    </li>
-                </ul>
+        <div class="above">
+            <div class="wrap-content">
+                <span id="logo">TRIPLEKIM</span>
+                <form class="wrap-search-content" action="" metho="POST">
+                    <input type="text" class="search-input" placeholder="search">
+                    <i class="fa-solid fa-magnifying-glass search_button"></i>
+                </form>
             </div>
         </div>
         <div class="bottom">
-            <div class="left">
-                <div class="info">
-                    <span style="font-size: 26px;">CALL CENTER</span>
-                    <span style="font-size: 20px;">032-123-4567</span>
-                    <span style="font-size: 20px;">AM 10 : 10 ~ PM 17 : 00</span>
-                </div>
+            <div class="bottom-menu">
+                <a href="">회사소개</a>
+                <a href="">이용안내</a>
+                <a href="">약관안내</a>
             </div>
-            <div class="right">
-                <div class="info inforight">
-                    <span style="font-size: 26px;">BANK</span>
-                    <span style="font-size: 20px;">3486593486</span>
-                    <span style="font-size: 14px;">국민은행<br>예금주(주)삼김</span>
+            <div class="bottom-desc">
+                <div class="desc-for-info">
+                    <h2>CALL CENTER</h2>
+                    <p class="telephone">032-123-4567</p>
+                    <p>AM 10 : 10 ~ PM 17 : 00</p>
+                </div>
+                <div class="desc-for-account">
+                    <h2>BANK</h2>
+                    <p>345678919</p>
+                    <p>국민은행<br>예금주(주)삼김</p>
                 </div>
             </div>
         </div>

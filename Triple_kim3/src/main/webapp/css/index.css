@@ -3,6 +3,7 @@ main{
     width: 100%;
     height: auto;
     margin: 0;
+    z-index: 1;
 }
 .s1_product_img, .s2_product_img, .s3_product_container{
     position: relative;
