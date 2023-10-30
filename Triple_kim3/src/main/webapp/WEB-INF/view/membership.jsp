@@ -9,7 +9,7 @@
 </head>
 <body>
 	<jsp:include page="./modules/header.jsp" />
-    <form action="" method="POST" class="form">
+    <form action="${pageContext.request.contextPath }/create/account" method="POST" class="form">
         <div class="container">
             <label for="">아이디</label>
             <div class="id box">

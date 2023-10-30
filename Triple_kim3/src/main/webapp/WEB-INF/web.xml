@@ -63,7 +63,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>createAccount</servlet-name>
-		<servlet-class>ProcessAccountController</servlet-class>
+		<servlet-class>RegisterController</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>createAccount</servlet-name>
