@@ -15,8 +15,6 @@ import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 
 
-// Referenced Librariesë¡œ ì°¸ì¡°ê°€ ì•ˆë¨
-// WEB-INFì—ì„œ ì°¸ì¡°í•´ì•¼ ëŒ
 public class Dao {
 	private Connection conn;
 	private static Dao dao;
@@ -32,23 +30,22 @@ public class Dao {
 	
 	public Connection getConnection() {
 		try {
-			
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 			String id  = "system";
 			String pw = "1";
 			
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("dbì •ìƒì—°ê²°");
+			System.out.println("db¿¬°á¼º°ø");
 			
 			try {
 				conn = DriverManager.getConnection(url, id, pw);
-				System.out.println("dbê³„ì •ì¼ì¹˜");
+				System.out.println("db°èÁ¤¿¬°á¼º°ø");
 			}catch(Exception e) {
-				System.out.println("dbê³„ì •ë¶ˆì¼ì¹˜");
+				System.out.println("db°èÁ¤ºÒÀÏÄ¡");
 				e.printStackTrace();
 			}
 		}catch(Exception e) {
-			System.out.println("DBì—°ê²°ì‹¤íŒ¨");
+			System.out.println("DBÁ¢¼Ó½ÇÆĞ");
 			e.printStackTrace();
 		}
 		return conn;
@@ -60,24 +57,24 @@ public class Dao {
 		try {
 			if(conn != null) conn.close();
 		}catch(SQLException ignored) {}
-		System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
+		System.out.println("Á¾·á");
 	}
 	public void close(ResultSet rs) {
 		try {
 			if(rs != null) rs.close();
 		}catch(SQLException ignored) {}
-		System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
+		System.out.println("Á¾·á");
 	}
 	public void close(Statement stmt) {
 		try {
 			if(stmt != null) stmt.close();
 		}catch(SQLException ignored) {}
-		System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
+		System.out.println("Á¾·á");
 	}
 	public void close(PreparedStatement pstmt) {
 		try {
 			if(pstmt != null) pstmt.close();
 		}catch(SQLException ignored) {}
-		System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
+		System.out.println("Á¾·á");
 	}
 }

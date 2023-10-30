@@ -12,7 +12,7 @@
 	<jsp:include page="./modules/header.jsp" />
     <div class="login-wrapper">
        	<h2>Login</h2>
-         <form method="post" action="login.do" id="login-form">
+         <form method="post" action="${pageContext.request.contextPath }/login.do" id="login-form">
              <input type="text" name="userName" placeholder="Email">
              <input type="password" name="userPassword" placeholder="Password">
              <label for="remember-check">

@@ -13,26 +13,26 @@
         <div class="container">
             <label for="">아이디</label>
             <div class="id box">
-                <input type="text" name="id" class="user_id" required>
+                <input type="text" name="id" class="user_id" placeholder="id" required>
                 <a href="#" id="check_duplicate">중복확인</a>
             </div>
         </div>
         <div class="container">
             <label for="">비밀번호</label>
             <div class="pw box">
-                <input type="password" name="pw" class="user_pw" required>
+                <input type="password" name="pw" class="user_pw" placeholder="pw" required>
             </div>
         </div>
         <div class="container">
             <label for="">이름</label>
             <div class="name box">
-                <input type="text" name="name" class="user_name" required>
+                <input type="text" name="name" class="user_name" placeholder="name" required>
             </div>
         </div>
         <div class="container">
             <label for="">이메일</label>
             <div class="email box">
-                <input type="text" name="email" class="user_email" required>
+                <input type="text" name="email" class="user_email" placeholder="email" required>
                 <select name="domain" id="rwd-domain" required>
                     <option value="null"></option>
                     <option value="naver">@naver.com</option>
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="container">
-            <label for="">휴대전화번호</label>
+            <label for="">휴대전화 번호</label>
             <div class="tel">
                 <input type="text" name="ptel1" class="user_tel" value="010" maxlength="3" readonly>
                 <span style="background-color: rgb(151, 151, 151); width: 10px; height: 2.5px;"></span>
@@ -62,10 +62,9 @@
             </div>
         </div>
         <div class="container">
-            <label for="">집전화번호</label>
+            <label for="">전화번호</label>
             <div class="tel">
                 <select name="htel1" id="domain" style="height:100%; text-align:center; margin: 0px 14px 0px 14px;width:25%;" required>
-                    <option value="null"></option>
                     <option value="02">02</option>
                     <option value="032">032</option>
                     <option value="021">021</option>
@@ -79,10 +78,10 @@
         <div class="container">
             <label for="">주소</label>
             <div class="addr1 box">
-                <input type="text" name="addr1" class="user_addr" required>
+                <input type="text" name="addr1" class="user_addr" placeholder="기본주소" required>
             </div>
             <div class="addr2 box">
-                <input type="text" name="addr2" class="user_addr" required>
+                <input type="text" name="addr2" class="user_addr" placeholder="상세주소" required>
             </div>
         </div>
         <div class="container">
@@ -94,6 +93,11 @@
             <label for="">생년월일</label>
             <div class="birth box">
                 <input type="date" name="brith" class="user_birth">
+            </div>
+        </div>
+        <div class="container">
+            <div class="submitbox">
+                <input type="submit" value="가입하기">
             </div>
         </div>
     </form>
