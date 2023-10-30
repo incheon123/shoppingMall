@@ -1,37 +1,102 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <link rel="stylesheet" href="../css/membership.css">
-<title>»∏ø¯∞°¿‘</title>
+<title>ÌöåÏõêÍ∞ÄÏûÖ</title>
 </head>
 <body>
-    <form action="" method="POST" class="joinForm" onsubmit="DoJoinForm__submit(this); return false;">
-        <h2>»∏ø¯∞°¿‘</h2>
-        <div class="textForm">
-            <input name="loginId" type="text" class="id" placeholder="æ∆¿Ãµ"></input>
+	<jsp:include page="./modules/header.jsp" />
+    <form action="" method="POST" class="form">
+        <div class="container">
+            <label for="">ÏïÑÏù¥Îîî</label>
+            <div class="id box">
+                <input type="text" name="id" class="user_id" required>
+                <a href="#" id="check_duplicate">Ï§ëÎ≥µÌôïÏù∏</a>
+            </div>
         </div>
-        <div class="textForm">
-            <input name="loginPw" type="password" class="pw" placeholder="∫Òπ–π¯»£">
+        <div class="container">
+            <label for="">ÎπÑÎ∞ÄÎ≤àÌò∏</label>
+            <div class="pw box">
+                <input type="password" name="pw" class="user_pw" required>
+            </div>
         </div>
-        <div class="textForm">
-            <input name="loginPwConfirm" type="password" class="pw" placeholder="∫Òπ–π¯»£ »Æ¿Œ">
+        <div class="container">
+            <label for="">Ïù¥Î¶Ñ</label>
+            <div class="name box">
+                <input type="text" name="name" class="user_name" required>
+            </div>
         </div>
-        <div class="textForm">
-            <input name="name" type="password" class="name" placeholder="¿Ã∏ß">
+        <div class="container">
+            <label for="">Ïù¥Î©îÏùº</label>
+            <div class="email box">
+                <input type="text" name="email" class="user_email" required>
+                <select name="domain" id="rwd-domain" required>
+                    <option value="null"></option>
+                    <option value="naver">@naver.com</option>
+                    <option value="google">@google.com</option>
+                    <option value="daum">@daum.com</option>
+                </select>
+            </div>
         </div>
-        <div class="textForm">
-            <input name="email" type="text" class="email" placeholder="¿Ã∏ﬁ¿œ">
+        <div class="rwd-container">
+            <div class="domain box">
+                <select name="domain" id="domain" required>
+                    <option value="null"></option>
+                    <option value="naver">@naver.com</option>
+                    <option value="google">@google.com</option>
+                    <option value="daum">@daum.com</option>
+                </select>
+            </div>
         </div>
-        <div class="textForm">
-            <input name="nickname" type="text" class="nickname" placeholder="¥–≥◊¿”">
+        <div class="container">
+            <label for="">Ìú¥ÎåÄÏ†ÑÌôîÎ≤àÌò∏</label>
+            <div class="tel">
+                <input type="text" name="ptel1" class="user_tel" value="010" maxlength="3" readonly>
+                <span style="background-color: rgb(151, 151, 151); width: 10px; height: 2.5px;"></span>
+                <input type="text" name="ptel2" class="user_tel" maxlength="4" required>
+                <span style="background-color: rgb(151, 151, 151); width: 10px; height: 2.5px;"></span>
+                <input type="text" name="ptel3" class="user_tel" maxlength="4" required>
+            </div>
         </div>
-        <div class="textForm">
-            <input name="cellphoneNo" type="number" class="cellphoneNo" placeholder="¿¸»≠π¯»£">
+        <div class="container">
+            <label for="">ÏßëÏ†ÑÌôîÎ≤àÌò∏</label>
+            <div class="tel">
+                <select name="htel1" id="domain" style="height:100%; text-align:center; margin: 0px 14px 0px 14px;width:25%;" required>
+                    <option value="null"></option>
+                    <option value="02">02</option>
+                    <option value="032">032</option>
+                    <option value="021">021</option>
+                </select>
+                <span style="background-color: rgb(151, 151, 151); width: 10px; height: 2.5px;"></span>
+                <input type="text" name="htel2" class="user_tel" maxlength="4">
+                <span style="background-color: rgb(151, 151, 151); width: 10px; height: 2.5px;"></span>
+                <input type="text" name="htel3" class="user_tel" maxlength="4">
+            </div>
         </div>
-        <input type="submit" class="btn" value="»∏ø¯∞°¿‘"/>
+        <div class="container">
+            <label for="">Ï£ºÏÜå</label>
+            <div class="addr1 box">
+                <input type="text" name="addr1" class="user_addr" required>
+            </div>
+            <div class="addr2 box">
+                <input type="text" name="addr2" class="user_addr" required>
+            </div>
+        </div>
+        <div class="container">
+            <div style="margin-top:20px;"></div>
+            <input type="radio" name="gender" value="MEN" class="radio"><span style="color:rgb(91, 91, 91);">ÎÇ®ÏÑ±</span>
+            <input type="radio" name="gender" value="WOMEN" class="radio"><span style="color:rgb(91, 91, 91);">Ïó¨ÏÑ±</span>
+        </div>
+        <div class="container">
+            <label for="">ÏÉùÎÖÑÏõîÏùº</label>
+            <div class="birth box">
+                <input type="date" name="brith" class="user_birth">
+            </div>
+        </div>
     </form>
+    <jsp:include page="./modules/footer.jsp" />
 </body>
 </html>

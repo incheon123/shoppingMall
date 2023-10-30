@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -42,7 +40,11 @@ public class ProcessHeaderMenuController extends HttpServlet {
 		}else if(url.equals("/view/mypage/profile")) {
 			System.out.println(url);
 			dispatcher = request.getRequestDispatcher("/WEB-INF/view/mypage/profile.jsp");
+		}else if(url.equals("/logout")) {
+			System.out.println(url);
+			dispatcher = request.getRequestDispatcher("/WEB-INF/view/index.jsp");
 		}
+		
 		
 		dispatcher.forward(request, response);
 	}
