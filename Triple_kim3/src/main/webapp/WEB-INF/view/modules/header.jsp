@@ -14,11 +14,17 @@
     <header class="header">
         <div class="account_menu">
             <div class="button_group">
-                <a href="${pageContext.request.contextPath}/view/login">로그인</a>
-                <a href="${pageContext.request.contextPath}/view/membership">회원가입</a>
+            	<% if(session.getAttribute("id") != null){%>
+            		<a href="${pageContext.request.contextPath}/view/mypage/profile"><%= session.getAttribute("id") %></a>
+                	<a href="${pageContext.request.contextPath}/logout.do">로그아웃</a>
+                	<a href="${pageContext.request.contextPath}/view/basket">장바구니</a>
+                <%} else{%>
+	                <a href="${pageContext.request.contextPath}/view/login">로그인</a>
+	                <a href="${pageContext.request.contextPath}/view/membership">회원가입</a>
+	                <a href="${pageContext.request.contextPath}/view/basket">장바구니</a>
+                <%} %>
                 <!-- 장바구니(0)으로 교체 -->
-                <a href="${pageContext.request.contextPath}/view/basket">장바구니</a>
-                <a href="${pageContext.request.contextPath}/view/mypage/profile">마이페이지</a>
+              
             </div>
         </div>
         <div class="search_logo">

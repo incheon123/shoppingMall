@@ -24,17 +24,18 @@ public class LoginDAO {
 		this.conn = conn;
 	}
 	
-	public User selectAccount(String user_id, String user_pw) {
+	public User selectAccount(String user_id, String user_pw){
 		User user = null;
 		PreparedStatement pstmt=null;
+		Statement stmt = null;
+		
 		ResultSet rs = null;
 		
 		try {
-			pstmt = conn.prepareStatement("select * from ȸ�� where id = ? AND pw = ?");
+			pstmt = conn.prepareStatement("select * from 회원 where 아이디 = ? AND 비밀번호 = ?");
 			pstmt.setString(1,  user_id);
 			pstmt.setString(2,  user_pw);
 			rs = pstmt.executeQuery();
-			
 			if(rs.next()) {
 				user = new User();
 				user.setId(rs.getString(1));

@@ -50,7 +50,6 @@ public class ProcessAccountController extends HttpServlet {
 		LoginService login = new LoginService();
 		User loginUser = login.getLoginUser(id, pw);
 		
-		
 		if(loginUser != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("id", loginUser.getId());
