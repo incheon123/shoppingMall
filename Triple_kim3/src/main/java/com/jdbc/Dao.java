@@ -35,19 +35,19 @@ public class Dao {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			// 김택현의 리눅스 노트북 sid : xe
-//			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			
 			// 정록, 태규의 side : orcl (다르다면 최초 설치시 설정한 sid 입력하세요)
 			//사용하실 때는 위에 김택현 주소를 주석처리하고 아래 주소를 주석해제해서 쓰세요
-			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+//			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 			
 			/*
 			 * 자신의 데이터베이스에 만들어져 있는 계정을 사용하세요
 			 * 아이디와 비밀번호는 통일합시다
 			 * 아니면 위에처럼 자기 계정만들고 주석처리
 			 */
-			String id  = "system";
-			String pw = "1";
+			String id  = "kth";
+			String pw = "123";
 			
 			System.out.println("db접속성공");
 			try {

@@ -92,7 +92,7 @@
         <div class="container">
             <label for="">생년월일</label>
             <div class="birth box">
-                <input type="date" name="brith" class="user_birth">
+                <input type="date" name="birth" class="user_birth">
             </div>
         </div>
         <div class="container">

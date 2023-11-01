@@ -43,6 +43,9 @@ public class ProcessHeaderMenuController extends HttpServlet {
 		}else if(url.equals("/logout")) {
 			System.out.println(url);
 			dispatcher = request.getRequestDispatcher("/WEB-INF/view/index.jsp");
+		}else if(url.equals("/create/account")) {
+			System.out.println(url);
+			dispatcher = request.getRequestDispatcher("/WEB-INF/view/membership.jsp");
 		}
 		
 		
