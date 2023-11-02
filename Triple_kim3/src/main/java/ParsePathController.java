@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ProcessHeaderMenuController
  */
-public class ProcessHeaderMenuController extends HttpServlet {
+public class ParsePathController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProcessHeaderMenuController() {
+    public ParsePathController() {
         super();
         // TODO Auto-generated constructor stub
     }

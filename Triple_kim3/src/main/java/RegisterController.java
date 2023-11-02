@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.beans.User;
 
@@ -24,11 +25,24 @@ public class RegisterController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//check duplicate
+		MemberService duplicateChkService = new MemberService();
+		
+		boolean chk = duplicateChkService.checkDuplicateId(request.getParameter("id"));
+		
+		if(chk) {
+			System.out.println(request.getParameter("id") + "는 중복됩니다");
+			response.getWriter().write("true");
+		}else {
+			System.out.println(request.getParameter("id") + "는 중복안됩니다");
+			response.getWriter().write("falses");
+		}
+		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		RegisterService regiService = new RegisterService();
+		MemberService regiService = new MemberService();
 		
 		String user_id     = request.getParameter("id");	
 		String user_pw     = request.getParameter("pw");
@@ -50,8 +64,18 @@ public class RegisterController extends HttpServlet {
 		String user_gender = request.getParameter("gender");
 		String user_birth  = request.getParameter("birth");
 		
+		User temp = new User();
+		temp.setId(user_id);
+		temp.setPw(user_pw);
+		temp.setName(user_name);
+		temp.setEmail(user_email);
+		temp.setPhnTelNum(user_ptel);
+		temp.setHmTelNum(user_htel);
+		temp.setAddr(user_addr);
+		temp.setGender(user_gender);
+		temp.setBirth(user_birth);
 		
-		User user = regiService.register(user_id, user_pw, user_name, user_email, user_ptel, user_htel, user_addr, user_gender, user_birth);
+		User user = regiService.register(temp);
 		
 		if(user != null) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/login.jsp");

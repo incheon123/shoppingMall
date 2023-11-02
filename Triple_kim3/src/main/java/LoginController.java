@@ -15,14 +15,14 @@ import com.beans.*;
 import com.jdbc.*;
 import com.svc.*;
 
-public class ProcessAccountController extends HttpServlet {
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProcessAccountController() {
+    public LoginController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -45,10 +45,13 @@ public class ProcessAccountController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("userName");
 		String pw = request.getParameter("userPassword");
-		System.out.println(id + " : " + pw);
 		
-		LoginService login = new LoginService();
-		User loginUser = login.getLoginUser(id, pw);
+		User loginUserInfo = new User();
+		loginUserInfo.setId(id);
+		loginUserInfo.setPw(pw);
+		
+		MemberService login = new MemberService();
+		User loginUser = login.getLoginUser(loginUserInfo);
 		
 		if(loginUser != null) {
 			HttpSession session = request.getSession();
