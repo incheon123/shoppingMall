@@ -9,36 +9,93 @@
 <body>
 	<jsp:include page="./modules/header.jsp" />
 	<!-- 추후에 스크립트 태그를 추가하세요 -->
-	<main>
-        <div class="option_container">
-            <div class="category_container">
-                <div class="category"> <!-- border bottom -->
-                    <h2>product_category</h2>
-                </div>
-                <div class="category_menu">
-                    <a href="#" class="category_item">middle1</a>
-                    <a href="#" class="category_item">middle2</a>
-                </div>
+	<div class="container w-100">
+    <h3 class="flex-sm-fill text-sm-center nav-link text-secondary py-5">상의</h3>
+    <nav class="nav nav-pills flex-column flex-sm-row">
+      <a class="flex-sm-fill text-sm-center nav-link text-secondary" href="#">전체</a>
+      <a class="flex-sm-fill text-sm-center nav-link text-secondary" href="#">후디</a>
+      <a class="flex-sm-fill text-sm-center nav-link text-secondary" href="#">티셔츠</a>
+      <a class="flex-sm-fill text-sm-center nav-link text-secondary" href="#">반팔</a>
+      <a class="flex-sm-fill text-sm-center nav-link text-secondary" href="#">패딩</a>
+      <a class="flex-sm-fill text-sm-center nav-link text-secondary" href="#">스웨트</a>
+    </nav>
+    <div class="container w-100 d-flex justify-content-center px-0 py-0">
+      <div class="row row-cols-2 row-cols-md-4 g-4 my-5">
+        <a href="" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
+          <div class="col px-1 my-1">
+            <div class="card">
+              <img src="./resource/adidas_shoes_1.jpeg" class="card-img-top object-fit-cover" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">포럼 로우</h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">129,000 원</li>
+                <li class="list-group-item">남성 Original</li>
+                <li class="list-group-item">별점</li> <!-- 옵션 사항-->
+              </ul>
+              <div class="card-body">
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
             </div>
-            <div class="sort_container">
-                <div class="quantity_container"> <!-- border bottom -->
-                    <p>64개</p>
-                </div>
-                <div class="sort_menu">
-                    <a href="#" class="sort_item">추천인기순</a>
-                    <a href="#" class="sort_item">판매인기순</a>
-                    <a href="#" class="sort_item">낮은가격순</a>
-                    <a href="#" class="sort_item">높은가격순</a>
-                    <a href="#" class="sort_item">등록일순</a>
-                </div>
+          </div>
+        </a>
+        <a href="" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
+          <div class="col px-1 my-1">
+            <div class="card">
+              <img src="./resource/adidas_shoes_2.jpeg" class="card-img-top object-fit-cover" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">포럼 로우</h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">129,000 원</li>
+                <li class="list-group-item">남성 Original</li>
+                <li class="list-group-item">단색</li> <!-- 옵션 사항-->
+              </ul>
+              <div class="card-body">
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
             </div>
-        </div>
-    </main>
-    <section>
-        <div class="s3_product_container">
-        </div>
-    </section>
+          </div>
+        </a>
+        <a href="" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
+          <div class="col px-1 my-1">
+            <div class="card">
+              <img src="..." class="card-img-top object-fit-cover" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">포럼 로우</h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">129,000 원</li>
+                <li class="list-group-item">남성 Original</li>
+                <li class="list-group-item">단색</li> <!-- 옵션 사항-->
+              </ul>
+              <div class="card-body">
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
+          <div class="col px-1 my-1">
+            <div class="card">
+              <img src="..." class="card-img-top object-fit-cover" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">포럼 로우</h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">129,000 원</li>
+                <li class="list-group-item">남성 Original</li>
+                <li class="list-group-item">단색</li> <!-- 옵션 사항-->
+              </ul>
+              <div class="card-body">
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
     <jsp:include page="./modules/footer.jsp" />
 </body>
-<script src="../js/products.js"></script>
 </html>

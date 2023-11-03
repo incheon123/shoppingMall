@@ -41,7 +41,14 @@
 		<url-pattern>/view/mypage/profile</url-pattern>
 	</servlet-mapping>
 	
-	
+	<servlet>
+		<servlet-name>product</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>product</servlet-name>
+		<url-pattern>/view/product</url-pattern>
+	</servlet-mapping>
 	
 	
 	

@@ -98,5 +98,4 @@
     </main>
     <jsp:include page="./modules/footer.jsp" />
 </body>
-<script src="../js/index.js"></script>
 </html>

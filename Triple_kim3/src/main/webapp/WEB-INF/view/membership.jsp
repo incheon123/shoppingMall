@@ -11,28 +11,28 @@
 <body>
 	<jsp:include page="./modules/header.jsp" />
     <form action="${pageContext.request.contextPath }/create/account" method="POST" class="form">
-        <div class="container">
+        <div class="mycontainer">
             <label>아이디</label>
-            <div class="id box">
+            <div class="id mybox">
                 <input type="text" name="id" class="user_id" placeholder="id" required>
                 <a href="#" id="check_duplicate">중복확인</a>
             </div>
         </div>
-        <div class="container">
+        <div class="mycontainer">
             <label>비밀번호</label>
-            <div class="pw box">
+            <div class="pw mybox">
                 <input type="password" name="pw" class="user_pw" placeholder="pw" required>
             </div>
         </div>
-        <div class="container">
+        <div class="mycontainer">
             <label>이름</label>
-            <div class="name box">
+            <div class="name mybox">
                 <input type="text" name="name" class="user_name" placeholder="name" required>
             </div>
         </div>
-        <div class="container">
+        <div class="mycontainer">
             <label>이메일</label>
-            <div class="email box">
+            <div class="email mybox">
                 <input type="text" name="email" class="user_email" placeholder="email" required>
                 <select name="domain" id="rwd-domain" required>
                     <option value="null"></option>
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="rwd-container">
-            <div class="domain box">
+            <div class="domain mybox">
                 <select name="domain" id="domain" required>
                     <option value="null"></option>
                     <option value="naver">@naver.com</option>
@@ -52,7 +52,7 @@
                 </select>
             </div>
         </div>
-        <div class="container">
+        <div class="mycontainer">
             <label>휴대전화 번호</label>
             <div class="tel">
                 <input type="text" name="ptel1" class="user_tel" value="010" maxlength="3" readonly>
@@ -62,7 +62,7 @@
                 <input type="text" name="ptel3" class="user_tel" maxlength="4" required>
             </div>
         </div>
-        <div class="container">
+        <div class="mycontainer">
             <label>전화번호</label>
             <div class="tel">
                 <select name="htel1" id="htel1" style="height:100%; text-align:center; margin: 0px 14px 0px 14px;width:25%;" required>
@@ -76,27 +76,27 @@
                 <input type="text" name="htel3" class="user_tel" maxlength="4">
             </div>
         </div>
-        <div class="container">
+        <div class="mycontainer">
             <label>주소</label>
-            <div class="addr1 box">
+            <div class="addr1 mybox">
                 <input type="text" name="addr1" class="user_addr" placeholder="기본주소" required>
             </div>
-            <div class="addr2 box">
+            <div class="addr2 mybox">
                 <input type="text" name="addr2" class="user_addr" placeholder="상세주소" required>
             </div>
         </div>
-        <div class="container">
+        <div class="mycontainer">
             <div style="margin-top:20px;"></div>
             <input type="radio" name="gender" value="MEN" class="radio"><span style="color:rgb(91, 91, 91);">남성</span>
             <input type="radio" name="gender" value="WOMEN" class="radio"><span style="color:rgb(91, 91, 91);">여성</span>
         </div>
-        <div class="container">
+        <div class="mycontainer">
             <label>생년월일</label>
-            <div class="birth box">
+            <div class="birth mybox">
                 <input type="date" name="birth" class="user_birth">
             </div>
         </div>
-        <div class="container">
+        <div class="mycontainer">
             <div class="submitbox">
                 <input type="submit" value="가입하기">
             </div>

@@ -43,7 +43,7 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("userName");
+		String id = request.getParameter("userId");
 		String pw = request.getParameter("userPassword");
 		
 		User loginUserInfo = new User();
@@ -52,7 +52,8 @@ public class LoginController extends HttpServlet {
 		
 		MemberService login = new MemberService();
 		User loginUser = login.getLoginUser(loginUserInfo);
-		
+		System.out.println(loginUser.getId());
+		System.out.println(loginUser.getPw());
 		if(loginUser != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("id", loginUser.getId());

@@ -18,8 +18,8 @@ main{
     display: flex;
 }
 
-/* img_container¿Í info_container¸¦ °¨½Î´Â ¿ä¼Ò
-   ¼öÆòÁ¤·ÄÀ» ÇÑ´Ù
+/* img_containerï¿½ï¿½ info_containerï¿½ï¿½ ï¿½ï¿½ï¿½Î´ï¿½ ï¿½ï¿½ï¿½
+   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½
 */
 .product{
     width: 100%;
@@ -119,4 +119,8 @@ input[type="submit"]:hover{
 .minus:hover{
     transition: 0.5s ease;
     background-color: rgb(179, 0, 255);
+}
+.card-img-top{
+	width: 100%;
+	height: 260px;
 }

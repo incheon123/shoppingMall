@@ -10,23 +10,24 @@
 </head>
 <body>
 	<jsp:include page="./modules/header.jsp" />
-    <div class="login-wrapper">
-       	<h2>Login</h2>
-         <form method="post" action="${pageContext.request.contextPath }/login.do" id="login-form">
-             <input type="text" name="userName" placeholder="Email">
-             <input type="password" name="userPassword" placeholder="Password">
-             <label for="remember-check">
-                 <input type="checkbox" id="remember-check">아이디 저장하기
-             </label>
-             <input type="submit" value="Login">
-         </form>
-         <form action="./id.jsp" id ="id_search">
-             <input type="submit" value="아이디 찾기">
-         </form>
-         <form action="./password.jsp" id = "password_search">
-             <input type="submit" value="비밀번호 찾기">
-         </form>
-     </div>
-     <jsp:include page="./modules/footer.jsp" />
+		<form class="container w-100 my-3 py-3 border border-info d-flex flex-column align-items-center" action="${pageContext.request.contextPath }/login.do" method="POST">
+	        <h4 class="my-4 fs-1">Login</h4>
+	        <div class="input-group flex-nowrap w-75">
+	            <span class="input-group-text w-25" id="addon-wrapping">아이디</span>
+	            <input type="text" class="form-control" placeholder="id" aria-label="Username" name="userId">
+	        </div>
+	        <div class="input-group flex-nowrap w-75 py-2">
+	            <span class="input-group-text w-25" id="addon-wrapping">비밀번호</span>
+	            <input type="text" class="form-control" placeholder="password" aria-label="Username" name="userPassword">
+	        </div>
+	        <div class="input-group flex-nowrap w-75 py-2">
+	            <input type="submit" class="form-control py-3 fs-4" placeholder="password" value="Login">
+	        </div>
+	        <div class="container d-flex justify-content-around my-3">
+	            <a href="/find/id" class="text-decoration-none text-info">아이디찾기</a>
+	            <a href="/find/pw" class="text-decoration-none text-info">비밀번호찾기</a>
+	        </div>
+    	</form>
+	<jsp:include page="./modules/footer.jsp" />
 </body>
 </html>
