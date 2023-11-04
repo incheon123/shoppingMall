@@ -18,6 +18,7 @@
                 <a href="#" id="check_duplicate">중복확인</a>
             </div>
         </div>
+        <a href="#" id="rwd_check_duplicate">중복확인</a>
         <div class="mycontainer">
             <label>비밀번호</label>
             <div class="pw mybox">
