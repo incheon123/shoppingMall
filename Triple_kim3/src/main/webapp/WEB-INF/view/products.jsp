@@ -10,14 +10,14 @@
 	<jsp:include page="./modules/header.jsp" />
 	<!-- 추후에 스크립트 태그를 추가하세요 -->
 	<div class="container w-100">
-    <h3 class="flex-sm-fill text-sm-center nav-link text-secondary py-5">상의</h3>
+    <h3 class="flex-sm-fill text-sm-center nav-link text-secondary py-5 text-center">상의</h3>
     <nav class="nav nav-pills flex-column flex-sm-row">
-      <a class="flex-sm-fill text-sm-center nav-link text-secondary" href="#">전체</a>
-      <a class="flex-sm-fill text-sm-center nav-link text-secondary" href="#">후디</a>
-      <a class="flex-sm-fill text-sm-center nav-link text-secondary" href="#">티셔츠</a>
-      <a class="flex-sm-fill text-sm-center nav-link text-secondary" href="#">반팔</a>
-      <a class="flex-sm-fill text-sm-center nav-link text-secondary" href="#">패딩</a>
-      <a class="flex-sm-fill text-sm-center nav-link text-secondary" href="#">스웨트</a>
+		<a class="flex-sm-fill text-sm-center nav-link text-secondary text-center" href="#">전체</a>
+		<a class="flex-sm-fill text-sm-center nav-link text-secondary text-center" href="#">후디</a>
+		<a class="flex-sm-fill text-sm-center nav-link text-secondary text-center" href="#">티셔츠</a>
+		<a class="flex-sm-fill text-sm-center nav-link text-secondary text-center" href="#">반팔</a>
+		<a class="flex-sm-fill text-sm-center nav-link text-secondary text-center" href="#">패딩</a>
+		<a class="flex-sm-fill text-sm-center nav-link text-secondary text-center" href="#">스웨트</a>
     </nav>
     <div class="container w-100 d-flex justify-content-center px-0 py-0">
       <div class="row row-cols-2 row-cols-md-4 g-4 my-5">
