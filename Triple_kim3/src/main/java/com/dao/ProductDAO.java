@@ -25,7 +25,7 @@ public class ProductDAO {
 	
 	public Products selectHighPurchaseProducts() {
 		try {
-			pstmt = conn.prepareStatement("select * from product where purchase_count >= 200");
+			pstmt = conn.prepareStatement("SELECT * FROM product ORDER BY purchase_count DESC");
 			rs = pstmt.executeQuery();
 			
 			products = new Products();

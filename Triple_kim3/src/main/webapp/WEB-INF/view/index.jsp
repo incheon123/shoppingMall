@@ -26,7 +26,8 @@
 
         	<% for(idx = 0; idx < 4; idx++){ %>
             <div class="col">
-                <a href="${pageContext.request.contextPath }/view/product" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
+            	<!-- 상품을  누르면 상품상세페이지로 넘어감 -->
+                <a href="${pageContext.request.contextPath }/product/<%= product.get(idx).getProduct_id() %>" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
                     <div class="col px-1 my-1">
                         <div class="card">
                         	<span class="cart-shopping">
@@ -55,30 +56,31 @@
         <!-- three -->
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3">
         	<!-- script tag -->
+        	<% for(int i = idx; i < product.size(); i++) { %>
             <div class="col">
-                <a href="" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
+                <a href="${pageContext.request.contextPath }/product/<%= product.get(idx).getProduct_id() %>" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
                     <div class="col px-1 my-1">
                         <div class="card">
                         	<span class="cart-shopping">
                                 <i class="fa-solid fa-cart-shopping fs-2"></i>
                             </span>
-                            <img src="/gazelleBlack.jpg" class="card-img-top object-fit-cover" alt="...">
+                            <img src="/<%= product.get(i).getImg_url() %>" class="card-img-top object-fit-cover" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">포럼 로우</h5>
+                                <h5 class="card-title"><%= product.get(i).getProduct_name() %></h5>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">129,000 원</li>
-                                <li class="list-group-item">남성 Original</li>
+                                <li class="list-group-item"><%= product.get(i).getPrice() %>원</li>
+                                <li class="list-group-item"><%= product.get(i).getGender() %></li>
                                 <li class="list-group-item">별점</li> <!-- 옵션 사항-->
                             </ul>
                             <div class="card-body kth-product-desc">
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                    additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><%= product.get(i).getShort_desc() %></p>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
+            <% } %>
         </div>
     </div>
     <jsp:include page="./modules/footer.jsp" />
