@@ -51,7 +51,6 @@ public class ParsePathController extends HttpServlet {
 			dispatcher = request.getRequestDispatcher("/WEB-INF/view/product.jsp");
 		}
 		
-		
 		dispatcher.forward(request, response);
 	}
 

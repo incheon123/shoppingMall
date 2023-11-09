@@ -1,0 +1,29 @@
+package com.beans;
+
+import java.util.ArrayList;
+import com.beans.Product;
+
+public class Products {
+	private ArrayList<Product> mainPageProducts;
+	private ArrayList<Product> products;
+	
+	public Products() {
+		mainPageProducts = new ArrayList<>();
+		products = new ArrayList<>();
+	}
+	
+	public void addProductToMainPage(Product product) {
+		if(product != null)
+			mainPageProducts.add(product);
+	}
+	public ArrayList<Product> getMainPageProducts(){
+		return mainPageProducts;
+	}
+	
+	public void addProductToProductPage(Product product) {
+		products.add(product);
+	}
+	public ArrayList<Product> getProducts(){
+		return mainPageProducts;
+	}
+}
