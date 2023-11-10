@@ -17,4 +17,12 @@ public class ProductService {
 		dao.close(conn);
 		return products;
 	}
+	
+	public Product getProductById(int product_id) throws Exception{
+		
+		conn = dao.getConnection();
+		productdao.setConnection(conn);
+		Product product = productdao.selectProductById(product_id);
+		return product;
+	}
 }

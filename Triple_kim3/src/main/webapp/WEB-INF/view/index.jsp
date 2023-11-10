@@ -6,6 +6,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css">
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <title>Triple</title>
 </head>
 <body>
@@ -27,7 +28,7 @@
         	<% for(idx = 0; idx < 4; idx++){ %>
             <div class="col">
             	<!-- 상품을  누르면 상품상세페이지로 넘어감 -->
-                <a href="${pageContext.request.contextPath }/product/<%= product.get(idx).getProduct_id() %>" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
+                <a href="${pageContext.request.contextPath }/product?product_id=<%= product.get(idx).getProduct_id() %>" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
                     <div class="col px-1 my-1">
                         <div class="card">
                         	<span class="cart-shopping">
@@ -57,13 +58,10 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3">
         	<!-- script tag -->
         	<% for(int i = idx; i < product.size(); i++) { %>
-            <div class="col">
-                <a href="${pageContext.request.contextPath }/product/<%= product.get(idx).getProduct_id() %>" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
+            <div class="col position-relative">
+                <a href="${pageContext.request.contextPath }/product?product_id=<%= product.get(i).getProduct_id() %>" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
                     <div class="col px-1 my-1">
                         <div class="card">
-                        	<span class="cart-shopping">
-                                <i class="fa-solid fa-cart-shopping fs-2"></i>
-                            </span>
                             <img src="/<%= product.get(i).getImg_url() %>" class="card-img-top object-fit-cover" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title"><%= product.get(i).getProduct_name() %></h5>
@@ -79,10 +77,18 @@
                         </div>
                     </div>
                 </a>
+                <span class="cart-shopping">
+                    <i class="fa-solid fa-cart-shopping fs-2"></i>
+                </span>
             </div>
             <% } %>
         </div>
     </div>
     <jsp:include page="./modules/footer.jsp" />
 </body>
+<script>
+$(".cart-shopping").on('click', () => {
+	console.log(this)
+})
+</script>
 </html>

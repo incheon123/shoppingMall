@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="/home/kimtaekhyun/Downloads/apache-tomcat-9.0.82/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="/home/kimtaekhyun/Downloads/apache-tomcat-9.0.82/lib/jsp-api.jar"/>
 	<classpathentry kind="lib" path="/home/kimtaekhyun/Downloads/ojdbc10-full/ojdbc10.jar"/>
+	<classpathentry kind="lib" path="/home/kimtaekhyun/Downloads/jstl-1.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

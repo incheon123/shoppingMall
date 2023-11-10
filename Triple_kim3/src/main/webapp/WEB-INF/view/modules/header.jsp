@@ -54,7 +54,7 @@
                 </li>
             </ul>
         </div>
-        <nav class="navbar navbar-expand-lg my-4 bg-info">
+        <nav class="navbar navbar-expand-lg my-4 bg-secondary">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">목록</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

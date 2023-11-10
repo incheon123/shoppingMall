@@ -40,11 +40,11 @@
 	
 	<servlet>
 		<servlet-name>product</servlet-name>
-		<servlet-class>ParsePathController</servlet-class>
+		<servlet-class>ProductController</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>product</servlet-name>
-		<url-pattern>/view/product</url-pattern>
+		<url-pattern>/product/*</url-pattern>
 	</servlet-mapping>
 	
 	

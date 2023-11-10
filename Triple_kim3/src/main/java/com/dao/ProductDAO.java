@@ -54,11 +54,46 @@ public class ProductDAO {
 			}
 		}catch(Exception e) {
 			System.out.println("select * from product Error");
+			e.printStackTrace();
+		}finally {
 			dao.close(pstmt);
 			dao.close(rs);
-			e.printStackTrace();
 		}
 		
 		return products;
+	}
+	
+	public Product selectProductById(int product_id) throws Exception{
+		Product product;
+		
+		pstmt = conn.prepareStatement("select * from product where product_id = ?");
+		pstmt.setInt(1, product_id);
+		
+		rs = pstmt.executeQuery();
+		
+		product = new Product();
+		
+		if(rs.next()) {
+			product.setProduct_id(rs.getInt(1));
+			product.setProduct_name(rs.getString(2));
+			product.setProduct_id(rs.getInt(3));
+			product.setPrice(rs.getInt(4));
+			product.setMin_size(rs.getInt(5));
+			product.setMax_size(rs.getInt(6));
+			product.setMm(rs.getInt(7));
+			product.setShort_desc(rs.getString(8));
+			product.setDetail_desc(rs.getString(9));
+			product.setProduct_point(rs.getInt(10));
+			product.setPurchase_count(rs.getInt(11));
+			product.setSail(rs.getInt(12));
+			product.setAvailable_age(rs.getString(13));
+			product.setGender(rs.getString(14));
+			product.setProduct_category_id(rs.getInt(15));
+			product.setCategory_id(rs.getInt(16));
+			product.setImg_url(rs.getString(17));
+		}
+		dao.close(pstmt);
+		dao.close(rs);
+		return product; 
 	}
 }

@@ -18,6 +18,7 @@ public class Product {
 	private int product_category_id;
 	private int category_id;
 	private String img_url;
+	
 	public int getProduct_id() {
 		return product_id;
 	}
