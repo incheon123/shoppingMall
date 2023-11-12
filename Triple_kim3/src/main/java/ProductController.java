@@ -13,27 +13,36 @@ import com.beans.Product;
 import com.svc.ProductService;
 
 
-@WebServlet("/product")
+//@WebServlet("/product")
 public class ProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	private int product_id;
+	private String uri;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		product_id = Integer.parseInt(request.getParameter("product_id"));
 		
-		try {
-			ProductService service = new ProductService();
-			Product product = service.getProductById(product_id);
-			request.setAttribute("product", product);
+		uri = request.getRequestURI();
+		product_id = Integer.parseInt(request.getParameter("id"));
+		
+		if(uri.equals("/Triple_kim3/product")) {
+			try {
+				ProductService service = new ProductService();
+				Product product = service.getProductById(product_id);
+				request.setAttribute("product", product);
+				
+			}catch(Exception e) {
+				System.out.println("sql error");
+				e.printStackTrace();
+			}
 			
-		}catch(Exception e) {
-			System.out.println("sql error");
-			e.printStackTrace();
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/product.jsp");
+			dispatcher.forward(request, response);
+		}else if(uri.equals("/Triple_kim3/product/save")) {
+			System.out.println("Holy Sh**");
+			//ajax 응답받아서 코드 실행
+			//장바구니 테이블에 요청받은 상품 집어넣고 ㄱㄱ하면됨
 		}
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/product.jsp");
-		dispatcher.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

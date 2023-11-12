@@ -28,7 +28,7 @@
         	<% for(idx = 0; idx < 4; idx++){ %>
             <div class="col">
             	<!-- 상품을  누르면 상품상세페이지로 넘어감 -->
-                <a href="${pageContext.request.contextPath }/product?product_id=<%= product.get(idx).getProduct_id() %>" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
+                <a href="${pageContext.request.contextPath }/product?id=<%= product.get(idx).getProduct_id() %>" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
                     <div class="col px-1 my-1">
                         <div class="card">
                         	<span class="cart-shopping">
@@ -59,7 +59,7 @@
         	<!-- script tag -->
         	<% for(int i = idx; i < product.size(); i++) { %>
             <div class="col position-relative">
-                <a href="${pageContext.request.contextPath }/product?product_id=<%= product.get(i).getProduct_id() %>" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
+                <a href="${pageContext.request.contextPath }/product?id=<%= product.get(i).getProduct_id() %>" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
                     <div class="col px-1 my-1">
                         <div class="card">
                             <img src="/<%= product.get(i).getImg_url() %>" class="card-img-top object-fit-cover" alt="...">

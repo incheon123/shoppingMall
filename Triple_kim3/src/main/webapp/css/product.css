@@ -18,6 +18,8 @@ main{
     display: flex;
 }
 
+.btn-add-quantity{ width: 100px !important;}
+.btn-remove-quantity{ width: 10px !important; }
 /* img_container�� info_container�� ���δ� ���
    ���������� �Ѵ�
 */
