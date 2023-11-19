@@ -76,7 +76,7 @@ public class ProductDAO {
 		if(rs.next()) {
 			product.setProduct_id(rs.getInt(1));
 			product.setProduct_name(rs.getString(2));
-			product.setProduct_id(rs.getInt(3));
+			product.setCompany_id(rs.getInt(3));
 			product.setPrice(rs.getInt(4));
 			product.setMin_size(rs.getInt(5));
 			product.setMax_size(rs.getInt(6));

@@ -35,6 +35,9 @@ public class Dao {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			// 김택현의 리눅스 노트북 sid : xe
+			
+			
+			//local
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			
 			// 정록, 태규의 side : orcl (다르다면 최초 설치시 설정한 sid 입력하세요)

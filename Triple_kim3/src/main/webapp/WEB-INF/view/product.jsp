@@ -162,6 +162,16 @@
     <jsp:include page="./modules/footer.jsp" />
 </body>
 <script>
+
+	//상품의 수량 추가/제거 기능
+	const ELEMENT_QUANTITY = document.getElementsByClassName("quantity")[0];
+	const TOTAL_PRICE = document.getElementsByClassName("total-price")[0];
+	const SAIL = Number(document.getElementsByClassName("sail")[0].innerText);
+	const DELIVERY_PRICE = Number(document.getElementsByClassName("delivery-price")[0].innerText);
+	const PRODUCT_PRICE = Number(document.getElementsByClassName("product-price")[0].innerText);
+
+
+
 	var url = window.location.href;
 	var a = url.indexOf("?");
 	var b =  url.substring(a);
@@ -174,12 +184,19 @@
 		$.ajax({
 			type:'GET',
 			url: url+"/save",
-			data: {id : ${product.getProduct_id()} },
+			data: {
+				id : ${product.getProduct_id()},
+				quantity : Number(ELEMENT_QUANTITY.innerText)
+			},
 			success: function(result){
+				console.log(result);
 				if(result === 'true'){
+					alert("장바구니에 추가했습니다");
+					return;
+				}else{
+					alert("장바구니에 추가하지 못했습니다");
 					return;
 				}
-				return;
 			}
 		})
 	})
@@ -199,12 +216,6 @@
 		
 		//total price = ( (상품 단가 * 수량) / (100/할인률) ) + [ 배송비{0, 3000} ]
 		
-		//상품의 수량 추가/제거 기능
-		const ELEMENT_QUANTITY = document.getElementsByClassName("quantity")[0];
-		const TOTAL_PRICE = document.getElementsByClassName("total-price")[0];
-		const SAIL = Number(document.getElementsByClassName("sail")[0].innerText);
-		const DELIVERY_PRICE = Number(document.getElementsByClassName("delivery-price")[0].innerText);
-		const PRODUCT_PRICE = Number(document.getElementsByClassName("product-price")[0].innerText);
 		
 		$('.btn-add-quantity').on("click", () => {
 			let quantity = Number(ELEMENT_QUANTITY.innerText);

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.beans.Product;
 import com.svc.ProductService;
+import com.svc.BasketService;
 
 
 //@WebServlet("/product")
@@ -38,10 +39,6 @@ public class ProductController extends HttpServlet {
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/product.jsp");
 			dispatcher.forward(request, response);
-		}else if(uri.equals("/Triple_kim3/product/save")) {
-			System.out.println("Holy Sh**");
-			//ajax 응답받아서 코드 실행
-			//장바구니 테이블에 요청받은 상품 집어넣고 ㄱㄱ하면됨
 		}
 	}
 
