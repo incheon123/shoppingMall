@@ -14,7 +14,10 @@
             height:100%;
             width:100%;
         }
-        input[type="text"]{
+        .long{
+            width: 150px;
+        }
+        .short{
             width: 100px;
         }
         th{
@@ -23,13 +26,17 @@
         }
         tr{
         	width: 100%;
-        	background-color: blue;
+        	height: fit-content;
+        	background-color: blue !important;
+        }
+        textarea{
+            resize : none;
         }
     </style>
 </head>
 <body>
 	
-    <div class="container bg-info w-100 h-100 py-0">
+    <div class="container bg-info w-100 py-0" style="height: 2500px;">
         <ul class="nav">
             <li class="nav-item">
                 <a href="" class="nav-link active">상품관리</a>
@@ -50,16 +57,17 @@
         <div class="container">
             <p class="bg-secondary">조회하기</p>
         </div>
-        <div class="container w-100 bg-warning" style="height: 35%; overflow:scroll;">
-            <p class="bg-secondary">수정하기</p>
-            <caption>입고상품목록</caption> <button class="btn bg-success mx-5 px-1 py-1 btn-logistic-product-enroll-false"> 조회하기 </button>
-            <input type="checkbox" class="enroll" /> 자체 상품 등록여부 
+        <p class="bg-secondary">수정하기</p>
+        <caption>입고상품목록</caption><button class="btn bg-success mx-5 px-1 py-1 btn-logistic-product-enroll-false"> 조회하기 </button>
+        <input type="checkbox" class="enroll" /> 자체 상품 등록여부 
+        <div class="container w-100 bg-warning" style="height: 20%; overflow:scroll;">
             <div class="container">
                 <!-- 만약 enroll이 false라면 화면에 뿌려준다.-->
                 <div class="container">
                     <table class="table">
                         <thead>
                             <tr>
+                            	<th scope="col">#</th>
                                 <th scope="col">공급사 코드</th>
                                 <th scope="col">공급사측 상품코드</th>
                                 <th scope="col">공급일</th>
@@ -79,9 +87,114 @@
                 </div>
             </div>
         </div>
+        
+        <div class="container w-100 bg-secondary" style="height: 25%;">
+        	<h3>자체상품으로 추가하기</h3>
+        	<table class="table">
+	            <thead>
+	                <tr>
+	                    <th scope="col">공급사 코드</th>
+	                    <th scope="col">공급사측 상품코드</th>
+	                    <th scope="col">공급일</th>
+	                    <th scope="col">가격</th>
+	                    <th scope="col">포인트</th>
+	                    <!-- enroll 속성은 조건용이므로 화면에 뿌려주지 않는다-->
+	                </tr>
+	            </thead>
+	            <tbody class='logistic-product-tbody'>
+	            	<tr>
+	            		<td><input type="text" readonly class="long"></td>
+	            		<td><input type="text" readonly class="long"></td>
+	            		<td><input type="text" readonly class="long"></td>
+	            		<td><input type="text" class="short"></td>
+                        <td><input type="text" class="short"></td>
+	            	</tr>
+	            </tbody>
+                <tr>
+                    <th scope="col">이미지</th>
+	                <th scope="col">이미지경로</th>
+                    <th scope="col">대분류</th>
+	                <th scope="col">중분류</th>
+                </tr>
+                <tbody class='logistic-product-tbody'>
+	            	<tr>
+	            		<td><input type="file" style="width: 240px;"></td>
+	            		<td><input type="text" readonly class="long"></td>
+	            		<td>
+                            <select name="" id="super_category" onchange="change()" required>
+                                <option value="0">선택안됨</option>
+                                <option value="1">상의</option>
+                                <option value="2">하의</option>
+                                <option value="3">신발</option>
+                                <option value="4">모자</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" id="sub_category" required>
+                                <option value="-99999999">선택안됨</option>
+                            </select>
+                        </td>
+	            	</tr>
+	            </tbody>
+	            <tr>
+            		<th scope="col">요약설명</th>
+	                <th scope="col">설명</th>
+	            </tr>
+                <tbody class='logistic-product-tbody'>
+	            	<tr>
+	            		<td><textarea name="" id="" cols="30" rows="10" maxlength="140"></textarea></td>
+	            		<td><textarea name="" id="" cols="50" rows="10" maxlength="500"></textarea></td>
+	            	</tr>
+	            </tbody>
+	       	</table>
+        	<button class="btn btn-success">상품추가하기</button>
+        </div>
     </div>
 </body>
 <script>
+function change(){
+    var super_category = document.getElementById("super_category");
+    var sub_category = document.getElementById("sub_category");
+
+    $(sub_category).children("option").remove();
+    if(super_category.value === "1"){
+        sub_category.appendChild(createOption("스웨트"));
+        sub_category.appendChild(createOption("자켓"));
+        sub_category.appendChild(createOption("반팔"));
+        sub_category.appendChild(createOption("패딩"));
+        return
+    }
+    if(super_category.value === "2"){
+        sub_category.appendChild(createOption("긴바지"));
+        sub_category.appendChild(createOption("반바지"));
+        sub_category.appendChild(createOption("치마"));
+        sub_category.appendChild(createOption("트레이닝"));
+        sub_category.appendChild(createOption("등산"));
+       return
+    }
+    if(super_category.value === "3"){
+        sub_category.appendChild(createOption("일반화"));
+        sub_category.appendChild(createOption("등산화"));
+        sub_category.appendChild(createOption("축구화"));
+        sub_category.appendChild(createOption("슬리퍼"));
+        sub_category.appendChild(createOption("스웨트"));
+       return
+    }
+    if(super_category.value === "4"){
+        sub_category.appendChild(createOption("야구모자"));
+        sub_category.appendChild(createOption("등산모자"));
+        sub_category.appendChild(createOption("골프모자"));
+        sub_category.appendChild(createOption("트레이닝"));
+        sub_category.appendChild(createOption("일반모자"));
+       return
+    }
+}
+var option;
+function createOption(content){
+    option = document.createElement("option");
+    option.append(content);
+    return option;
+}
 const TBODY = document.getElementsByClassName('logistic-product-tbody')[0];
 
 let tr;
@@ -106,6 +219,7 @@ let arr = [];
 						tr = document.createElement("tr");
 						tr.className = i
 						
+						tr.appendChild(wrapper(i+1));
 						tr.appendChild(wrapper(arr[i].logistic_id));
 						tr.appendChild(wrapper(arr[i].product_id));
 						tr.appendChild(wrapper(arr[i].warehousing_date));
@@ -135,8 +249,8 @@ let arr = [];
 	}
 	
 	
-	$('tr').on('click', () => {
-		console.log(this);
+	$(document).on("click", "tr", function(){
+		
 	})
 </script>
 </html>
