@@ -60,4 +60,16 @@ public class LogisticProductDao {
 		}
 		return logi_products;
 	}
+	public void updateLogiProductEnroll(String cid, String pid, String date, String enroll) {
+//		try {
+//			pstmt = conn.prepareStatement("update logistic_product set enroll = 'true' where enroll = ?");
+//			pstmt.setString(1, enroll);
+//			pstmt.executeUpdate();
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//			System.out.println("업데이트 에레");
+//		}finally {
+//			jdbc.close(pstmt);
+//		}
+	}
 }

@@ -30,6 +30,7 @@ public class LogisticProduct {
 	private String available_age;
 	private String enroll;
 	
+	
 	public String getLogistic_id() {
 		return logistic_id;
 	}
@@ -99,10 +100,9 @@ public class LogisticProduct {
 	@Override
 	public String toString() {
 		return "LogisticProduct [logistic_id=" + logistic_id + ", product_id=" + product_id + ", warehousing_date="
-				+ warehousing_date + ", product_name=" + product_name + ", product_color=" + product_color
-				+ ", purchase_price=" + purchase_price + ", total_quantity=" + total_quantity + ", is_new=" + is_new
-				+ ", gender=" + gender + ", available_age=" + available_age + ", enroll=" + enroll + "]";
+				+ warehousing_date + ", product_name=" + product_name + ", product_color="
+				+ product_color + ", purchase_price=" + purchase_price + ", total_quantity=" + total_quantity
+				+ ", is_new=" + is_new + ", gender=" + gender + ", available_age=" + available_age + ", enroll="
+				+ enroll + "]";
 	}
-	
-	
 }

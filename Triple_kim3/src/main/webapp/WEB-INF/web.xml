@@ -80,7 +80,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>createAccount</servlet-name>
-		<url-pattern>/shit/create/account</url-pattern>
+		<url-pattern>/create/account</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>checkDuplicate</servlet-name>

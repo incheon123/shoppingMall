@@ -88,7 +88,7 @@
             </div>
         </div>
         
-        <div class="container w-100 bg-secondary" style="height: 25%;">
+        <form class="container w-100 bg-secondary" style="height: 25%;" action="${pageContext.request.contextPath}/put/product" method="POST" enctype="multipart/form-data">
         	<h3>자체상품으로 추가하기</h3>
         	<table class="table">
 	            <thead>
@@ -103,11 +103,11 @@
 	            </thead>
 	            <tbody class='logistic-product-tbody'>
 	            	<tr>
-	            		<td><input type="text" readonly class="long"></td>
-	            		<td><input type="text" readonly class="long"></td>
-	            		<td><input type="text" readonly class="long"></td>
-	            		<td><input type="text" class="short"></td>
-                        <td><input type="text" class="short"></td>
+	            		<td><input required type="text" readonly class="long" name='logi_company_id' id="logi_company_id"></td>
+	            		<td><input required type="text" readonly class="long" name="logi_product_id" id="logi_product_id"></td>
+	            		<td><input required type="text" readonly class="long" name="warehousing_date" id="warehousing_date"></td>
+	            		<td><input required type="text" class="short" name="price" id="price"></td>
+                        <td><input required type="text" class="short" name="point" id="point"></td>
 	            	</tr>
 	            </tbody>
                 <tr>
@@ -118,10 +118,10 @@
                 </tr>
                 <tbody class='logistic-product-tbody'>
 	            	<tr>
-	            		<td><input type="file" style="width: 240px;"></td>
-	            		<td><input type="text" readonly class="long"></td>
+	            		<td><input required type="file" style="width: 240px;" name='product_img' id="product_img"></td>
+	            		<td><input type="text" class="long" name='product_img_url' id="img_url"></td>
 	            		<td>
-                            <select name="" id="super_category" onchange="change()" required>
+                            <select required name="super_category" id="super_category" onchange="change()" required>
                                 <option value="0">선택안됨</option>
                                 <option value="1">상의</option>
                                 <option value="2">하의</option>
@@ -130,7 +130,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" id="sub_category" required>
+                            <select required name="sub_category" id="sub_category" required>
                                 <option value="-99999999">선택안됨</option>
                             </select>
                         </td>
@@ -142,13 +142,13 @@
 	            </tr>
                 <tbody class='logistic-product-tbody'>
 	            	<tr>
-	            		<td><textarea name="" id="" cols="30" rows="10" maxlength="140"></textarea></td>
-	            		<td><textarea name="" id="" cols="50" rows="10" maxlength="500"></textarea></td>
+	            		<td><textarea required name="short_desc" id="short_desc" cols="30" rows="10" maxlength="140"></textarea></td>
+	            		<td><textarea required name="detail_desc" id="detail_desc" cols="50" rows="10" maxlength="500"></textarea></td>
 	            	</tr>
 	            </tbody>
 	       	</table>
-        	<button class="btn btn-success">상품추가하기</button>
-        </div>
+        	<input type="submit" class="btn btn-success">상품추가하기</input>
+        </form>
     </div>
 </body>
 <script>
@@ -158,34 +158,84 @@ function change(){
 
     $(sub_category).children("option").remove();
     if(super_category.value === "1"){
-        sub_category.appendChild(createOption("스웨트"));
-        sub_category.appendChild(createOption("자켓"));
-        sub_category.appendChild(createOption("반팔"));
-        sub_category.appendChild(createOption("패딩"));
+    	let sb1 = createOption("스웨트");
+        sub_category.appendChild(sb1);
+    	sb1.value = '1'
+    	
+    	let sb2 = createOption("자켓");
+        sub_category.appendChild(sb2);
+    	sb2.value = '2'
+
+    	let sb3 = createOption("반팔");
+        sub_category.appendChild(sb3);
+        sb3.value = '3'
+        
+        let sb4 = createOption("패딩");
+        sub_category.appendChild(sb4);
+        sb4.value="4"
         return
     }
     if(super_category.value === "2"){
-        sub_category.appendChild(createOption("긴바지"));
-        sub_category.appendChild(createOption("반바지"));
-        sub_category.appendChild(createOption("치마"));
-        sub_category.appendChild(createOption("트레이닝"));
-        sub_category.appendChild(createOption("등산"));
+    	let sb1 = createOption("긴바지");
+        sub_category.appendChild(sb1);
+        sb1.value = '1'
+        
+        let sb2 = createOption("반바지")
+        sub_category.appendChild(sb2);
+        sb2.value = '2'
+        
+        let sb3 = createOption("치마")
+        sub_category.appendChild(sb3);
+        sb3.value='3'
+        
+        let sb4 = createOption("트레이닝")
+        sub_category.appendChild(sb4);
+        sb4.value = '4';
+        
+        let sb5 = createOption("등산")
+        sub_category.appendChild(sb5);
+        sb5.value = '5'
        return
     }
     if(super_category.value === "3"){
-        sub_category.appendChild(createOption("일반화"));
-        sub_category.appendChild(createOption("등산화"));
-        sub_category.appendChild(createOption("축구화"));
-        sub_category.appendChild(createOption("슬리퍼"));
-        sub_category.appendChild(createOption("스웨트"));
+    	let sb1 = createOption("일반화")
+        sub_category.appendChild(sb1);
+    	sb1.value = '1'
+    	
+    	let sb2 = createOption("등산화")
+        sub_category.appendChild(sb2);
+    	sb2.value = '2'
+    	
+    	let sb3 = createOption("축구화")
+        sub_category.appendChild(sb3);
+    	sb3.value = '3'
+    	
+    	let sb4 = createOption("슬리퍼")
+        sub_category.appendChild(sb4);
+    	sb4.value = '4'
+    	
        return
     }
     if(super_category.value === "4"){
-        sub_category.appendChild(createOption("야구모자"));
-        sub_category.appendChild(createOption("등산모자"));
-        sub_category.appendChild(createOption("골프모자"));
-        sub_category.appendChild(createOption("트레이닝"));
-        sub_category.appendChild(createOption("일반모자"));
+    	let sb1 = createOption("야구모자")
+        sub_category.appendChild(sb1);
+    	sb1.value = '1'
+    	
+    	let sb2 = createOption("등산모자")
+        sub_category.appendChild(sb2);
+    	sb2.value = '2'
+    	
+    	let sb3 = createOption("골프모자")
+        sub_category.appendChild(sb3);
+    	sb3.value = '3'
+    	
+    	let sb4 = createOption("트레이닝")
+        sub_category.appendChild(sb4);
+    	sb4.value = '4'
+    	
+    	let sb5 = createOption("일반모자")
+        sub_category.appendChild(sb5);
+    	sb5.value = '5'
        return
     }
 }
@@ -217,7 +267,8 @@ let arr = [];
 						arr.push(result.logisticProducts[i]);
 						
 						tr = document.createElement("tr");
-						tr.className = i
+						tr.id = i
+						tr.className = "logi_product"
 						
 						tr.appendChild(wrapper(i+1));
 						tr.appendChild(wrapper(arr[i].logistic_id));
@@ -249,8 +300,30 @@ let arr = [];
 	}
 	
 	
-	$(document).on("click", "tr", function(){
-		
+	$(document).on("click", ".logi_product", function(){
+		console.log(this.children[1].innerText);
+		$("#logi_company_id").val(this.children[1].innerText)
+		$("#logi_product_id").val(this.children[2].innerText)
+		$("#warehousing_date").val(this.children[3].innerText)
 	})
+	
+	
+	
+//자체상품으로 추가하기
+/*
+let company_id = $("#logi_company_id").val();
+let product_id = $("#logi_product_id").val();
+let warehousing_date = $("#warehousing_date").val();
+let price = Number($("#price").val());
+let point = Number($("point").val());
+let product_img = $("#product_img")[0].files[0];
+let img_url = $("#img_url").val();
+let super_category = Number($("#super_category").val());
+let sub_category = Number($("#sub_category").val());
+let short_desc = $("#short_desc").val();
+let detail_desc = $("#detail_desc").val();
+*/
+
+	
 </script>
 </html>

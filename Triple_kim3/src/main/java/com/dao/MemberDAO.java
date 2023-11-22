@@ -26,27 +26,33 @@ public class MemberDAO {
 		this.conn = conn;
 	}
 	
+	//로그인한 유저 정보 가져오기
 	public User selectAccount(User login_info){
 		
 		try {
-			pstmt = conn.prepareStatement("select * from 회원 where 아이디 = ? AND 비밀번호 = ?");
+//			pstmt = conn.prepareStatement("select * from user_account where user_id = '" + login_info.getId() + "' AND user_pw = '" + login_info.getPw() + "'");
+			pstmt = conn.prepareStatement("select * from user_account where user_id = ? AND user_pw = ?");
+			
+			System.out.println(pstmt);
 			pstmt.setString(1,  login_info.getId());
 			pstmt.setString(2,  login_info.getPw());
+			
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				user = new User();
 				user.setId(rs.getString(1));
 				user.setPw(rs.getString(2));
 				user.setName(rs.getString(3));
-				user.setPhnTelNum(rs.getString(4));
-				user.setHmTelNum(rs.getString(5));
-				user.setAddr(rs.getString(6));
-				user.setGender(rs.getString(7));
-				user.setBirth(rs.getString(8));
-				user.setDelete(rs.getString(9));
+				user.setEmail(rs.getString(4));
+				user.setPhnTelNum(rs.getString(5));
+				user.setHmTelNum(rs.getString(6));
+				user.setAddr(rs.getString(7));
+				user.setGender(rs.getString(8));
+				user.setBirth(rs.getString(9));
 				user.setDeleteDate(rs.getString(10));
 				user.setPoint(rs.getInt(11));
 				user.setLastLoginTime(rs.getString(12));
+				
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -60,6 +66,8 @@ public class MemberDAO {
 		}
 		return user;
 	}
+	
+	//회원가입
 	public User insertRegiInfo(User user_info) {
 		
 		try {
@@ -73,6 +81,7 @@ public class MemberDAO {
 			pstmt.setString(7,  user_info.getAddr());
 			pstmt.setString(8,  user_info.getGender());
 			pstmt.setString(9,  user_info.getBirth());
+			//포인트랑, 삭제여부랑, 마지막로그인타임 기록하셈
 			pstmt.executeUpdate();
 			
 			
@@ -89,7 +98,6 @@ public class MemberDAO {
 				user.setGender(temp.getString(8));
 				user.setBirth(temp.getString(9));
 				
-				user.setDelete(temp.getString(10));
 				user.setDeleteDate(temp.getString(11));
 				user.setPoint(temp.getInt(12));
 //				user.setLastLoginTime(rs.getString(12));
@@ -133,7 +141,7 @@ public class MemberDAO {
 	 */
 	public boolean checkDuplicateId(String user_id) {
 		try {
-			pstmt = conn.prepareStatement("select case when count(*) = 1 then 'true' else 'false' end as result from 회원 where 아이디 = ? ");
+			pstmt = conn.prepareStatement("select case when count(*) = 1 then 'true' else 'false' end as result from user_account where user_id = ? ");
 			pstmt.setString(1, user_id);
 			rs = pstmt.executeQuery();
 			

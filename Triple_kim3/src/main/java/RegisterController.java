@@ -75,22 +75,24 @@ public class RegisterController extends HttpServlet {
 		temp.setGender(user_gender);
 		temp.setBirth(user_birth);
 		
-		User user = regiService.register(temp);
 		
-		if(user != null) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/login.jsp");
-			dispatcher.forward(request, response);
-		}
-		
-		
-		System.out.println(user_id);
-		System.out.println(user_pw);
-		System.out.println(user_name);
-		System.out.println(user_ptel);
-		System.out.println(user_htel);
-		System.out.println(user_addr);
-		System.out.println(user_gender);
-		System.out.println(user_birth);
+		System.out.println(temp);
+//		User user = regiService.register(temp);
+//		
+//		if(user != null) {
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/login.jsp");
+//			dispatcher.forward(request, response);
+//		}
+//		
+//		
+//		System.out.println(user_id);
+//		System.out.println(user_pw);
+//		System.out.println(user_name);
+//		System.out.println(user_ptel);
+//		System.out.println(user_htel);
+//		System.out.println(user_addr);
+//		System.out.println(user_gender);
+//		System.out.println(user_birth);
 		
 	}
 

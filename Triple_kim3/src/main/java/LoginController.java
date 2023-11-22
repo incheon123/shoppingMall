@@ -52,13 +52,18 @@ public class LoginController extends HttpServlet {
 		
 		MemberService login = new MemberService();
 		User loginUser = login.getLoginUser(loginUserInfo);
-		System.out.println(loginUser.getId());
-		System.out.println(loginUser.getPw());
+		
+		String root = request.getServletContext().getContextPath();
 		if(loginUser != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("id", loginUser.getId());
-			RequestDispatcher dp = request.getRequestDispatcher("/WEB-INF/view/index.jsp");
-			dp.forward(request, response);
+			
+			//로그인 성공
+			
+			response.sendRedirect(root);
+		}else {
+			request.getSession().setAttribute("result", "false");
+			response.sendRedirect(root + "/view/login");
 		}
 	}
 

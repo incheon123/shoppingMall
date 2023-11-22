@@ -13,4 +13,15 @@
 	  <servlet-name>logistic_product</servlet-name>
 	  <url-pattern>/get/logistic_product/*</url-pattern>
   </servlet-mapping>
+  
+  <!-- 본상품으로 추가하는 코드 -->
+  <servlet>
+	  <servlet-name>product</servlet-name>
+	  <servlet-class>adminProductController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>product</servlet-name>
+	  <url-pattern>/put/product</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

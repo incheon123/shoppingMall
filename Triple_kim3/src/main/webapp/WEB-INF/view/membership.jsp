@@ -45,7 +45,7 @@
         </div>
         <div class="rwd-container">
             <div class="domain mybox">
-                <select name="domain" id="domain" required>
+                <select name="domain2" id="domain" required>
                     <option value="null"></option>
                     <option value="naver">@naver.com</option>
                     <option value="google">@google.com</option>
@@ -58,9 +58,9 @@
             <div class="tel">
                 <input type="text" name="ptel1" class="user_tel" value="010" maxlength="3" readonly>
                 <span style="background-color: rgb(151, 151, 151); width: 10px; height: 2.5px;"></span>
-                <input type="text" name="ptel2" class="user_tel" maxlength="4" required>
+                <input type="text" name="ptel2" class="user_ptel1" maxlength="4" required>
                 <span style="background-color: rgb(151, 151, 151); width: 10px; height: 2.5px;"></span>
-                <input type="text" name="ptel3" class="user_tel" maxlength="4" required>
+                <input type="text" name="ptel3" class="user_ptel2" maxlength="4" required>
             </div>
         </div>
         <div class="mycontainer">
@@ -72,9 +72,9 @@
                     <option value="021">021</option>
                 </select>
                 <span style="background-color: rgb(151, 151, 151); width: 10px; height: 2.5px;"></span>
-                <input type="text" name="htel2" class="user_tel" maxlength="4">
+                <input type="text" name="htel2" class="user_htel1" maxlength="4">
                 <span style="background-color: rgb(151, 151, 151); width: 10px; height: 2.5px;"></span>
-                <input type="text" name="htel3" class="user_tel" maxlength="4">
+                <input type="text" name="htel3" class="user_htel2" maxlength="4">
             </div>
         </div>
         <div class="mycontainer">
@@ -108,59 +108,109 @@
 <script>
 
 let idDuplicateChk = false;
+$("input[type=submit]").click(function(){
+	if(!idCheckValidate($('.user_id'))) return false;
+	if(!pwCheckValidate($(".user_pw"))) return false;
+	if(!idDuplicateChk){
+		alert("아이디 중복 체크하세요")
+		return false;
+	}
+	if(emailCheckValidate($(".user_email"))) return false;
+	if(ptelCheckValidate($(".user_ptel1"), $(".user_ptel2"))) return false;
+	if(htelCheckValidate($(".user_htel1"), $(".user_htel2"))) return false;
+	$(".form").submit();
+})
+
+function pwCheckValidate(pw){
+	if(pw.val().length < 8){
+		alert("비밀번호는 8자 이상입니다");
+		pw.val('')
+		pw.focus();
+		return false;
+	}
+	return true;
+}
+function emailCheckValidate(email){
+	var special_pattern = /[^\w\sㄱ-힣()0-9]/g;
+	if(special_pattern.test(email.val()) == true){
+	    alert('이메일에는 특수문자를 제외한 문자만 입력해주세요');
+	    return false;
+	}
+	return true;
+}
+function ptelCheckValidate(p1, p2){
+	if(p1.val().length != 4 && p2.val().length != 4){
+		alert("전화번호 형식에 맞춰주세요");
+		p1.focus();
+		return false;
+	}
+	
+	var special_pattern = /^[0-9]*$/;
+	if(special_pattern.test(p1.val()) == false && special_pattern.test(p2.val()) == false){
+	    alert('전화번호 형식에 맞춰주세요');
+	    p1.focus();
+	    return false;
+	}
+	return true;
+}
+function htelCheckValidate(h1, h2){
+	if(h1.val().length != 3 && h2.val().length != 4){
+		alert("전화번호 형식에 맞춰주세요");
+		h1.focus();
+		return false;
+	}
+	
+	var special_pattern = /^[0-9]*$/;
+	if(special_pattern.test(h1.val()) == false && special_pattern.test(h2.val()) == false){
+	    alert('전화번호 형식에 맞춰주세요');
+	    h1.focus();
+	    return false;
+	}
+	return true;
+}
 $("#check_duplicate").click(function(){
-	checkValidate();
+	
 	
 	/*
 		아이디 중복 체크 비동기방식으로 진행 => ajax
 	*/
-	$.ajax({
-		type:'GET',
-		url: '/Triple_kim3/view/check/duplicate',
-		data: {id : $(".user_id").val() },
-		success: function(result){
-			if(result === 'true'){
-				alert("아이디가 중복됩니다");
-				idDuplicateChk = false;
-				$('.user_id').val('');
+	if(checkValidate()){
+		$.ajax({
+			type:'GET',
+			url: '/Triple_kim3/view/check/duplicate',
+			data: {id : $(".user_id").val() },
+			success: function(result){
+				if(result === 'true'){
+					alert("아이디가 중복됩니다");
+					idDuplicateChk = false;
+					$('.user_id').val('');
+					return;
+				}
+				alert("사용가능한 아이디입니다");
+				idDuplicateChk = true;
 				return;
 			}
-			alert("사용가능한 아이디입니다");
-			idDuplicateChk = true;
-			return;
-		}
-	})
+		})
+	}
 });
 
 function checkValidate(){
-	let regExp = null;
+	return idCheckValidate($('.user_id'));
 	
-	let input     = $('.user_id')
-	let inputText = input.val();
-	
-	if(inputText == null){
-		alert('아이디는 공백이 될 수 없습니다');
-		input.focus();
-		return;
-	}
-	if(inputText.length < 8){
-		alert('아이디는 8자리 이상입니다');
-		return;
-	}
-	//아래의 조건들은 정규표현식을 이용하기 바람
-	
-	//아이디가 문자열 사이에 공백 체크
-	//아이디가 숫자로 시작하는지 체크
-	//아이디에 특수문자가 섞여있는지 체크
-	
-	
-	//마찬가지로 비밀번호도 똑같이 진행한다
-	
-	
-	
-	//마찬가지로 이메일도 똑같이 진행한다
 }
-
+function idCheckValidate(id){
+	if(id.val() === ''){
+		alert('아이디는 공백이 될 수 없습니다');
+		id.focus();
+		return false;
+	}
+	if((id.val()).length < 8){
+		alert('아이디는 8자리 이상입니다');
+		return false;
+	}
+	idDuplicateChk = true
+	return true 
+}
 
 </script>
 </html>

@@ -10,7 +10,6 @@ public class User {
 	private String addr;
 	private String gender;
 	private String birth;
-	private String delete;
 	private String deleteDate;
 	private int point;
 	private String lastLoginTime;
@@ -69,12 +68,6 @@ public class User {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-	public String getDelete() {
-		return delete;
-	}
-	public void setDelete(String delete) {
-		this.delete = delete;
-	}
 	public String getDeleteDate() {
 		return deleteDate;
 	}
@@ -92,6 +85,12 @@ public class User {
 	}
 	public void setLastLoginTime(String lastLoginTime) {
 		this.lastLoginTime = lastLoginTime;
+	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", pw=" + pw + ", name=" + name + ", email=" + email + ", phnTelNum=" + phnTelNum
+				+ ", hmTelNum=" + hmTelNum + ", addr=" + addr + ", gender=" + gender + ", birth=" + birth
+				+ ", deleteDate=" + deleteDate + ", point=" + point + ", lastLoginTime=" + lastLoginTime + "]";
 	}
 	
 	
