@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.beans.*" %>
+<%@ page import="java.util.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
@@ -23,18 +24,38 @@
             </div>
 
             <div class="col my-auto">
-
-                <div class="col text-start">
-                    <nav class="navbar bg-body-tertiary border">
-                        <div class="container-fluid">
-                          <span class="navbar-text">
-                            	${product.getPname() }
-                          </span>
-                          
-                        </div>
-                      </nav>
+				<div class="col text-start">
+                  <nav class="navbar bg-body-tertiary">
+                    <div class="container-fluid">
+                      <span class="navbar-text"></span>
+                      <span class="navbar-text">
+                        ${product.getPurchase_count() }번의 구매
+                      </span>
+                    </div>
+                  </nav>
                 </div>
-
+                <div class="col text-start">
+	                <nav class="navbar bg-body-tertiary border">
+	                    <div class="container-fluid">
+	                      <span class="navbar-text">
+	                        	${product.getPname()}
+	                      </span>
+	                      <span class="d-flex flex-column align-items-end">
+	                        <span>
+	                          <div class="star-count">
+	                            <input id="starRating" type="text" style="display:none;" name="starRating" value="">
+	                            <i class="star fa-solid fa-star"></i>
+	                            <i class="star fa-solid fa-star"></i>
+	                            <i class="star fa-solid fa-star"></i>
+	                            <i class="star fa-solid fa-star"></i>
+	                            <i class="star fa-solid fa-star"></i>
+	                          </div>
+	                        </span>
+	                        <a href="">${product.getReview_count()}개의 리뷰</a>
+	                      </span>
+	                    </div>
+	                  </nav>
+                </div>
                 <div class="col text-start">
                     <nav class="navbar bg-body-tertiary py-0 px-3">
                         <div class="container-fluid">
@@ -71,14 +92,21 @@
                   <nav class="navbar bg-body-tertiary py-0 px-3">
                       <div class="container-fluid">
                         <div class="dropdown w-100 d-block">
-                          <button class="w-100 btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" value="-1">
+                          <button class="w-100 btn btn-secondary submitBasket dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" value="-1">
                             필수옵션
                           </button>
                           <ul class="dropdown-menu w-100 text-center">
-                            <li class="d-flex flex-direction-row justify-content-around">
-                              <span>사이즈</span>
-                              <span>수량</span>
+                          	<li class="d-flex flex-direction-row justify-content-around">
+	                            	<span>사이즈</span>
+	                            	<span>재고량</span>
                             </li>
+                          	<c:forEach var="item" items="${product.getSizes() }">
+	                            <li class="dropdown-item dropdown-li d-flex flex-direction-row justify-content-around">
+	                            	<span class="shoes-size">${item.get(0)}</span>
+	                            	<span class="shoes-quantity">${item.get(1)}</span>
+	                            </li>
+                            </c:forEach>
+                            
                           </ul>
                         </div>
                     </div>
@@ -179,12 +207,15 @@
     <jsp:include page="./modules/footer.jsp" />
 </body>
 <script>
-
 	//상품 사이즈 클릭하면 동작한다
-	$(".dropdown-item").on("click", (e) => {
-		let size = e.target.children[0].innerText
-	    $(".dropdown-toggle").val(size)
-	    $(".dropdown-toggle").text(size)
+	$(document).on("click", ".dropdown-li", (e) => {
+		clsName = $(e.target).attr('class');
+		console.log(clsName);
+		if(clsName != 'shoes-size' && clsName != 'shoes-quantity'){
+			let size = e.target.children[0].innerText
+		    $(".dropdown-toggle").val(size)
+		    $(".dropdown-toggle").text(size)
+		}
 	})
 	
 	
@@ -205,12 +236,22 @@
 	
 	//ajax를 이용해서 장바구니에 넣기(실질적으로는 데이터베이스에 넣는거다.)
 	$(".btn-basket").on("click", () => {
-		console.log("누름")
+		
+		//로그인 안되어있으면 빡구
+		if(`<%= session.getAttribute("id")%>` == `null`){
+			window.location.href=`${pageContext.request.contextPath}` + "/view/login"
+			return;
+		}
+		if($('.submitBasket').val() == '-1'){
+			alert("상품 사이즈를 선택하세요")
+			return;
+		}
 		$.ajax({
 			type:'GET',
 			url: url+"/save",
 			data: {
-				id : ${product.getPid()},
+				id : `${product.getPid()}`,
+				size : $('.submitBasket').attr('value'),
 				quantity : Number(ELEMENT_QUANTITY.innerText)
 			},
 			success: function(result){
@@ -218,8 +259,10 @@
 				if(result === 'true'){
 					alert("장바구니에 추가했습니다");
 					return;
-				}else{
+				}else if(result === 'false'){
 					alert("장바구니에 추가하지 못했습니다");
+					return;
+				}else{
 					return;
 				}
 			}
@@ -283,5 +326,18 @@
 				DELIVERY_PRICE[0].innerText = 0;
 			
 		}
+		
+		let count = 0;
+	    function setCount(stat){
+	        count = stat
+	    }
+
+	    let star = document.getElementsByClassName("star");
+
+	    /*
+	    for(let i = 0; i < ; i++){
+	      star[i].className = 'star fa-solid fa-star clicked'
+	    }
+	    */
 </script>
 </html>
