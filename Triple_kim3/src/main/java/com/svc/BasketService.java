@@ -19,10 +19,10 @@ public class BasketService {
 		return basket;
 	}
 	
-	public boolean addProductById(int pid, int quantity) {
+	public boolean addProductById(String uid, String pid, int size, int quantity) {
 		conn = dao.getConnection();
 		basketDao.setConnection(conn);
-		boolean result = basketDao.insertByPid(pid, quantity);
+		boolean result = basketDao.insertByPid(uid, pid, size, quantity);
 		dao.close(conn);
 		
 		return result;
