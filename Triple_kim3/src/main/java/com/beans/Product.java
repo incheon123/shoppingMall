@@ -1,5 +1,7 @@
 package com.beans;
 
+import java.util.*;
+
 public class Product {
 	private String pid;
 	private String pname;
@@ -18,6 +20,7 @@ public class Product {
 	private String detail_desc;
 	private int super_category;
 	private int sub_category;
+	private ArrayList<ArrayList<Integer>> sizes;
 	
 	public String getPid() {
 		return pid;
@@ -122,14 +125,21 @@ public class Product {
 	public void setSub_category(int sub_category) {
 		this.sub_category = sub_category;
 	}
+	public ArrayList<ArrayList<Integer>> getSizes() {
+		return sizes;
+	}
+	public void setSizes(ArrayList<ArrayList<Integer>> sizes) {
+		this.sizes = sizes;
+	}
 	@Override
 	public String toString() {
 		return "Product [pid=" + pid + ", pname=" + pname + ", pcolor=" + pcolor + ", logi_id=" + logi_id + ", gender="
 				+ gender + ", available_age=" + available_age + ", price=" + price + ", point=" + point + ", sail="
 				+ sail + ", total_score=" + total_score + ", img_url=" + img_url + ", purchase_count=" + purchase_count
 				+ ", review_count=" + review_count + ", short_desc=" + short_desc + ", detail_desc=" + detail_desc
-				+ ", super_category=" + super_category + ", sub_category=" + sub_category + "]";
+				+ ", super_category=" + super_category + ", sub_category=" + sub_category + ", sizes=" + sizes + "]";
 	}
+	
 	
 	
 	
