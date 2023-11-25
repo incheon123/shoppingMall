@@ -77,7 +77,7 @@ public class adminProductController extends HttpServlet {
 		
 		request.setCharacterEncoding("utf-8");
 		
-		String path = "/home/kimtaekhyun/Desktop/upload_img";
+		String path = "/home/kimtaekhyun/Desktop/imgResource";
 		File file = new File(path);
 		
 		DiskFileItemFactory factory = new DiskFileItemFactory();
@@ -129,26 +129,25 @@ public class adminProductController extends HttpServlet {
 //					System.out.println(fileFieldName + ", " + fileName + ", " + contentType);
 					fileName = fileName.substring(fileName.lastIndexOf("\\") +1);
 					
-					
-					File uploadFile = new File(path + "/" + fileName);
-					item.write(uploadFile);
+					//중복 안된 경우
+					if(!identifyDuplicateFileName(fileName, path)) {
+						
+						
+						File uploadFile = new File(path + "/" + fileName);
+						item.write(uploadFile);
+						
+					}else {
+						System.out.println("중복입니다");
+					}
 					
 					
 				}
 			}
 			
-			//물류회사코드+공급상품코드+일자 이렇게 비교해서 (물류상품테이블에서) 사이즈 갖고와서 상품 테이블에 넣고 상품사이즈에는 사이즈 넣고
-			//그리고 물류상품테이블에서 추가한 상품의 enroll을 변경한다
-			System.out.println(p);
+			//if문 추가하기 삽입이 돼야지 업뎃할 수 있으니까
 			
-			p.setPid(ProductId.generatePid(p.getLogi_id(), p.getSupply_product_id()));
-			ProductService ps = new ProductService();
+			insertProduct(p);
 			
-			//삽입
-			ps.putProduct(p);
-			
-			//공급상품의 enroll 여부를 변경한다
-			ps.updateLogiProductEnroll(p.getLogi_id(), p.getSupply_product_id(), p.getSupply_product_date(), "false");
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -156,5 +155,36 @@ public class adminProductController extends HttpServlet {
 //		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/adminProduct.jsp");
 		response.sendRedirect(request.getContextPath());
 	}
-
+	
+	
+	private void insertProduct(Product p) {
+		//물류회사코드+공급상품코드+일자 이렇게 비교해서 (물류상품테이블에서) 사이즈 갖고와서 상품 테이블에 넣고 상품사이즈에는 사이즈 넣고
+		//그리고 물류상품테이블에서 추가한 상품의 enroll을 변경한다
+		
+		System.out.println(p);
+		
+		p.setPid(ProductId.generatePid(p.getLogi_id(), p.getSupply_product_id()));
+		ProductService ps = new ProductService();
+		
+		//삽입
+		ps.putProduct(p);
+		
+		//공급상품의 enroll 여부를 변경한다
+		ps.updateLogiProductEnroll(p.getLogi_id(), p.getSupply_product_id(), p.getSupply_product_date());
+	}
+	
+	private boolean identifyDuplicateFileName(String fileName, String path) {
+		//중복되면 true 안되면 false
+		
+		File dir = new File(path);
+		String[] files = dir.list();
+		
+		for(String f : files) {
+			//중복되면
+			if(fileName.equals(f))
+				return true;
+		}
+		
+		return false;
+	}
 }

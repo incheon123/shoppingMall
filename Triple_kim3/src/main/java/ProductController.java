@@ -18,13 +18,13 @@ import com.svc.BasketService;
 public class ProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	private int product_id;
 	private String uri;
+	private String product_id;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		uri = request.getRequestURI();
-		product_id = Integer.parseInt(request.getParameter("id"));
+		product_id = request.getParameter("id");
 		
 		if(uri.equals("/Triple_kim3/product")) {
 			try {

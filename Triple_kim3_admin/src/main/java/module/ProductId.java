@@ -4,7 +4,7 @@ import java.util.StringTokenizer;
 
 public class ProductId {
 	public static String generatePid(String logi_id, String logi_pid) {
-		return parseStr(logi_id) + logi_pid + ((int)(Math.random() * 89999999) + 10000000);
+		return "p" + parseStr(logi_id) + logi_pid + ((int)(Math.random() * 89999999) + 10000000);
 	}
 	
 	public static StringBuilder parseStr(String logi_id) {

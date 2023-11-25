@@ -19,10 +19,10 @@ public class ProductService {
 		return;
 	}
 	
-	public void updateLogiProductEnroll(String cid, String pid, String date, String enroll) {
+	public void updateLogiProductEnroll(String cid, String pid, String date) {
 		conn = jdbc.getConnection();
 		logiProductdao.setConnection(conn);
-		logiProductdao.updateLogiProductEnroll(cid, pid, date, enroll);
+		logiProductdao.updateLogiProductEnroll(cid, pid, date);
 		jdbc.close(conn);
 		return;
 	}

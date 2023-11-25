@@ -15,6 +15,7 @@
 	<!-- 추후에 스크립트 태그를 추가하세요 -->
     <% 
    		ProductService ps = new ProductService();
+    		//젤 높은게 없다면 같은 순위끼리
 		Products products = ps.getHighPurchaseRatingProducts();
 		ArrayList<Product> product = products.getMainPageProducts(); 
 		
@@ -28,7 +29,7 @@
         	<% for(idx = 0; idx < 4; idx++){ %>
             <div class="col">
             	<!-- 상품을  누르면 상품상세페이지로 넘어감 -->
-                <a href="${pageContext.request.contextPath }/product?id=<%= product.get(idx).getProduct_id() %>" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
+                <a href="${pageContext.request.contextPath }/product?id=<%= product.get(idx).getPid() %>" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
                     <div class="col px-1 my-1">
                         <div class="card">
                         	<span class="cart-shopping">
@@ -36,12 +37,12 @@
                             </span>
                             <img src="/<%= product.get(idx).getImg_url() %>" class="card-img-top object-fit-cover" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title"><%= product.get(idx).getProduct_name() %></h5>
+                                <h5 class="card-title"><%= product.get(idx).getPname() %></h5>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><%= product.get(idx).getPrice() %>원</li>
                                 <li class="list-group-item"><%= product.get(idx).getGender() %></li>
-                                <li class="list-group-item">별점</li> <!-- 옵션 사항-->
+                                <li class="list-group-item"><%= product.get(idx).getTotal_score() %></li> <!-- 옵션 사항-->
                             </ul>
                             <div class="card-body kth-product-desc">
                                 <p class="card-text"><%=product.get(idx).getShort_desc() %></p>
@@ -59,17 +60,17 @@
         	<!-- script tag -->
         	<% for(int i = idx; i < product.size(); i++) { %>
             <div class="col position-relative">
-                <a href="${pageContext.request.contextPath }/product?id=<%= product.get(i).getProduct_id() %>" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
+                <a href="${pageContext.request.contextPath }/product?id=<%= product.get(i).getPid() %>" class="kth kth-hover px-0 py-0 my-0 text-decoration-none">
                     <div class="col px-1 my-1">
                         <div class="card">
                             <img src="/<%= product.get(i).getImg_url() %>" class="card-img-top object-fit-cover" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title"><%= product.get(i).getProduct_name() %></h5>
+                                <h5 class="card-title"><%= product.get(i).getPname() %></h5>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><%= product.get(i).getPrice() %>원</li>
                                 <li class="list-group-item"><%= product.get(i).getGender() %></li>
-                                <li class="list-group-item">별점</li> <!-- 옵션 사항-->
+                                <li class="list-group-item"><%= product.get(i).getTotal_score() %></li> <!-- 옵션 사항-->
                             </ul>
                             <div class="card-body kth-product-desc">
                                 <p class="card-text"><%= product.get(i).getShort_desc() %></p>

@@ -25,30 +25,41 @@ public class ProductDAO {
 	
 	public Products selectHighPurchaseProducts() {
 		try {
-			pstmt = conn.prepareStatement("SELECT * FROM product ORDER BY purchase_count DESC");
+			pstmt = conn.prepareStatement(
+					"SELECT * FROM " 
+					+ "("				
+					+ "SELECT p.product_id, lp.product_name, lp.product_color, p.logistic_id, lp.gender, lp.available_age, p.price,"
+					+ "p.product_point, p.sail, p.total_score, p.img_url, p.purchase_count, p.review_count, p.short_desc, p.detail_desc,"
+					+ "p.super_category, p.sub_category "
+					+ "FROM product p, logistic_product lp "
+					+ "WHERE p.logistic_id = lp.logistic_id AND p.supply_product_id = lp.product_id AND p.supply_product_date = lp.warehousing_date "
+					+ "ORDER BY p.purchase_count DESC"
+					+ ") "
+					+ "WHERE ROWNUM <= 30"
+					);
 			rs = pstmt.executeQuery();
 			
 			products = new Products();
 			while(rs.next()) {
 				
 				product = new Product();
-				product.setProduct_id(rs.getInt(1));
-				product.setProduct_name(rs.getString(2));
-				product.setCompany_id(rs.getInt(3));
-				product.setPrice(rs.getInt(4));
-				product.setMin_size(rs.getInt(5));
-				product.setMax_size(rs.getInt(6));
-				product.setMm(rs.getInt(7));
-				product.setShort_desc(rs.getString(8));
-				product.setDetail_desc(rs.getString(9));
-				product.setProduct_point(rs.getInt(10));
-				product.setPurchase_count(rs.getInt(11));
-				product.setSail(rs.getInt(12));
-				product.setAvailable_age(rs.getString(13));
-				product.setGender(rs.getString(14));
-				product.setProduct_category_id(rs.getInt(15));
-				product.setCategory_id(rs.getInt(16));
-				product.setImg_url(rs.getString(17));
+				product.setPid(rs.getString(1));
+				product.setPname(rs.getString(2));
+				product.setPcolor(rs.getString(3));
+				product.setLogi_id(rs.getString(4));
+				product.setGender(rs.getString(5));
+				product.setAvailable_age(rs.getString(6));
+				product.setPrice(rs.getInt(7));
+				product.setPoint(rs.getInt(8));
+				product.setSail(rs.getInt(9));
+				product.setTotal_score(rs.getInt(10));
+				product.setImg_url(rs.getString(11));
+				product.setPurchase_count(rs.getInt(12));
+				product.setReview_count(rs.getInt(13));
+				product.setShort_desc(rs.getString(14));
+				product.setDetail_desc(rs.getString(15));
+				product.setSuper_category(rs.getInt(16));
+				product.setSub_category(rs.getInt(17));
 				
 				products.addProductToMainPage(product);
 			}
@@ -63,34 +74,46 @@ public class ProductDAO {
 		return products;
 	}
 	
-	public Product selectProductById(int product_id) throws Exception{
+	public Product selectProductById(String product_id) throws Exception{
 		Product product;
 		
-		pstmt = conn.prepareStatement("select * from product where product_id = ?");
-		pstmt.setInt(1, product_id);
+		pstmt = conn.prepareStatement(
+				"SELECT "
+			    + "p.product_id, lp.product_name, lp.product_color, p.logistic_id, lp.gender, lp.available_age, p.price,"
+			    + "p.product_point, p.sail, p.total_score, p.img_url, p.purchase_count, p.review_count, p.short_desc, p.detail_desc,"
+			    + "p.super_category, p.sub_category "
+				+ "from product p, logistic_product lp "
+				+ "where p.product_id = ? "
+				+ "AND p.logistic_id = lp.logistic_id "
+				+ "AND p.supply_product_id = lp.product_id "
+				+ "AND p.supply_product_date = lp.warehousing_date"
+				);
+		pstmt.setString(1, product_id);
 		
 		rs = pstmt.executeQuery();
 		
 		product = new Product();
 		
 		if(rs.next()) {
-			product.setProduct_id(rs.getInt(1));
-			product.setProduct_name(rs.getString(2));
-			product.setCompany_id(rs.getInt(3));
-			product.setPrice(rs.getInt(4));
-			product.setMin_size(rs.getInt(5));
-			product.setMax_size(rs.getInt(6));
-			product.setMm(rs.getInt(7));
-			product.setShort_desc(rs.getString(8));
-			product.setDetail_desc(rs.getString(9));
-			product.setProduct_point(rs.getInt(10));
-			product.setPurchase_count(rs.getInt(11));
-			product.setSail(rs.getInt(12));
-			product.setAvailable_age(rs.getString(13));
-			product.setGender(rs.getString(14));
-			product.setProduct_category_id(rs.getInt(15));
-			product.setCategory_id(rs.getInt(16));
-			product.setImg_url(rs.getString(17));
+			
+			product.setPid(rs.getString(1));
+			product.setPname(rs.getString(2));
+			product.setPcolor(rs.getString(3));
+			product.setLogi_id(rs.getString(4));
+			product.setGender(rs.getString(5));
+			product.setAvailable_age(rs.getString(6));
+			product.setPrice(rs.getInt(7));
+			product.setPoint(rs.getInt(8));
+			product.setSail(rs.getInt(9));
+			product.setTotal_score(rs.getInt(10));
+			product.setImg_url(rs.getString(11));
+			product.setPurchase_count(rs.getInt(12));
+			product.setReview_count(rs.getInt(13));
+			product.setShort_desc(rs.getString(14));
+			product.setDetail_desc(rs.getString(15));
+			product.setSuper_category(rs.getInt(16));
+			product.setSub_category(rs.getInt(17));
+			
 		}
 		dao.close(pstmt);
 		dao.close(rs);

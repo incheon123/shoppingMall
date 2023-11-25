@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<title>${product.getProduct_name() }</title>
+<title>${product.getPname() }</title>
 </head>
 <body>
 	<jsp:include page="./modules/header.jsp" />
@@ -28,7 +28,7 @@
                     <nav class="navbar bg-body-tertiary border">
                         <div class="container-fluid">
                           <span class="navbar-text">
-                            	${product.getProduct_name() }
+                            	${product.getPname() }
                           </span>
                           
                         </div>
@@ -60,13 +60,30 @@
                         			nothing
                        			</c:when>
                        			<c:otherwise>
-                       				${ sail }
+                       				${ sail }%
                      			</c:otherwise>
                         	</c:choose>
                           </span>
                         </div>
                       </nav>
                 </div>
+                <div class="col text-start">
+                  <nav class="navbar bg-body-tertiary py-0 px-3">
+                      <div class="container-fluid">
+                        <div class="dropdown w-100 d-block">
+                          <button class="w-100 btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" value="-1">
+                            필수옵션
+                          </button>
+                          <ul class="dropdown-menu w-100 text-center">
+                            <li class="d-flex flex-direction-row justify-content-around">
+                              <span>사이즈</span>
+                              <span>수량</span>
+                            </li>
+                          </ul>
+                        </div>
+                    </div>
+                  </nav>
+              	</div>
                 <div class="col text-start">
                     <nav class="navbar bg-body-tertiary py-0 px-3">
                         <div class="container-fluid">
@@ -163,11 +180,19 @@
 </body>
 <script>
 
+	//상품 사이즈 클릭하면 동작한다
+	$(".dropdown-item").on("click", (e) => {
+		let size = e.target.children[0].innerText
+	    $(".dropdown-toggle").val(size)
+	    $(".dropdown-toggle").text(size)
+	})
+	
+	
 	//상품의 수량 추가/제거 기능
 	const ELEMENT_QUANTITY = document.getElementsByClassName("quantity")[0];
 	const TOTAL_PRICE = document.getElementsByClassName("total-price")[0];
-	const SAIL = Number(document.getElementsByClassName("sail")[0].innerText);
-	const DELIVERY_PRICE = Number(document.getElementsByClassName("delivery-price")[0].innerText);
+	const SAIL = Number(document.getElementsByClassName("sail")[0].innerText.substring(0, 1));
+	const DELIVERY_PRICE = document.getElementsByClassName("delivery-price");
 	const PRODUCT_PRICE = Number(document.getElementsByClassName("product-price")[0].innerText);
 
 
@@ -177,7 +202,7 @@
 	var b =  url.substring(a);
 	var c = url.replace(b,"");
 	url = c;
-	console.log(url);
+	
 	//ajax를 이용해서 장바구니에 넣기(실질적으로는 데이터베이스에 넣는거다.)
 	$(".btn-basket").on("click", () => {
 		console.log("누름")
@@ -185,7 +210,7 @@
 			type:'GET',
 			url: url+"/save",
 			data: {
-				id : ${product.getProduct_id()},
+				id : ${product.getPid()},
 				quantity : Number(ELEMENT_QUANTITY.innerText)
 			},
 			success: function(result){
@@ -204,7 +229,7 @@
 			$.ajax({
 				type:'GET',
 				url: '주문페이지로 이동',
-				data: {id : ${product.getProduct_id()} }, //바로 주문하는거면 클라이언트가 변경한 정보와 상품의 변하지 않는 정보를 같이 넘긴다.
+				data: {id : ${product.getPid()} }, //바로 주문하는거면 클라이언트가 변경한 정보와 상품의 변하지 않는 정보를 같이 넘긴다.
 				success: function(result){
 					if(result === 'true'){
 						return;
@@ -251,8 +276,11 @@
 			}
 			
 			
-			if(Number(TOTAL_PRICE.innerText) <= 100000)
+			if(Number(TOTAL_PRICE.innerText) < 100000){
+		        DELIVERY_PRICE[0].innerText = 3000;
 				TOTAL_PRICE.innerText = Number(TOTAL_PRICE.innerText) + 3000
+			}else
+				DELIVERY_PRICE[0].innerText = 0;
 			
 		}
 </script>
