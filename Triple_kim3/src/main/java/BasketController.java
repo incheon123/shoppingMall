@@ -29,24 +29,26 @@ public class BasketController extends HttpServlet {
 	 */
     private String uri;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("basketController 실행");
+		
 		uri = request.getRequestURI();
+		
 		if(uri.equals("/Triple_kim3/product/save")) {
-			int pid = Integer.parseInt(request.getParameter("id"));
+			
+			String user_id = (String) request.getSession().getAttribute("id");
+			String pid = request.getParameter("id");
+			int size = Integer.parseInt(request.getParameter("size"));
 			int quantity = Integer.parseInt(request.getParameter("quantity"));
 			
-			System.out.println("pid : " + pid + ", quantity : " + quantity);
-			
 			BasketService basket = BasketService.getInstance();
-			boolean result = basket.addProductById(pid, quantity);
+			
+			System.out.println(user_id+ " : " + pid +" : " +size +" : " + quantity);
+			boolean result = basket.addProductById(user_id, pid, size, quantity);
 			
 			if(result)
 				response.getWriter().write("true");
 			else
 				response.getWriter().write("false");
 			
-			//ajax 응답받아서 코드 실행
-			//장바구니 테이블에 요청받은 상품 집어넣고 ㄱㄱ하면됨
 		}
 	}
 
