@@ -4,6 +4,7 @@ import java.sql.*;
 
 import com.beans.*;
 import com.jdbc.*;
+import java.util.*;
 
 public class ProductDAO {
 	private Dao dao = Dao.getDao();
@@ -114,9 +115,49 @@ public class ProductDAO {
 			product.setSuper_category(rs.getInt(16));
 			product.setSub_category(rs.getInt(17));
 			
+			product.setSizes(selectSizeByProductId(product_id));
 		}
 		dao.close(pstmt);
 		dao.close(rs);
 		return product; 
+	}
+	
+	private ArrayList<ArrayList<Integer>> selectSizeByProductId(String pid) {
+		ArrayList<ArrayList<Integer>> sizes = new ArrayList<>();;
+		ArrayList<Integer> slist = null;
+		try {
+			
+			pstmt = conn.prepareStatement(
+					"SELECT "
+					+ "product_size, remain_quantity "
+					+ "FROM "
+					+ "product_size "
+					+ "WHERE product_id = ? "
+					+ "ORDER BY product_size "
+					);
+			pstmt.setString(1, pid);
+			rs = pstmt.executeQuery();
+		
+			while(rs.next()) {
+				//sizes 맵에 사이즈 : 재고량 형식으로 집어넣는다.
+				slist = new ArrayList<>();
+				slist.add(rs.getInt("product_size"));
+				slist.add(rs.getInt("remain_quantity"));
+				sizes.add(slist);
+			}
+			
+//			Collections.sort(sizes, Collections.reverseOrder());
+			for(ArrayList<Integer> item : sizes) {
+				
+				System.out.println(item.get(0) + " : " + item.get(1));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			dao.close(pstmt);
+			dao.close(rs);
+		}
+		
+		return sizes;
 	}
 }
