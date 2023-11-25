@@ -27,4 +27,5 @@ public class ProductService {
 		Product product = productdao.selectProductById(product_id);
 		return product;
 	}
+	
 }
