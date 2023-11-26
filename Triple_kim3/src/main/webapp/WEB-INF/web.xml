@@ -23,11 +23,19 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>basket</servlet-name>
-		<servlet-class>ParsePathController</servlet-class>
+		<servlet-class>BasketController</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>basket</servlet-name>
 		<url-pattern>/view/basket</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>mybasket</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mybasket</servlet-name>
+		<url-pattern>/view/mybasket</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>mypage</servlet-name>
@@ -54,6 +62,17 @@
 	<servlet-mapping>
 		<servlet-name>saveProductInBasket</servlet-name>
 		<url-pattern>/product/save</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 주문 -->
+	
+	<servlet>
+		<servlet-name>checkOrder</servlet-name>
+		<servlet-class>OrderController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>checkOrder</servlet-name>
+		<url-pattern>/view/checkOrder</url-pattern>
 	</servlet-mapping>
 	
 	

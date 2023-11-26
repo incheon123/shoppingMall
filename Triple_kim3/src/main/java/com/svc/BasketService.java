@@ -3,6 +3,8 @@ package com.svc;
 import com.jdbc.Dao;
 import java.sql.Connection;
 import com.dao.BasketDAO;
+import com.beans.*;
+import java.util.*;
 
 public class BasketService {
 
@@ -19,6 +21,8 @@ public class BasketService {
 		return basket;
 	}
 	
+	private BasketService() {};
+	
 	public boolean addProductById(String uid, String pid, int size, int quantity) {
 		conn = dao.getConnection();
 		basketDao.setConnection(conn);
@@ -27,6 +31,21 @@ public class BasketService {
 		
 		return result;
 	}
-	private BasketService() {};
+	
+	public BasketProduct getProduct(String user_id, String pid, int size) {
+		conn = dao.getConnection();
+		basketDao.setConnection(conn);
+		BasketProduct result = basketDao.selectBasketProduct(user_id, pid, size);
+		dao.close(conn);
+		return result;
+	}
+	
+	public ArrayList<BasketProduct2> getProductByUid(String user_id) {
+		conn = dao.getConnection();
+		basketDao.setConnection(conn);
+		BasketProducts result = basketDao.selectBasketProduct2(user_id);
+		dao.close(conn);
+		return result.getProduct2();
+	}
 	
 }

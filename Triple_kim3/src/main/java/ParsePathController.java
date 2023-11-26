@@ -35,7 +35,7 @@ public class ParsePathController extends HttpServlet {
 			dispatcher = request.getRequestDispatcher("/WEB-INF/view/login.jsp");
 		}else if(url.equals("/view/membership")) {
 			dispatcher = request.getRequestDispatcher("/WEB-INF/view/membership.jsp");
-		}else if(url.equals("/view/basket")) {
+		}else if(url.equals("/view/mybasket")) {
 			dispatcher = request.getRequestDispatcher("/WEB-INF/view/basket.jsp");
 		}else if(url.equals("/view/mypage/profile")) {
 			System.out.println(url);

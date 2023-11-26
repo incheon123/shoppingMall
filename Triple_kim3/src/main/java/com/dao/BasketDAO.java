@@ -2,7 +2,7 @@ package com.dao;
 
 import java.sql.*;
 import com.jdbc.Dao;
-
+import com.beans.*;
 
 public class BasketDAO {
 	private static BasketDAO basket;
@@ -53,7 +53,7 @@ public class BasketDAO {
 	}
 	
 	public boolean selectPid(int pid) {
-try {
+		try {
 			
 			pstmt = conn.prepareStatement("select pid from basket");
 			pstmt.execute();
@@ -70,5 +70,79 @@ try {
 
 		//삽입 실패
 		return false;
+	}
+	
+	public BasketProduct selectBasketProduct(String user_id, String pid, int size) {
+		
+		BasketProduct basketProduct = null;
+		try {
+			pstmt = conn.prepareStatement(
+					"SELECT "
+					+ "lp.product_name, lp.product_color, p.price, p.img_url, c.product_quantity, ps.remain_quantity, p.sail "
+					+ "FROM cart c, product p, logistic_product lp, product_size ps "
+					+ "WHERE c.user_id = ? "
+					+ "AND c.product_id = ?  "
+					+ "AND p.product_id = ?  "
+					+ "AND p.logistic_id = lp.logistic_id "
+					+ "AND p.product_id = ps.product_id "
+					+ "AND ps.product_size = ?"
+					+ "AND p.supply_product_id = lp.product_id "
+					+ "AND p.supply_product_date = lp.warehousing_date "
+					);
+			pstmt.setString(1, user_id);
+			pstmt.setString(2, pid);
+			pstmt.setString(3, pid);
+			pstmt.setInt(4, size);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				basketProduct = new BasketProduct();
+				basketProduct.setPname(rs.getString("product_name"));
+				basketProduct.setPcolor(rs.getString("product_color"));
+				basketProduct.setPrice(rs.getInt("price"));
+				basketProduct.setImg_url(rs.getString("img_url"));
+				basketProduct.setQuantity(rs.getInt("product_quantity"));
+				basketProduct.setSail(rs.getInt("sail"));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			dao.close(pstmt);
+			dao.close(rs);
+		}
+		
+		return basketProduct;
+	}
+	public BasketProducts selectBasketProduct2(String user_id){
+		
+		BasketProducts basketProducts = new BasketProducts();
+		BasketProduct2 basketProduct2 = null;
+		try {
+			pstmt = conn.prepareStatement(
+					"SELECT "
+					+ "* "
+					+ "FROM cart "
+					+ "WHERE user_id = ?"
+					);
+			pstmt.setString(1, user_id);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				basketProduct2 = new BasketProduct2();
+				basketProduct2.setUser_id(rs.getString("user_id"));
+				basketProduct2.setPid(rs.getString("product_id"));
+				basketProduct2.setSize(rs.getInt("product_size"));
+				basketProduct2.setQuantity(rs.getInt("product_quantity"));
+				
+				basketProducts.addProduct2(basketProduct2);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			dao.close(pstmt);
+			dao.close(rs);
+		}
+		
+		return basketProducts;
 	}
 }
