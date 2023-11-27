@@ -78,7 +78,7 @@ public class BasketDAO {
 		try {
 			pstmt = conn.prepareStatement(
 					"SELECT "
-					+ "lp.product_name, lp.product_color, p.price, p.img_url, c.product_quantity, ps.remain_quantity, p.sail "
+					+ "p.product_id, lp.product_name, lp.product_color, p.price, p.img_url, c.product_quantity, ps.remain_quantity, p.sail, c.product_size "
 					+ "FROM cart c, product p, logistic_product lp, product_size ps "
 					+ "WHERE c.user_id = ? "
 					+ "AND c.product_id = ?  "
@@ -96,13 +96,16 @@ public class BasketDAO {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
+				System.out.println("값있잖아 씨발새기야");
 				basketProduct = new BasketProduct();
+				basketProduct.setPid(rs.getString("product_id"));
 				basketProduct.setPname(rs.getString("product_name"));
 				basketProduct.setPcolor(rs.getString("product_color"));
 				basketProduct.setPrice(rs.getInt("price"));
 				basketProduct.setImg_url(rs.getString("img_url"));
 				basketProduct.setQuantity(rs.getInt("product_quantity"));
 				basketProduct.setSail(rs.getInt("sail"));
+				basketProduct.setProduct_size(rs.getInt("product_size"));
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

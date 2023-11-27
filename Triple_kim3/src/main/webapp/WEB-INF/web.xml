@@ -74,7 +74,14 @@
 		<servlet-name>checkOrder</servlet-name>
 		<url-pattern>/view/checkOrder</url-pattern>
 	</servlet-mapping>
-	
+	<servlet>
+		<servlet-name>successOrder</servlet-name>
+		<servlet-class>OrderController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>successOrder</servlet-name>
+		<url-pattern>/view/success</url-pattern>
+	</servlet-mapping>
 	
 	
 	<servlet>

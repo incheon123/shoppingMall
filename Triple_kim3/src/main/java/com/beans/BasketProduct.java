@@ -1,14 +1,21 @@
 package com.beans;
 
 public class BasketProduct {
+	private String pid;
 	private String pname;
 	private int price;
 	private String pcolor;
 	private String img_url;
 	private int quantity;
-	private int remain_quantity;
 	private int sail;
+	private int product_size;
 	
+	public String getPid() {
+		return pid;
+	}
+	public void setPid(String pid) {
+		this.pid = pid;
+	}
 	public String getPname() {
 		return pname;
 	}
@@ -39,16 +46,16 @@ public class BasketProduct {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public int getRemain_quantity() {
-		return remain_quantity;
-	}
-	public void setRemain_quantity(int remain_quantity) {
-		this.remain_quantity = remain_quantity;
-	}
 	public int getSail() {
 		return sail;
 	}
 	public void setSail(int sail) {
 		this.sail = sail;
+	}
+	public int getProduct_size() {
+		return product_size;
+	}
+	public void setProduct_size(int product_size) {
+		this.product_size = product_size;
 	}
 }

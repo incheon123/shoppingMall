@@ -16,11 +16,11 @@
 	        <h4 class="my-4 fs-1">Login</h4>
 	        <div class="input-group flex-nowrap w-75">
 	            <span class="input-group-text w-25" id="addon-wrapping">아이디</span>
-	            <input type="text" class="form-control" placeholder="id" aria-label="Username" name="userId">
+	            <input type="text" class="form-control" placeholder="id" aria-label="Username" name="userId" required>
 	        </div>
 	        <div class="input-group flex-nowrap w-75 py-2">
 	            <span class="input-group-text w-25" id="addon-wrapping">비밀번호</span>
-	            <input type="text" class="form-control" placeholder="password" aria-label="Username" name="userPassword">
+	            <input type="text" class="form-control" placeholder="password" aria-label="Username" name="userPassword" required>
 	        </div>
 	        <c:if test="${result eq 'false'}">
   				<p>계정 불일치</p>

@@ -57,27 +57,34 @@ public class BasketController extends HttpServlet {
 			//먼저 기본 상품 데이터 가져오기
 			//그리고 가공된 상품 데이터 가져오기
 			
-			BasketService basket = BasketService.getInstance();
 			String user_id = (String) request.getSession().getAttribute("id");
 			
-			//최종 장바구니 상품을 가져오기 위한 상품. 개개인의 상품을 구별하기 위해 pk로 user_id를 보내준다 
-			ArrayList<BasketProduct2> ingredient = basket.getProductByUid(user_id);
-			
-			//최종 장바구니 상품을 담을 list
-			ArrayList<BasketProduct> basketList = new ArrayList<>();
-			
-			//ingredient에 있는 데이터 3개를 매개변수로 보내서 최종 장바구니 상품을 가져온다
-			//최종 장바구니 상품을 가져와서 basketList에 추가한다
-			for(BasketProduct2 bp : ingredient) {
-				BasketProduct product = basket.getProduct(bp.getUser_id(), bp.getPid(), bp.getSize());
-				basketList.add(product);
+			if(user_id != null) {
+				
+				BasketService basket = BasketService.getInstance();
+				
+				//최종 장바구니 상품을 가져오기 위한 상품. 개개인의 상품을 구별하기 위해 pk로 user_id를 보내준다 
+				ArrayList<BasketProduct2> ingredient = basket.getProductByUid(user_id);
+				
+				//최종 장바구니 상품을 담을 list
+				ArrayList<BasketProduct> basketList = new ArrayList<>();
+				
+				//ingredient에 있는 데이터 3개를 매개변수로 보내서 최종 장바구니 상품을 가져온다
+				//최종 장바구니 상품을 가져와서 basketList에 추가한다
+				for(BasketProduct2 bp : ingredient) {
+					BasketProduct product = basket.getProduct(bp.getUser_id(), bp.getPid(), bp.getSize());
+					basketList.add(product);
+				}
+				System.out.println(basketList.get(0).getPname());
+				//list를 장바구니 페이지에 보낸다
+				request.getSession().setAttribute("product", basketList);
+				response.sendRedirect("mybasket");
+	//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/basket.jsp");
+	//			dispatcher.forward(request, response);
+				return;
+			}else {
+				response.sendRedirect("login");
 			}
-			System.out.println(basketList.get(0).getPname());
-			//list를 장바구니 페이지에 보낸다
-			request.getSession().setAttribute("product", basketList);
-			response.sendRedirect("mybasket");
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/basket.jsp");
-//			dispatcher.forward(request, response);
 		}
 	}
 
