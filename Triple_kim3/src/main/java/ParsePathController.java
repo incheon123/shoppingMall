@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import com.svc.*;
 /**
  * Servlet implementation class ProcessHeaderMenuController
  */
@@ -46,6 +46,24 @@ public class ParsePathController extends HttpServlet {
 		}else if(url.equals("/create/account")) {
 			System.out.println(url);
 			dispatcher = request.getRequestDispatcher("/WEB-INF/view/membership.jsp");
+		}else if(url.equals("/view/success")) {
+			dispatcher = request.getRequestDispatcher("/WEB-INF/view/success.jsp");
+		}else if(url.equals("/view/mypage/order")) {
+			dispatcher = request.getRequestDispatcher("/WEB-INF/view/mypage/order.jsp");
+		}else if(url.equals("/view/mypage/inquiry")) {
+			dispatcher = request.getRequestDispatcher("/WEB-INF/view/mypage/myinquiry.jsp");
+		}else if(url.equals("/view/mypage/review")) {
+			dispatcher = request.getRequestDispatcher("/WEB-INF/view/mypage/myreview.jsp");
+		}else if(url.equals("/view/inquiry")) {
+			dispatcher = request.getRequestDispatcher("/WEB-INF/view/inquiry.jsp");
+		}else if(url.equals("/view/inquirys")) {
+			InquiryService is = new InquiryService();
+			request.getSession().setAttribute("inquirys", is.getInquirys());
+			dispatcher = request.getRequestDispatcher("/WEB-INF/view/inquirys.jsp");
+		}else if(url.equals("/view/reviews")) {
+			dispatcher = request.getRequestDispatcher("/WEB-INF/view/reviews.jsp");
+		}else if(url.equals("/view/review")) {
+			dispatcher = request.getRequestDispatcher("/WEB-INF/view/review.jsp");
 		}
 		
 		dispatcher.forward(request, response);

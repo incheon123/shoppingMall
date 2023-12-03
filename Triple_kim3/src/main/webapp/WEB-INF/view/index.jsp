@@ -19,6 +19,17 @@
 		Products products = ps.getHighPurchaseRatingProducts();
 		ArrayList<Product> product = products.getMainPageProducts(); 
 		
+		BasketService bs = BasketService.getInstance();
+		//장바구니 상품을 가져와서 리스트에 담고 리스트에 해당하는 상품아이디가 있으면 있는걸로 간주한다
+		
+		ArrayList<String> list = null;
+		//로그인 되어있을 때
+		if(session.getAttribute("id") != null){
+			list = bs.getProductByUserId((String) session.getAttribute("id"));
+			for(String pid : list){
+			}
+		}
+		
 		int idx;
    	%>
 	<div class="container text-center d-block">
@@ -33,7 +44,11 @@
                     <div class="col px-1 my-1">
                         <div class="card">
                         	<span class="cart-shopping">
-                                <i class="fa-solid fa-cart-shopping fs-2"></i>
+                        		<% if(list != null && list.contains(product.get(idx).getPid())){ %>
+                                	<i class="fa-solid fa-cart-shopping fs-2" style="color: aqua;"></i>
+                                <% }else{ %>
+                                	<i class="fa-solid fa-cart-shopping fs-2"></i>
+                                <% } %>
                             </span>
                             <img src="/<%= product.get(idx).getImg_url() %>" class="card-img-top object-fit-cover" alt="...">
                             <div class="card-body">
@@ -79,8 +94,13 @@
                     </div>
                 </a>
                 <span class="cart-shopping">
-                    <i class="fa-solid fa-cart-shopping fs-2"></i>
+                    <% if(list != null && list.contains(product.get(i).getPid())){ %>
+                    	<i class="fa-solid fa-cart-shopping fs-2" style="color: aqua;"></i>
+                    <% }else{ %>
+                    	<i class="fa-solid fa-cart-shopping fs-2"></i>
+                    <% } %>
                 </span>
+                <p><%=product.get(idx).isProduct_of_cart() %></p>
             </div>
             <% } %>
         </div>

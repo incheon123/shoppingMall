@@ -10,7 +10,7 @@
 </head>
 <body>
 	<jsp:include page="./modules/header.jsp" />
-	<form class="container w-75 h-75" method="POST" action="success">
+	<form class="container w-75 h-75" method="POST" action="process_order">
         <div class="input-group mb-3">
             <span class="input-group-text">아이디</span>
             <input type="text" class="form-control uid" name="uid" placeholder="아이디" aria-label="Username" required disabled>
@@ -84,8 +84,8 @@
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2">최종 결제 금액</span>
-                        <input type="text" class="form-control" name='totalPrice' aria-label="Recipient's username"
-                            aria-describedby="basic-addon2" value="129,500원">
+                        <input type="text" class="form-control total_price" name='totalPrice' aria-label="Recipient's username"
+                            aria-describedby="basic-addon2" value="" disabled>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -136,6 +136,7 @@
 	if(TYPE === 'one'){
 		let obj = JSON.parse(sessionStorage.getItem("product"))[0];
 		console.log(obj);
+		totalPrice = Number(obj.totalPrice);
 		
 // 		유저 아이디 추가
 		$('.uid').val(obj.uid);
@@ -143,13 +144,14 @@
 		row.appendChild(createCol(createInput(obj.pname, "pname")));
 		row.appendChild(createCol(createInput(obj.quantity, "quantity")));
 		row.appendChild(createCol(createInput(obj.psize, "psize")));
+		
 		if(obj.delivery === '0'){
 			row.appendChild(createCol(createInput('무료', "delivery")));
 // 			$(".totalDelivery").text('최종 배송비 : ' + '무료');
 		}else{
 			row.appendChild(createCol(createInput(3000, "delivery")));
-// 			$(".totalDelivery").text('최종 배송비 : ' + 3000 + '원');
 		}
+		
 		row.appendChild(createCol(createInput(obj.price, "price")));
 		row.appendChild(createCol(createInput(obj.totalPrice, "totalPrice")));
 		
@@ -160,7 +162,7 @@
 		row.appendChild(temp);
 		container.append(row);
 		
-// 		$(".totalPrice").text('총 결제 금액 : ' + obj.totalPrice);
+		$(".total_price").val(totalPrice);
 		
 		
 	}else{
@@ -198,9 +200,8 @@
 			row.appendChild(temp);
 			
 			container.append(row);
-			
-			
 		}
+		$(".total_price").val(totalPrice);
 // 		if(totalPrice >= 100000){
 // 			$(".totalPrice").text('총 결제 금액 : ' + totalPrice + '원');
 // 			$(".totalDelivery").text('최종 배송비 : ' + '무료');

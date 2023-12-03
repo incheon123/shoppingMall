@@ -3,6 +3,7 @@ package com.dao;
 import java.sql.*;
 import com.jdbc.Dao;
 import com.beans.*;
+import java.util.*;
 
 public class BasketDAO {
 	private static BasketDAO basket;
@@ -71,7 +72,32 @@ public class BasketDAO {
 		//삽입 실패
 		return false;
 	}
-	
+	public ArrayList<String> selectBasketProduct(String user_id){
+		ArrayList<String> result = new ArrayList<String>();
+		
+		try {
+			pstmt = conn.prepareStatement(
+					"SELECT "
+					+ "product_id "
+					+ "FROM cart "
+					+ "WHERE user_id = ?"
+				);
+			pstmt.setString(1, user_id);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				result.add(rs.getString("product_id"));
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			dao.close(pstmt);
+			dao.close(rs);
+		}
+		
+		return result;
+	}
 	public BasketProduct selectBasketProduct(String user_id, String pid, int size) {
 		
 		BasketProduct basketProduct = null;

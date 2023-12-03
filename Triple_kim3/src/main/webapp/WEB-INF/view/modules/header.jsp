@@ -25,6 +25,12 @@
 					<li class="nav-item">
 						<a class="nav-link text-secondary" aria-current="page" href="${pageContext.request.contextPath}/view/basket">장바구니</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link text-secondary" aria-current="page" href="${pageContext.request.contextPath}/view/inquirys">문의</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-secondary" aria-current="page" href="${pageContext.request.contextPath}/view/reviews">리뷰</a>
+					</li>
                 <%} else{%>
 					<li class="nav-item">
 						<a class="nav-link text-secondary" aria-current="page" href="${pageContext.request.contextPath}/view/login">로그인</a>
@@ -34,6 +40,12 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link text-secondary" href="${pageContext.request.contextPath}/view/basket">장바구니</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-secondary" aria-current="page" href="${pageContext.request.contextPath}/view/inquirys">문의</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-secondary" aria-current="page" href="${pageContext.request.contextPath}/view/reviews">리뷰</a>
 					</li>
                 <%} %>
           </ul>

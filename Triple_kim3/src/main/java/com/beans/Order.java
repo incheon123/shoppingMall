@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Order {
 	
 	//주문자
+	private String order_id;
+	private String order_date;
 	private String uid;
 	private String uname;
 	private String ptel;
@@ -41,11 +43,26 @@ public class Order {
 	public void setAddr2(String addr2) {
 		this.addr2 = addr2;
 	}
+	public String getOrder_id() {
+		return order_id;
+	}
+	public void setOrder_id(String order_id) {
+		this.order_id = order_id;
+	}
+	public String getOrder_date() {
+		return order_date;
+	}
+	public void setOrder_date(String order_date) {
+		this.order_date = order_date;
+	}
+	
+	
 	public void setProducts(ArrayList<OrderProduct> products) {
 		this.products = products;
 	}
 	
-	
+
+
 	//주문상품정보
 	private ArrayList<OrderProduct> products = new ArrayList<>();
 	

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.beans.*;
-import com.beans.*;
+import com.svc.*;
 
 @WebServlet("/OrderController")
 public class OrderController extends HttpServlet {
@@ -36,7 +36,7 @@ public class OrderController extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/checkOrder.jsp");
 			dispatcher.forward(request, response);
 			
-		}else if(uri.equals("/view/success")) {
+		}else if(uri.equals("/view/process_order")) {
 			
 			//주문자정보
 			String uid = (String) request.getSession().getAttribute("id");
@@ -76,7 +76,10 @@ public class OrderController extends HttpServlet {
 				order_product.setPname(pname[i]);
 				order_product.setQuantity(Integer.parseInt(quantity[i]));
 				order_product.setPsize(Integer.parseInt(psize[i]));
-				order_product.setDelivery(Integer.parseInt(delivery[i]));
+				if(delivery[i].equals("무료"))
+					order_product.setDelivery(0); //에러
+				else
+					order_product.setDelivery(Integer.parseInt(delivery[i]));
 				order_product.setPrice(Integer.parseInt(price[i]));
 				order_product.setTotalProductPrice(Integer.parseInt(totalProductPrice[i]));
 				
@@ -89,16 +92,23 @@ public class OrderController extends HttpServlet {
 			order.setPayment_num(payment_num);
 			order.setPayment_totalPrice(payment_totalPrice);
 			
-			//오더서비스클래스에 오더 dto 넘기기
-			//1. 상품 포인트 계산해서 사용자 계정에 포인트 지급
-			//2. 구매한 상품 수량에 맞춰 재고량 업데이트( 지금 같은 경우는 제거하기)
-			//3. 주문번호, 결제번호 발행하기
-			//4. 주문테이블에 주문정보 집어넣기
-			//5 결제테이블에 결제정보 집어넣기
-			//6 사용자에게 주문성공페이지 띄우고 정보 집어넣기
-			//7 장바구니에서 주문한 상품 제거
+			OrderService service = new OrderService();
 			
-			System.out.println(payment_user + ", " + payment_method + ", " + payment_card_company + ", " + payment_num + ", " + payment_totalPrice);
+			String url;
+			OrderResult result = service.order(order);
+			//주문이 성공적으로 처리됐다면
+			if(result != null) {
+				url = "success";
+				request.getSession().setAttribute("result", result);
+				//주문,결제 정보를 가져와서 뿌려준다
+			}else{
+				url = "fail";
+			}
+
+			response.sendRedirect(url);
+			
+			
+//			System.out.println(payment_user + ", " + payment_method + ", " + payment_card_company + ", " + payment_num + ", " + payment_totalPrice);
 //			System.out.println(pname[0] + ", " + quantity[0] + ", " + psize[0] + ", " + delivery[0] + ", " + price[0] +", " + totalProductPrice[0]);
 //			System.out.println(uid + ", " + uname + ", " + ptel + ", " + addr1 + ", " + addr2);
 		}

@@ -48,4 +48,11 @@ public class BasketService {
 		return result.getProduct2();
 	}
 	
+	public ArrayList<String> getProductByUserId(String user_id){
+		conn = dao.getConnection();
+		basketDao.setConnection(conn);
+		ArrayList<String> result = basketDao.selectBasketProduct(user_id);
+		dao.close(conn);
+		return result;
+	}
 }

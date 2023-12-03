@@ -9,7 +9,7 @@
 <title></title>
 </head>
 <body>
-	<footer>
+	<footer class="my-0 container" style="display: block;">
         <div class="above">
             <div class="wrap-content">
                 <span id="logo">TRIPLEKIM</span>

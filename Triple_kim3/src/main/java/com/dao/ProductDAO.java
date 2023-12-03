@@ -31,7 +31,8 @@ public class ProductDAO {
 					+ "("				
 					+ "SELECT p.product_id, lp.product_name, lp.product_color, p.logistic_id, lp.gender, lp.available_age, p.price,"
 					+ "p.product_point, p.sail, p.total_score, p.img_url, p.purchase_count, p.review_count, p.short_desc, p.detail_desc,"
-					+ "p.super_category, p.sub_category "
+					+ "p.super_category, p.sub_category, "
+					+ "CASE WHEN EXISTS(SELECT 1 FROM cart c WHERE c.product_id = p.product_id) THEN 'true' ELSE 'false' END AS product_of_cart "
 					+ "FROM product p, logistic_product lp "
 					+ "WHERE p.logistic_id = lp.logistic_id AND p.supply_product_id = lp.product_id AND p.supply_product_date = lp.warehousing_date "
 					+ "ORDER BY p.purchase_count DESC"
@@ -61,6 +62,7 @@ public class ProductDAO {
 				product.setDetail_desc(rs.getString(15));
 				product.setSuper_category(rs.getInt(16));
 				product.setSub_category(rs.getInt(17));
+				product.setProduct_of_cart(rs.getString(18));
 				
 				products.addProductToMainPage(product);
 			}

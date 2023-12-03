@@ -38,7 +38,7 @@ public class Dao {
 			
 			//local
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			String id  = "kth";
+			String id  = "kth2";
 			String pw = "123";
 			
 			System.out.println("db접속성공");

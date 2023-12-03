@@ -9,128 +9,41 @@
 </head>
 <body>
 	<jsp:include page="../modules/header.jsp" />
-	<main>
-        <div class="inner_main">
-            <h2>리뷰</h2>
-            <div class="content">
-                <div class="inner_content"> <!-- flex -->
-                    <div class="flex_left">
-                        <nav>
-                            <ul class="above">
-                                <li>    
-                                    <p>주문확인</p>
-                                    <a href="#">주문확인하기</a>
-                                </li>
-                                <li>
-                                    <p class="active">내 리뷰</p>
-                                    <a href="#" class="underline">내 리뷰 조회하기</a>
-                                </li>
-                                <li>
-                                    <p>내 문의</p>
-                                    <a href="#">내 문의 조회하기</a>
-                                </li>
-                                <li>
-                                    <p>회원 탈퇴</p>
-                                    <a href="#">회원탈퇴하기</a>
-                                </li>
-                            </ul>
-                            <div class="bottom">
-                                <input type="submit" value="로그아웃">
-                            </div>
-                        </nav>
-                    </div>
-                    <div class="flex_right">
-                        <form action="#">
-                            <div class="search_date search">
-                                <span>일자</span>
-                                <input type="date" name="from"> -
-                                <input type="date" name="to">
-                            </div>
-                            <div class="search_review search">
-                                <span>추천수</span>
-                                <!---->
-                                <select name="" id="" class="answerType">
-                                    <option value="null">선택안함</option>
-                                    <option value="success">높은순</option>
-                                    <option value="wait">낮은순</option>
-                                </select>
-                            </div>
-                            <div class="search_addr search">
-                                <span>제목</span>
-                                <input type="text" name="addr" placeholder="제목을 입력하세요">
-                            </div>
-                            <span class="flexForSubmit">
-                                <input type="submit" value="검색하기" id="search">
-                            </span>
-                        </form>
-                        <table class="order_historys">
-                            <tr>
-                                <th class="date">리뷰일자</th>
-                                <th class="title">제목</th>
-                                <th class="user">아이디</th>
-                                <th class="recommend">추천수</th>
-                                <th data-desc="border-bottom 맞추려고 만듦(건들지말것)"></th>
-                            </tr>
-                            <tr>
-                                <td>23-10-14</td>
-                                <td class="td-title">abcd efgufhdk fjdkfjkasdfasdfasdfasfsdf</td>
-                                <td>Budweiser</td>
-                                <td>355</td>
-                                <td>
-                                    <a href="#" class="detail">상세정보</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>23-10-14</td>
-                                <td class="td-title">abcd efgufhdk fjdkfjkasdfasdfasdfasfsdf</td>
-                                <td>Budweiser</td>
-                                <td>355</td>
-                                <td>
-                                    <a href="#" class="detail">상세정보</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>23-10-14</td>
-                                <td class="td-title">abcd efgufhdk fjdkfjkasdfasdfasdfasfsdf</td>
-                                <td>Budweiser</td>
-                                <td>355</td>
-                                <td>
-                                    <a href="#" class="detail">상세정보</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>23-10-14</td>
-                                <td class="td-title">abcd efgufhdk fjdkfjkasdfasdfasdfasfsdf</td>
-                                <td>Budweiser</td>
-                                <td>355</td>
-                                <td>
-                                    <a href="#" class="detail">상세정보</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>23-10-14</td>
-                                <td class="td-title">abcd efgufhdk fjdkfjkasdfasdfasdfasfsdf</td>
-                                <td>Budweiser</td>
-                                <td>355</td>
-                                <td>
-                                    <a href="#" class="detail">상세정보</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>23-10-14</td>
-                                <td class="td-title">abcdefgufhdkfjdkfjkasdfasdfasdfsdfasdfasdfasdfasdfsdaasdfjkasdfgjklasfgsfgjklsfgjkasfgjklasfgasgs</td>
-                                <td>Budweiser</td>
-                                <td>355</td>
-                                <td>
-                                    <a href="#" class="detail">상세정보</a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
+	<jsp:include page="../modules/sideDropdown.jsp" />
+	<div class="table-responsive w-75 container py-4" style="margin-top: 5%; margin-bottom: 5%;">
+        <!-- 조회 옵션 -->
+        <div class="container bg-info w-50 py-2" style="border-radius: 10px;">
+            <div class="input-group my-1">
+                <span class="input-group-text" id="basic-addon1">조회날짜</span>
+                <input type="date" class="form-control" placeholder="date" aria-label="Username" aria-describedby="basic-addon1">
             </div>
+            <div class="input-group my-2">
+                <span class="input-group-text" id="basic-addon1">작성자</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
         </div>
-    </main>
+        <table class="table my-2">
+            <thead>
+                <tr>
+                    <th scope="col" style="width: 4%;">#</th>
+                    <th scope="col" style="width: 55%;">제목</th>
+                    <th scope="col" style="width: 11%;">작성자</th>
+                    <th scope="col" style="width: 11%;">리뷰 여부</th>
+                    <th scope="col" style="width: 11%;">작성일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="order">1</th>
+                    <td class="title">
+                        <a href="" style="display: block; width: 100%; height:100%;">Mark</a>
+                    </td>
+                    <td class="writer">Otto</td>
+                    <td class="status">@mdo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <jsp:include page="../modules/footer.jsp" />
 </body>
 </html>

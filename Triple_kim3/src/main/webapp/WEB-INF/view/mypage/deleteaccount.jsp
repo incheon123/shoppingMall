@@ -14,38 +14,12 @@
 </head>
 <body>
 	<jsp:include page="../modules/header.jsp" />
-	<div class="h1">
-        <div class="line1"></div>
-        <div class="delete">회원탈퇴</div>
-    </div>
-    
-    <div class="big_menu">
-        <div class="rect1"></div>              
-        <div class="rect2"></div>
-        <div class="rect3"></div>
-        <div class="rect4"></div>
-        <div class="rect5"></div>
-        <div class="logout">로그아웃</div>
-        <div class="orderconf">주문확인하기</div>
-        <div class="myreview">내 리뷰 조회하기</div>
-        <div class="deleteaccount">회원 탈퇴 하기</div>
-        <div class="line2"></div>
-    </div>
-    <div id="menu">
-        <div class="conf">주문확인</div>
-        <div class="myrev">내 리뷰</div>
-        <div class="myinquire">내 문의</div>
-        <div class="deleteac">회원탈퇴</div>
-    </div>
-
-    <div class="myinquirecheck">내 문의 조회하기</div>
-    <div class="rect6"></div>
-    <div class="deleteaccount_menu">
-        <div class="txt1">탈퇴를 원하시면 비밀번호를 입력해주세요.</div>
-        <div class="rect7"></div>
-        <div class="rect8"></div>
-        <div class="pw">비밀번호</div>
-        <div class="out">탈퇴</div>
+	<div class="container w-25 ">
+        <label for="basic-url" class="form-label">탈퇴를 원하시면 비밀번호를 입력해주세요</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="비밀번호" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">탈퇴</button>
+    	</div>
     </div>
     <jsp:include page="../modules/footer.jsp" />
 </body>

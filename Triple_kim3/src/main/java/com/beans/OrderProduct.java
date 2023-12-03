@@ -6,9 +6,16 @@ public class OrderProduct {
 	private int quantity;
 	private int psize;
 	private int delivery;
-	private int price;
-	private int totalProductPrice;
+	private int price; //단가?
+	private int sail;
+	private int totalProductPrice; // 상품 최종가 = 배송비 + 단가 * 수량
 	
+	public int getSail() {
+		return sail;
+	}
+	public void setSail(int sail) {
+		this.sail = sail;
+	}
 	public String getPid() {
 		return pid;
 	}

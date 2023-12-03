@@ -75,7 +75,6 @@ public class BasketController extends HttpServlet {
 					BasketProduct product = basket.getProduct(bp.getUser_id(), bp.getPid(), bp.getSize());
 					basketList.add(product);
 				}
-				System.out.println(basketList.get(0).getPname());
 				//list를 장바구니 페이지에 보낸다
 				request.getSession().setAttribute("product", basketList);
 				response.sendRedirect("mybasket");

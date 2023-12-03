@@ -21,6 +21,7 @@ public class Product {
 	private int super_category;
 	private int sub_category;
 	private ArrayList<ArrayList<Integer>> sizes;
+	private String product_of_cart;
 	
 	public String getPid() {
 		return pid;
@@ -131,13 +132,20 @@ public class Product {
 	public void setSizes(ArrayList<ArrayList<Integer>> sizes) {
 		this.sizes = sizes;
 	}
+	public String isProduct_of_cart() {
+		return product_of_cart;
+	}
+	public void setProduct_of_cart(String product_of_cart) {
+		this.product_of_cart = product_of_cart;
+	}
 	@Override
 	public String toString() {
 		return "Product [pid=" + pid + ", pname=" + pname + ", pcolor=" + pcolor + ", logi_id=" + logi_id + ", gender="
 				+ gender + ", available_age=" + available_age + ", price=" + price + ", point=" + point + ", sail="
 				+ sail + ", total_score=" + total_score + ", img_url=" + img_url + ", purchase_count=" + purchase_count
 				+ ", review_count=" + review_count + ", short_desc=" + short_desc + ", detail_desc=" + detail_desc
-				+ ", super_category=" + super_category + ", sub_category=" + sub_category + ", sizes=" + sizes + "]";
+				+ ", super_category=" + super_category + ", sub_category=" + sub_category + ", sizes=" + sizes
+				+ ", product_of_cart=" + product_of_cart + "]";
 	}
 	
 	

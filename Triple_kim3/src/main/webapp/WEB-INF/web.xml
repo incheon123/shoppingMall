@@ -45,6 +45,63 @@
 		<servlet-name>mypage</servlet-name>
 		<url-pattern>/view/mypage/profile</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>myorder</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myorder</servlet-name>
+		<url-pattern>/view/mypage/order</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>myinquiry</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myinquiry</servlet-name>
+		<url-pattern>/view/mypage/inquiry</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>myreview</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myreview</servlet-name>
+		<url-pattern>/view/mypage/review</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>inquiry</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>inquiry</servlet-name>
+		<url-pattern>/view/inquiry</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>inquirys</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>inquirys</servlet-name>
+		<url-pattern>/view/inquirys</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>reviews</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>reviews</servlet-name>
+		<url-pattern>/view/reviews</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>review</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>review</servlet-name>
+		<url-pattern>/view/review</url-pattern>
+	</servlet-mapping>
+	
 	
 	<servlet>
 		<servlet-name>product</servlet-name>
@@ -54,6 +111,7 @@
 		<servlet-name>product</servlet-name>
 		<url-pattern>/product/*</url-pattern>
 	</servlet-mapping>
+	
 	
 	<servlet>
 		<servlet-name>saveProductInBasket</servlet-name>
@@ -75,14 +133,21 @@
 		<url-pattern>/view/checkOrder</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name>successOrder</servlet-name>
+		<servlet-name>processOrder</servlet-name>
 		<servlet-class>OrderController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>processOrder</servlet-name>
+		<url-pattern>/view/process_order</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>successOrder</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>successOrder</servlet-name>
 		<url-pattern>/view/success</url-pattern>
 	</servlet-mapping>
-	
 	
 	<servlet>
 		<servlet-name>loginDo</servlet-name>
@@ -115,5 +180,14 @@
 	<servlet-mapping>
 		<servlet-name>checkDuplicate</servlet-name>
 		<url-pattern>/view/check/duplicate</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>processInquiry</servlet-name>
+		<servlet-class>InquiryController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>processInquiry</servlet-name>
+		<url-pattern>/process/inquiry</url-pattern>
 	</servlet-mapping>
 </web-app>
