@@ -25,7 +25,31 @@ public class ProductService {
 		conn = dao.getConnection();
 		productdao.setConnection(conn);
 		Product product = productdao.selectProductById(product_id);
+		
+		dao.close(conn);
 		return product;
 	}
 	
+	//전체상품
+	public Products getTotalProducts(String gender, String age, String sbcg) {
+		
+		conn = dao.getConnection();
+		productdao.setConnection(conn);
+		Products result = productdao.selectProducts(gender, age, sbcg);
+		dao.close(conn);
+		
+		return result;
+	}
+	
+	//전체 상품이 아닌 경우
+	public Products getProducts(String gender, String age, String spcg, String sbcg) {
+		conn = dao.getConnection();
+		productdao.setConnection(conn);
+		
+		Products result = productdao.selectProducts(gender, age, spcg, sbcg);
+		
+		dao.close(conn);
+		
+		return result;
+	}
 }

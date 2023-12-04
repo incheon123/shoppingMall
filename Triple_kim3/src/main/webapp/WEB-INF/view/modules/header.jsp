@@ -26,7 +26,7 @@
 						<a class="nav-link text-secondary" aria-current="page" href="${pageContext.request.contextPath}/view/basket">장바구니</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-secondary" aria-current="page" href="${pageContext.request.contextPath}/view/inquirys">문의</a>
+						<a class="nav-link text-secondary" aria-current="page" href="${pageContext.request.contextPath}/view/inquirys?pageNo=1">문의</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link text-secondary" aria-current="page" href="${pageContext.request.contextPath}/view/reviews">리뷰</a>
@@ -42,7 +42,7 @@
 						<a class="nav-link text-secondary" href="${pageContext.request.contextPath}/view/basket">장바구니</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-secondary" aria-current="page" href="${pageContext.request.contextPath}/view/inquirys">문의</a>
+						<a class="nav-link text-secondary" aria-current="page" href="${pageContext.request.contextPath}/view/inquirys?pageNo=1"">문의</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link text-secondary" aria-current="page" href="${pageContext.request.contextPath}/view/reviews">리뷰</a>
@@ -57,11 +57,21 @@
                         <i class="fa-regular fa-user"></i>
                     </a>
                     <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">로그인</a></li>
-                    <li><a class="dropdown-item" href="#">회원가입</a></li>
-                    <li><a class="dropdown-item" href="#">장바구니</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    <% if(session.getAttribute("id") != null){%>
+	                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/mypage/profile"><%= session.getAttribute("id") %></a></li>
+	                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout.do">로그아웃</a></li>
+	                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/basket">장바구니</a></li>
+	                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/inquirys?pageNo=1">문의</a></li>
+	                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/reviews">리뷰</a></li>
+	                    <li><hr class="dropdown-divider"></li>
+                    <% }else{ %>
+                    	<li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/login">로그인</a></li>
+	                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/membership">회원가입</a></li>
+	                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/login">장바구니</a></li>
+	                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/inquirys?pageNo=1">문의</a></li>
+	                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/reviews">리뷰</a></li>
+	                    <li><hr class="dropdown-divider"></li>
+                    <% } %>
                     </ul>
                 </li>
             </ul>
@@ -79,11 +89,10 @@
                         남성
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/product">전체</a></li>
-                            <li><a class="dropdown-item" href="#">상의</a></li>
-                            <li><a class="dropdown-item" href="#">하의</a></li>
-                            <li><a class="dropdown-item" href="#">모자</a></li>
-                            <li><a class="dropdown-item" href="#">양말</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/product?gender=man&age=adult&spcg=none&sbcg=1">상의</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/product?gender=man&age=adult&spcg=none&sbcg=2">하의</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/product?gender=man&age=adult&spcg=none&sbcg=3">신발</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/product?gender=man&age=adult&spcg=none&sbcg=4">모자</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -91,11 +100,10 @@
                         여성
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">전체</a></li>
-                            <li><a class="dropdown-item" href="#">상의</a></li>
-                            <li><a class="dropdown-item" href="#">하의</a></li>
-                            <li><a class="dropdown-item" href="#">모자</a></li>
-                            <li><a class="dropdown-item" href="#">양말</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/product?gender=woman&age=adult&spcg=none&sbcg=1">상의</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/product?gender=woman&age=adult&spcg=none&sbcg=2">하의</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/product?gender=woman&age=adult&spcg=none&sbcg=3">신발</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/product?gender=woman&age=adult&spcg=none&sbcg=4">모자</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -103,11 +111,10 @@
                         키즈
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">전체</a></li>
-                            <li><a class="dropdown-item" href="#">상의</a></li>
-                            <li><a class="dropdown-item" href="#">하의</a></li>
-                            <li><a class="dropdown-item" href="#">모자</a></li>
-                            <li><a class="dropdown-item" href="#">양말</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/product?gender=kids&age=child&spcg=none&sbcg=1">상의</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/product?gender=kids&age=child&spcg=none&sbcg=2">하의</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/product?gender=kids&age=child&spcg=none&sbcg=3">신발</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/product?gender=kids&age=child&spcg=none&sbcg=4">모자</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -115,12 +122,11 @@
                         스포츠
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">전체</a></li>
-                            <li><a class="dropdown-item" href="#">축구</a></li>
-                            <li><a class="dropdown-item" href="#">농구</a></li>
-                            <li><a class="dropdown-item" href="#">야구</a></li>
-                            <li><a class="dropdown-item" href="#">테니스</a></li>
-                            <li><a class="dropdown-item" href="#">용품</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/sports/soccer">축구</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/sports/basketball">농구</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/sports/baseball">야구</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/sports/tennis">테니스</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/sports/gear">용품</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -128,11 +134,10 @@
                         세일
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">전체</a></li>
-                            <li><a class="dropdown-item" href="#">상의</a></li>
-                            <li><a class="dropdown-item" href="#">하의</a></li>
-                            <li><a class="dropdown-item" href="#">모자</a></li>
-                            <li><a class="dropdown-item" href="#">양말</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/sail_product&spcg=none&sbcg=1">상의</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/sail_product&spcg=none&sbcg=2">하의</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/sail_product&spcg=none&sbcg=3">신발</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/sail_product&spcg=none&sbcg=4">모자</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -140,11 +145,10 @@
                         품절임박
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">전체</a></li>
-                            <li><a class="dropdown-item" href="#">상의</a></li>
-                            <li><a class="dropdown-item" href="#">하의</a></li>
-                            <li><a class="dropdown-item" href="#">모자</a></li>
-                            <li><a class="dropdown-item" href="#">양말</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/soldout_product&spcg=none&sbcg=1">상의</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/soldout_product&spcg=none&sbcg=2">하의</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/soldout_product&spcg=none&sbcg=3">신발</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/soldout_product&spcg=none&sbcg=4">모자</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -152,23 +156,12 @@
                         한정판
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">전체</a></li>
-                            <li><a class="dropdown-item" href="#">상의</a></li>
-                            <li><a class="dropdown-item" href="#">하의</a></li>
-                            <li><a class="dropdown-item" href="#">모자</a></li>
-                            <li><a class="dropdown-item" href="#">양말</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/limited_product&spcg=none&sbcg=1">상의</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/limited_product&spcg=none&sbcg=2">하의</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/limited_product&spcg=none&sbcg=3">신발</a></li>
+                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/view/limited_product&spcg=none&sbcg=4">모자</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown d-lg-none">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                        </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
                 </ul>
                 <form class="d-flex" role="search">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

@@ -49,7 +49,7 @@ public class InquiryController extends HttpServlet {
 		InquiryService is = new InquiryService();
 		int result = is.insertInquiry(i);
 		
-		response.sendRedirect("view/inquirys");
+		response.sendRedirect("/Triple_kim3/view/inquirys");
 	}
 
 }

@@ -26,15 +26,36 @@ public class InquiryService {
 		return result;
 	}
 	
-	public ArrayList<Inquiry> getInquirys(){
+	public ArrayList<Inquiry> getInquirys(int startNo, int endNo){
 		ArrayList<Inquiry> list = new ArrayList<Inquiry>();
 		
 		conn = dao.getConnection();
 		idao.setConnection(conn);
 		
-		list = idao.selectInquirys();
+		list = idao.selectInquirys(startNo, endNo);
 		
 		dao.close(conn);
 		return list;
+	}
+	
+	public int getSize() {
+		conn = dao.getConnection();
+		idao.setConnection(conn);
+		
+		int size = idao.getSize();
+		
+		dao.close(conn);
+		return size;
+	}
+	
+	public Inquiry getInquiry(String id) {
+		conn = dao.getConnection();
+		idao.setConnection(conn);
+		
+		Inquiry result = idao.getInquiry(id);
+		
+		dao.close(conn);
+		
+		return result;
 	}
 }

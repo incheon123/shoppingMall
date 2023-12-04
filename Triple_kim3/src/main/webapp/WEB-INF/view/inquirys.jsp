@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,23 +32,23 @@
         <table class="table my-2">
             <thead>
                 <tr>
-                    <th scope="col" style="width: 4%;">#</th>
                     <th scope="col" style="width: 55%;">제목</th>
                     <th scope="col" style="width: 11%;">작성자</th>
                     <th scope="col" style="width: 11%;">답변 상태</th>
-                    <th scope="col" style="width: 11%;">작성일</th>
+                    <th scope="col" style="width: 14%;">작성일</th>
                 </tr>
             </thead>
             <tbody>
+            	<c:forEach var="item" items="${inquirys}">
                 <tr>
-                    <th class="order">1</th>
                     <td class="title">
-                        <a href="" style="display: block; width: 100%; height:100%;">Mark</a>
+                        <a href="${pageContext.request.contextPath}/view/bbs_inquiry?iid=${item.getIid()}" style="display: block; width: 100%; height:100%;">${item.getTitle() }</a>
                     </td>
-                    <td class="writer">Otto</td>
-                    <td class="status">@mdo</td>
-                    <td class="write-date">@mdo</td>
+                    <td class="writer">${item.getUid() }</td>
+                    <td class="status">${item.getStatus() }</td>
+                    <td class="write-date">${item.getDate()}</td>
                 </tr>
+                </c:forEach>
             </tbody>
         </table>
         <div class="container text-end">
@@ -56,6 +58,34 @@
             	<a href="${pageContext.request.contextPath}/view/login" class="btn bg-info">문의하기</a>
             <%} %>
         </div>
+        <div class="container text-center">
+        <c:choose>
+	        <c:when test="${pageNo eq 1}">
+	        	<a href="${pageContext.request.contextPath}/view/inquirys?pageNo=${pageNo}" class="btn bg-warning"> < </a>
+	        </c:when>
+	        <c:otherwise>
+	        	<a href="${pageContext.request.contextPath}/view/inquirys?pageNo=${pageNo - 1}" class="btn bg-warning"> < </a>
+	        </c:otherwise>
+        </c:choose>
+        <fmt:parseNumber var="totalPageNo" value="${Math.ceil(length/5) }" integerOnly="true" />
+       	<c:if test="${ totalPageNo >= pageNo }">
+        	<a href="${pageContext.request.contextPath}/view/inquirys?pageNo=${pageNo}" class="btn bg-info">${pageNo}</a>
+        </c:if>
+        <c:if test="${ totalPageNo >= pageNo+1 }">
+        	<a href="${pageContext.request.contextPath}/view/inquirys?pageNo=${pageNo+1}" class="btn">${pageNo+1}</a>
+        </c:if>
+        <c:if test="${ totalPageNo >= pageNo+2 }">
+        	<a href="${pageContext.request.contextPath}/view/inquirys?pageNo=${pageNo+2}" class="btn">${pageNo+2}</a>
+        </c:if>
+        <c:choose>
+	        <c:when test="${pageNo eq totalPageNo}">
+	        	<a href="${pageContext.request.contextPath}/view/inquirys?pageNo=${pageNo}" class="btn bg-warning"> > </a>
+	        </c:when>
+	        <c:otherwise>
+	        	<a href="${pageContext.request.contextPath}/view/inquirys?pageNo=${pageNo + 1}" class="btn bg-warning"> > </a>
+	        </c:otherwise>
+        </c:choose>
+    </div>
     </div>
 	<jsp:include page="./modules/footer.jsp" />
 </body>

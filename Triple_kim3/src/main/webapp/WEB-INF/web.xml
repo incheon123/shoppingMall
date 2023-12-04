@@ -83,7 +83,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>inquirys</servlet-name>
-		<url-pattern>/view/inquirys</url-pattern>
+		<url-pattern>/view/inquirys/*</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>reviews</servlet-name>
@@ -111,6 +111,49 @@
 		<servlet-name>product</servlet-name>
 		<url-pattern>/product/*</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>products</servlet-name>
+		<servlet-class>ProductController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>products</servlet-name>
+		<url-pattern>/view/product/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>sportsProduct</servlet-name>
+		<servlet-class>ProductController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sportsProduct</servlet-name>
+		<url-pattern>/view/sports/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>sail_product</servlet-name>
+		<servlet-class>ProductController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sail_product</servlet-name>
+		<url-pattern>/view/sail_product/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>soldout_product</servlet-name>
+		<servlet-class>ProductController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>soldout_product</servlet-name>
+		<url-pattern>/view/soldout_product/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>limited_product</servlet-name>
+		<servlet-class>ProductController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>limited_product</servlet-name>
+		<url-pattern>/view/limited_product/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	
 	
 	
 	<servlet>
@@ -189,5 +232,13 @@
 	<servlet-mapping>
 		<servlet-name>processInquiry</servlet-name>
 		<url-pattern>/process/inquiry</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>bbsInquiry</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>bbsInquiry</servlet-name>
+		<url-pattern>/view/bbs_inquiry/*</url-pattern>
 	</servlet-mapping>
 </web-app>

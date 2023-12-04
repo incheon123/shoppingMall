@@ -162,4 +162,204 @@ public class ProductDAO {
 		
 		return sizes;
 	}
+	
+	//totalProducts
+	public Products selectProducts(String gender, String age, String sbcg) {
+		
+		
+		ArrayList<ProductCategory> cate = getCategory(sbcg);
+		
+		//상품
+		
+		try {
+			//키즈 상품이 아닐 대
+			if(gender != null) {
+				pstmt = conn.prepareStatement(
+						"SELECT "
+						+ "p.product_id, lp.product_name, lp.product_color, p.logistic_id, lp.gender, lp.available_age, p.price,"
+					    + "p.product_point, p.sail, p.total_score, p.img_url, p.purchase_count, p.review_count, p.short_desc, p.detail_desc,"
+					    + "p.super_category, p.sub_category "
+						+ "FROM product p, logistic_product lp "
+						+ "WHERE p.logistic_id = lp.logistic_id "
+						+ "AND p.supply_product_id = lp.product_id "
+						+ "AND p.supply_product_date = lp.warehousing_date "
+						+ "AND lp.gender = ? "
+						+ "AND lp.available_age = 'adult' "
+						+ "AND p.super_category = ? "
+						);
+				pstmt.setString(1, gender);
+				pstmt.setInt(2, Integer.parseInt(sbcg));
+			}else{
+				//키즈 상품일 때
+				pstmt = conn.prepareStatement(
+						"SELECT "
+						+ "p.product_id, lp.product_name, lp.product_color, p.logistic_id, lp.gender, lp.available_age, p.price,"
+					    + "p.product_point, p.sail, p.total_score, p.img_url, p.purchase_count, p.review_count, p.short_desc, p.detail_desc,"
+					    + "p.super_category, p.sub_category "
+						+ "FROM product p, logistic_product lp "
+						+ "WHERE p.logistic_id = lp.logistic_id "
+						+ "AND p.supply_product_id = lp.product_id "
+						+ "AND p.supply_product_date = lp.warehousing_date "
+						+ "AND lp.available_age = 'child' "
+						+ "AND p.super_category = ? "
+						);
+				pstmt.setInt(1, Integer.parseInt(sbcg));
+			}
+			
+			rs = pstmt.executeQuery();
+			
+			products = new Products();
+			while(rs.next()) {
+				product = new Product();
+				
+				product.setPid(rs.getString(1));
+				product.setPname(rs.getString(2));
+				product.setPcolor(rs.getString(3));
+				product.setLogi_id(rs.getString(4));
+				product.setGender(rs.getString(5));
+				product.setAvailable_age(rs.getString(6));
+				product.setPrice(rs.getInt(7));
+				product.setPoint(rs.getInt(8));
+				product.setSail(rs.getInt(9));
+				product.setTotal_score(rs.getInt(10));
+				product.setImg_url(rs.getString(11));
+				product.setPurchase_count(rs.getInt(12));
+				product.setReview_count(rs.getInt(13));
+				product.setShort_desc(rs.getString(14));
+				product.setDetail_desc(rs.getString(15));
+				product.setSuper_category(rs.getInt(16));
+				product.setSub_category(rs.getInt(17));
+				
+				products.addProductToProductPage(product);
+			}
+			products.setCategorys(cate);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			dao.close(pstmt);
+			dao.close(rs);
+		}
+		return products;
+	}
+	
+	public Products selectProducts(String gender, String age, String spcg, String sbcg) {
+		Products products = null;
+		
+		ArrayList<ProductCategory> cate = getCategory(spcg);
+		
+		//상품
+		
+		try {
+			
+			//키즈상품이 아닐 때
+			if(gender != null) {
+				pstmt = conn.prepareStatement(
+						"SELECT "
+						+ "p.product_id, lp.product_name, lp.product_color, p.logistic_id, lp.gender, lp.available_age, p.price,"
+					    + "p.product_point, p.sail, p.total_score, p.img_url, p.purchase_count, p.review_count, p.short_desc, p.detail_desc,"
+					    + "p.super_category, p.sub_category "
+						+ "FROM product p, logistic_product lp "
+						+ "WHERE p.logistic_id = lp.logistic_id "
+						+ "AND p.supply_product_id = lp.product_id "
+						+ "AND p.supply_product_date = lp.warehousing_date "
+						+ "AND lp.gender = ?"
+						+ "AND lp.available_age = ? "
+						+ "AND p.super_category = ? "
+						+ "AND p.sub_category = ? "
+						);
+				pstmt.setString(1, gender);
+				pstmt.setString(2, age);
+				pstmt.setInt(3, Integer.parseInt(spcg));
+				pstmt.setInt(4, Integer.parseInt(sbcg));
+			}else{ //키즈 상품일 때
+				pstmt = conn.prepareStatement(
+						"SELECT "
+						+ "p.product_id, lp.product_name, lp.product_color, p.logistic_id, lp.gender, lp.available_age, p.price,"
+					    + "p.product_point, p.sail, p.total_score, p.img_url, p.purchase_count, p.review_count, p.short_desc, p.detail_desc,"
+					    + "p.super_category, p.sub_category "
+						+ "FROM product p, logistic_product lp "
+						+ "WHERE p.logistic_id = lp.logistic_id "
+						+ "AND p.supply_product_id = lp.product_id "
+						+ "AND p.supply_product_date = lp.warehousing_date "
+						+ "AND lp.available_age = ? "
+						+ "AND p.super_category = ? "
+						+ "AND p.sub_category = ? "
+						);
+				pstmt.setString(1, age);
+				pstmt.setInt(2, Integer.parseInt(spcg));
+				pstmt.setInt(3, Integer.parseInt(sbcg));
+			}
+			rs = pstmt.executeQuery();
+			
+			products = new Products();
+			while(rs.next()) {
+				product = new Product();
+				
+				product.setPid(rs.getString(1));
+				product.setPname(rs.getString(2));
+				product.setPcolor(rs.getString(3));
+				product.setLogi_id(rs.getString(4));
+				product.setGender(rs.getString(5));
+				product.setAvailable_age(rs.getString(6));
+				product.setPrice(rs.getInt(7));
+				product.setPoint(rs.getInt(8));
+				product.setSail(rs.getInt(9));
+				product.setTotal_score(rs.getInt(10));
+				product.setImg_url(rs.getString(11));
+				product.setPurchase_count(rs.getInt(12));
+				product.setReview_count(rs.getInt(13));
+				product.setShort_desc(rs.getString(14));
+				product.setDetail_desc(rs.getString(15));
+				product.setSuper_category(rs.getInt(16));
+				product.setSub_category(rs.getInt(17));
+				
+				products.addProductToProductPage(product);
+			}
+			products.setCategorys(cate);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			dao.close(pstmt);
+			dao.close(rs);
+		}
+		return products;
+	}
+	
+	private ArrayList<ProductCategory> getCategory(String spcg) {
+		ArrayList<ProductCategory> list = new ArrayList<>();
+		ProductCategory category = null;
+		
+		try {
+			pstmt = conn.prepareStatement(
+					"SELECT * "
+					+ "FROM product_category "
+					+ "WHERE super_category = ? "
+					);
+			pstmt.setString(1, spcg);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				category = new ProductCategory();
+				
+				int super_category = rs.getInt("super_category");
+				if(super_category == -1) category.setSuper_category("none");
+				else category.setSuper_category(super_category+"");
+					
+				int sub_category = rs.getInt("sub_category");
+				String category_name = rs.getString("category_name");
+				category.setSub_category(sub_category+"");
+				category.setCategory_name(category_name);
+				
+				list.add(category);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			dao.close(pstmt);
+			dao.close(rs);
+		}
+		
+		return list;
+	}
 }

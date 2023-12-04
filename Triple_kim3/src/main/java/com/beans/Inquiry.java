@@ -1,6 +1,9 @@
 package com.beans;
 
 public class Inquiry {
+	
+	private int rownum;
+	
 	private String iid;
 	private String uid;
 	private String type;
@@ -58,6 +61,17 @@ public class Inquiry {
 	}
 	public void setDesc(String desc) {
 		this.desc = desc;
+	}
+	public int getRownum() {
+		return rownum;
+	}
+	public void setRownum(int rownum) {
+		this.rownum = rownum;
+	}
+	@Override
+	public String toString() {
+		return "Inquiry [rownum=" + rownum + ", iid=" + iid + ", uid=" + uid + ", type=" + type + ", title=" + title
+				+ ", desc=" + desc + ", date=" + date + ", status=" + status + ", delete=" + delete + "]";
 	}
 	
 	

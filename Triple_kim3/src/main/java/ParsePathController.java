@@ -6,6 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.beans.Inquiry;
 import com.svc.*;
 /**
  * Servlet implementation class ProcessHeaderMenuController
@@ -57,13 +59,35 @@ public class ParsePathController extends HttpServlet {
 		}else if(url.equals("/view/inquiry")) {
 			dispatcher = request.getRequestDispatcher("/WEB-INF/view/inquiry.jsp");
 		}else if(url.equals("/view/inquirys")) {
+			
+			Integer pageNo = 1;
+			int startNo = 1;
+			int endNo = 5;
+			
+			if(request.getParameter("pageNo") != null) {
+				pageNo = Integer.parseInt(request.getParameter("pageNo"));
+				startNo = (5 * (pageNo-1)) + 1;
+				endNo = startNo + 4;
+			}
+			
 			InquiryService is = new InquiryService();
-			request.getSession().setAttribute("inquirys", is.getInquirys());
+			request.getSession().setAttribute("pageNo", pageNo);
+			request.getSession().setAttribute("length", is.getSize());
+			request.getSession().setAttribute("inquirys", is.getInquirys(startNo, endNo));
+			
 			dispatcher = request.getRequestDispatcher("/WEB-INF/view/inquirys.jsp");
 		}else if(url.equals("/view/reviews")) {
 			dispatcher = request.getRequestDispatcher("/WEB-INF/view/reviews.jsp");
 		}else if(url.equals("/view/review")) {
 			dispatcher = request.getRequestDispatcher("/WEB-INF/view/review.jsp");
+		}else if(url.equals("/view/bbs_inquiry")) {
+			String iid = request.getParameter("iid");
+			
+			InquiryService is = new InquiryService();
+			Inquiry inquiry = is.getInquiry(iid);
+			
+			request.getSession().setAttribute("inq", inquiry);
+			dispatcher = request.getRequestDispatcher("/WEB-INF/view/bbsInquiry.jsp");
 		}
 		
 		dispatcher.forward(request, response);
