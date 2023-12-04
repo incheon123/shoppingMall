@@ -1,6 +1,8 @@
 package com.svc;
 
 import java.sql.*;
+import java.util.ArrayList;
+
 import com.dao.*;
 import com.jdbc.*;
 import com.beans.*;
@@ -51,5 +53,16 @@ public class ProductService {
 		dao.close(conn);
 		
 		return result;
+	}
+	
+	public ArrayList<ProductCategory> getCategorys(String spcg){
+		conn = dao.getConnection();
+		productdao.setConnection(conn);
+		
+		ArrayList<ProductCategory> cate = productdao.getCategory(spcg);
+		
+		dao.close(conn);
+		
+		return cate;
 	}
 }

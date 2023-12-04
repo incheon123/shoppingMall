@@ -166,9 +166,6 @@ public class ProductDAO {
 	//totalProducts
 	public Products selectProducts(String gender, String age, String sbcg) {
 		
-		
-		ArrayList<ProductCategory> cate = getCategory(sbcg);
-		
 		//상품
 		
 		try {
@@ -232,7 +229,6 @@ public class ProductDAO {
 				
 				products.addProductToProductPage(product);
 			}
-			products.setCategorys(cate);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -244,8 +240,6 @@ public class ProductDAO {
 	
 	public Products selectProducts(String gender, String age, String spcg, String sbcg) {
 		Products products = null;
-		
-		ArrayList<ProductCategory> cate = getCategory(spcg);
 		
 		//상품
 		
@@ -315,7 +309,6 @@ public class ProductDAO {
 				
 				products.addProductToProductPage(product);
 			}
-			products.setCategorys(cate);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -325,7 +318,7 @@ public class ProductDAO {
 		return products;
 	}
 	
-	private ArrayList<ProductCategory> getCategory(String spcg) {
+	public ArrayList<ProductCategory> getCategory(String spcg) {
 		ArrayList<ProductCategory> list = new ArrayList<>();
 		ProductCategory category = null;
 		

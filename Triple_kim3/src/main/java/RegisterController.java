@@ -48,7 +48,7 @@ public class RegisterController extends HttpServlet {
 		String user_pw     = request.getParameter("pw");
 		String user_name   = request.getParameter("name");
 		String email  = request.getParameter("email");
-		String domain = request.getParameter("domain");
+		String domain = request.getParameter("server");
 		String user_email = email + "@" +domain;
 		String ptel1       = request.getParameter("ptel1");
 		String ptel2       = request.getParameter("ptel2");
@@ -60,7 +60,7 @@ public class RegisterController extends HttpServlet {
 		String user_htel   = htel1+htel2+htel3;
 		String addr1       = request.getParameter("addr1");
 		String addr2       = request.getParameter("addr2");
-		String user_addr       = addr1 + addr2;
+		String user_addr       = addr1 + " " + addr2;
 		String user_gender = request.getParameter("gender");
 		String user_birth  = request.getParameter("birth");
 		

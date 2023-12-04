@@ -210,12 +210,21 @@
 	//상품 사이즈 클릭하면 동작한다
 	$(document).on("click", ".dropdown-li", (e) => {
 		clsName = $(e.target).attr('class');
-		console.log(clsName);
 		if(clsName != 'shoes-size' && clsName != 'shoes-quantity'){
 			let size = e.target.children[0].innerText
-		    $(".dropdown-toggle").val(size)
-		    $(".dropdown-toggle").text(size)
+		    $(".submitBasket").val(size)
+		    $(".submitBasket").text(size)
 		}
+	})
+	$(document).on("click", ".shoes-size", (e) => {
+		size = e.target.parentElement.children[0].innerText
+		$(".submitBasket").val(size)
+	    $(".submitBasket").text(size)
+	})
+	$(document).on("click", ".shoes-quantity", (e) => {
+		size = e.target.parentElement.children[0].innerText
+		$(".submitBasket").val(size)
+	    $(".submitBasket").text(size)
 	})
 	
 	

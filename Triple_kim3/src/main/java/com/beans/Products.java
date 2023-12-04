@@ -25,7 +25,7 @@ public class Products {
 		products.add(product);
 	}
 	public ArrayList<Product> getProducts(){
-		return mainPageProducts;
+		return products;
 	}
 
 	public ArrayList<ProductCategory> getCategorys() {

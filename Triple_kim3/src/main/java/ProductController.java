@@ -1,6 +1,7 @@
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +14,7 @@ import com.beans.Product;
 import com.beans.Products;
 import com.svc.ProductService;
 import com.svc.BasketService;
-
+import com.beans.*;
 
 //@WebServlet("/product")
 public class ProductController extends HttpServlet {
@@ -46,8 +47,11 @@ public class ProductController extends HttpServlet {
 			String spcg = request.getParameter("spcg");
 			String sbcg = request.getParameter("sbcg");
 			
+			System.out.println(gender + " " + age + " " + spcg + " " + sbcg);
+			
 			ProductService service = new ProductService();
-			Products products;
+			ArrayList<ProductCategory> cate = null;
+			Products products = null;
 			
 			
 			//kids 상품일 때
@@ -55,16 +59,29 @@ public class ProductController extends HttpServlet {
 				//전체 상품
 				if(spcg.equals("none")) {
 					products = service.getTotalProducts(null, age, sbcg);
+					cate = service.getCategorys(sbcg);
 				}else { //전체 상품 아닌 경우
 					products = service.getProducts(null, age, spcg, sbcg);
+					cate = service.getCategorys(spcg);
 				}
 			}else {
 				if(spcg.equals("none")) {
 					products = service.getTotalProducts(gender, age, sbcg);
+					cate = service.getCategorys(sbcg);
 				}else { //전체 상품 아닌 경우
 					products = service.getProducts(gender, age, spcg, sbcg);
+					cate = service.getCategorys(spcg);
 				}
 			}
+			
+			for(Product p : products.getProducts()) {
+				System.out.println(p);
+			}
+			
+			request.getSession().setAttribute("age", age);
+			request.getSession().setAttribute("gender", gender);
+			request.getSession().setAttribute("cate", cate);
+			request.getSession().setAttribute("servletPath", request.getServletPath());
 			request.getSession().setAttribute("products", products);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/products.jsp");
 			dispatcher.forward(request, response);

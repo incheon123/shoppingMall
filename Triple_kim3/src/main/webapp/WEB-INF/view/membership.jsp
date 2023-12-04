@@ -10,99 +10,112 @@
 </head>
 <body>
 	<jsp:include page="./modules/header.jsp" />
-    <form action="${pageContext.request.contextPath }/create/account" method="POST" class="form">
+	<div class="container w-50">
+    <form action="${pageContext.request.contextPath }/create/account" method="POST" class="form w-75">
         <div class="mycontainer">
-            <label>아이디</label>
-            <div class="id mybox">
-                <input type="text" name="id" class="user_id" placeholder="id" required>
-                <a href="#" id="check_duplicate">중복확인</a>
+            <label for="validationCustom01" class="form-label mb-0">아이디</label>
+            <div class="container id mybox">
+                <input type="text" name="id" class="user_id form-control" placeholder="id" required>
+                <a href="#" id="check_duplicate" class="btn bg-info">중복확인</a>
             </div>
+        </div>
+        <div class="invalid-feedback d-block">
         </div>
         <a href="#" id="rwd_check_duplicate">중복확인</a>
         <div class="mycontainer">
-            <label>비밀번호</label>
-            <div class="pw mybox">
-                <input type="password" name="pw" class="user_pw" placeholder="pw" required>
+            <label for="validationCustom01" class="form-label mb-0">비밀번호</label>
+            <div class="container pw mybox">
+                <input type="password" name="pw" class="user_pw form-control" placeholder="pw" required>
             </div>
+        </div>
+        <div class="invalid-feedback d-block">
         </div>
         <div class="mycontainer">
-            <label>이름</label>
-            <div class="name mybox">
-                <input type="text" name="name" class="user_name" placeholder="name" required>
+            <label for="validationCustom01" class="form-label mb-0">이름</label>
+            <div class="container name mybox">
+                <input type="text" name="name" class="user_name form-control" placeholder="name" required>
             </div>
+        </div>
+        <div class="invalid-feedback d-block">
+        </div>
+        <div class="mycontainer input-group">
+            <label for="validationCustom01" class="form-label mb-0">이메일</label>
+            <div class="container email mybox">
+                <input type="text" name="email" class="form-control" placeholder="email" aria-label="email">
+			  	<span class="input-group-text">@</span>
+		  		<input type="text" name="server" class="form-control" placeholder="domain" aria-label="domain">
+            </div>
+        </div>
+        <div class="invalid-feedback d-block">
+        </div>
+<!--         <div class="rwd-container"> -->
+<!--             <div class="domain mybox"> -->
+<!--                 <label for="validationCustom01" class="form-label mb-0">이메일</label> -->
+<!--             	<div class="container email mybox"> -->
+<!-- 	                <input type="text" name="email" class="form-control" placeholder="email" aria-label="email"> -->
+<!-- 				  	<span class="input-group-text">@</span> -->
+<!-- 			  		<input type="text" name="server" class="form-control" placeholder="domain" aria-label="domain"> -->
+<!--             	</div> -->
+<!--             </div> -->
+<!--         </div> -->
+        <div class="mycontainer">
+            <label for="validationCustom01" class="form-label mb-0">휴대전화</label>
+            <div class="container tel ">
+                <input type="text" name="ptel1" class="user_tel form-control" value="010" maxlength="3" readonly>
+                <span style="background-color: rgb(151, 151, 151); width: 30px; height: 2.5px;"></span>
+                <input type="text" name="ptel2" class="user_tel form-control" maxlength="4" required>
+                <span style="background-color: rgb(151, 151, 151); width: 30px; height: 2.5px;"></span>
+                <input type="text" name="ptel3" class="user_tel form-control" maxlength="4" required>
+            </div>
+        </div>
+        <div class="invalid-feedback d-block">
         </div>
         <div class="mycontainer">
-            <label>이메일</label>
-            <div class="email mybox">
-                <input type="text" name="email" class="user_email" placeholder="email" required>
-                <select name="domain" id="rwd-domain" required>
-                    <option value="null"></option>
-                    <option value="naver">@naver.com</option>
-                    <option value="google">@google.com</option>
-                    <option value="daum">@daum.com</option>
-                </select>
-            </div>
-        </div>
-        <div class="rwd-container">
-            <div class="domain mybox">
-                <select name="domain2" id="domain" required>
-                    <option value="null"></option>
-                    <option value="naver">@naver.com</option>
-                    <option value="google">@google.com</option>
-                    <option value="daum">@daum.com</option>
-                </select>
-            </div>
-        </div>
-        <div class="mycontainer">
-            <label>휴대전화 번호</label>
-            <div class="tel">
-                <input type="text" name="ptel1" class="user_tel" value="010" maxlength="3" readonly>
-                <span style="background-color: rgb(151, 151, 151); width: 10px; height: 2.5px;"></span>
-                <input type="text" name="ptel2" class="user_ptel1" maxlength="4" required>
-                <span style="background-color: rgb(151, 151, 151); width: 10px; height: 2.5px;"></span>
-                <input type="text" name="ptel3" class="user_ptel2" maxlength="4" required>
-            </div>
-        </div>
-        <div class="mycontainer">
-            <label>전화번호</label>
-            <div class="tel">
-                <select name="htel1" id="htel1" style="height:100%; text-align:center; margin: 0px 14px 0px 14px;width:25%;" required>
+            <label for="validationCustom01" class="form-label mb-0">집전화</label>
+            <div class="container tel">
+                <select name="htel1" class="user_tel form-select text-center" required>
                     <option value="02">02</option>
                     <option value="032">032</option>
                     <option value="021">021</option>
                 </select>
-                <span style="background-color: rgb(151, 151, 151); width: 10px; height: 2.5px;"></span>
-                <input type="text" name="htel2" class="user_htel1" maxlength="4">
-                <span style="background-color: rgb(151, 151, 151); width: 10px; height: 2.5px;"></span>
-                <input type="text" name="htel3" class="user_htel2" maxlength="4">
+                <span style="background-color: rgb(151, 151, 151); width: 30px; height: 2.5px;"></span>
+                <input type="text" name="htel2" class="user_tel form-control" maxlength="4">
+                <span style="background-color: rgb(151, 151, 151); width: 30px; height: 2.5px;"></span>
+                <input type="text" name="htel3" class="user_tel form-control" maxlength="4">
             </div>
         </div>
         <div class="mycontainer">
-            <label>주소</label>
-            <div class="addr1 mybox">
-                <input type="text" name="addr1" class="user_addr" placeholder="기본주소" required>
+            <label for="validationCustom01" class="form-label mb-0">주소</label>
+            <div class="container addr1 mybox">
+                <input type="text" name="addr1" class="user_addr form-control" placeholder="기본주소" required>
             </div>
-            <div class="addr2 mybox">
-                <input type="text" name="addr2" class="user_addr" placeholder="상세주소" required>
+            <div class="container addr2 mybox">
+                <input type="text" name="addr2" class="user_addr form-control" placeholder="상세주소" required>
+            </div>
+        </div>
+        <div class="container my-4">
+            <input type="radio" name="gender" value="man" class="form-check-input">
+            <label class="form-check-label" for="flexRadioDefault1">
+			    남성
+		  	</label>
+            <input type="radio" name="gender" value="woman" class="form-check-input">
+            <label class="form-check-label" for="flexRadioDefault1">
+			    여성
+		  	</label>
+        </div>
+        <div class="mycontainer">
+            <label for="validationCustom01" class="form-label mb-0">생년월일</label>
+            <div class="container mybox">
+                <input type="date" name="birth" class="user_birth form-control">
             </div>
         </div>
         <div class="mycontainer">
-            <div style="margin-top:20px;"></div>
-            <input type="radio" name="gender" value="MEN" class="radio"><span style="color:rgb(91, 91, 91);">남성</span>
-            <input type="radio" name="gender" value="WOMEN" class="radio"><span style="color:rgb(91, 91, 91);">여성</span>
-        </div>
-        <div class="mycontainer">
-            <label>생년월일</label>
-            <div class="birth mybox">
-                <input type="date" name="birth" class="user_birth">
-            </div>
-        </div>
-        <div class="mycontainer">
-            <div class="submitbox">
-                <input type="submit" value="가입하기">
+            <div class="container">
+                <input type="submit" class="btn bg-info w-100" value="가입하기" >
             </div>
         </div>
     </form>
+    </div>
     <jsp:include page="./modules/footer.jsp" />
 </body>
 <script>
