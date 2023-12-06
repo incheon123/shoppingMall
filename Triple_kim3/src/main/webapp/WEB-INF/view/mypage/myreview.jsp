@@ -11,17 +11,7 @@
 	<jsp:include page="../modules/header.jsp" />
 	<jsp:include page="../modules/sideDropdown.jsp" />
 	<div class="table-responsive w-75 container py-4" style="margin-top: 5%; margin-bottom: 5%;">
-        <!-- 조회 옵션 -->
-        <div class="container bg-info w-50 py-2" style="border-radius: 10px;">
-            <div class="input-group my-1">
-                <span class="input-group-text" id="basic-addon1">조회날짜</span>
-                <input type="date" class="form-control" placeholder="date" aria-label="Username" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group my-2">
-                <span class="input-group-text" id="basic-addon1">작성자</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-        </div>
+        
         <table class="table my-2">
             <thead>
                 <tr>

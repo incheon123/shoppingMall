@@ -1,6 +1,11 @@
 package com.beans;
 
 public class Payment {
+	@Override
+	public String toString() {
+		return "Payment [payment_id=" + payment_id + ", total=" + total + ", payment_username=" + payment_username
+				+ ", payment_card_number=" + payment_card_number + "]";
+	}
 	private String payment_id;
 	private int total;
 	private String payment_username;

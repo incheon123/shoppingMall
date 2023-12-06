@@ -44,11 +44,13 @@
                     <div class="col px-1 my-1">
                         <div class="card">
                         	<span class="cart-shopping">
+                        	<% if(session.getAttribute("id") != null){ %>
                         		<% if(list != null && list.contains(product.get(idx).getPid())){ %>
                                 	<i class="fa-solid fa-cart-shopping fs-2" style="color: aqua;"></i>
                                 <% }else{ %>
                                 	<i class="fa-solid fa-cart-shopping fs-2"></i>
                                 <% } %>
+                             <% } %>
                             </span>
                             <img src="/<%= product.get(idx).getImg_url() %>" class="card-img-top object-fit-cover" alt="...">
                             <div class="card-body">
@@ -94,11 +96,13 @@
                     </div>
                 </a>
                 <span class="cart-shopping">
+                <% if(session.getAttribute("id") != null){ %>
                     <% if(list != null && list.contains(product.get(i).getPid())){ %>
                     	<i class="fa-solid fa-cart-shopping fs-2" style="color: aqua;"></i>
                     <% }else{ %>
                     	<i class="fa-solid fa-cart-shopping fs-2"></i>
                     <% } %>
+                <% } %>
                 </span>
                 <p><%=product.get(idx).isProduct_of_cart() %></p>
             </div>

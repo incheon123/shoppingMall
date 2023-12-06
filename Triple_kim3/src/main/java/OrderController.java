@@ -20,10 +20,10 @@ public class OrderController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("/WEB-INF/view/checkOrder.jsp");
-		dispatcher.forward(request, response);
+		System.out.println(request.getContextPath());
+//		RequestDispatcher dispatcher = 
+//				request.getRequestDispatcher("/WEB-INF/view/checkOrder.jsp");
+//		dispatcher.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

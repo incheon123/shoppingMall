@@ -37,6 +37,7 @@
 		<servlet-name>mybasket</servlet-name>
 		<url-pattern>/view/mybasket</url-pattern>
 	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>mypage</servlet-name>
 		<servlet-class>ParsePathController</servlet-class>
@@ -45,6 +46,7 @@
 		<servlet-name>mypage</servlet-name>
 		<url-pattern>/view/mypage/profile</url-pattern>
 	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>myorder</servlet-name>
 		<servlet-class>ParsePathController</servlet-class>
@@ -119,14 +121,8 @@
 		<servlet-name>products</servlet-name>
 		<url-pattern>/view/product/*</url-pattern>
 	</servlet-mapping>
-	<servlet>
-		<servlet-name>sportsProduct</servlet-name>
-		<servlet-class>ProductController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>sportsProduct</servlet-name>
-		<url-pattern>/view/sports/*</url-pattern>
-	</servlet-mapping>
+	
+	<!-- 셰일상품 -->
 	<servlet>
 		<servlet-name>sail_product</servlet-name>
 		<servlet-class>ProductController</servlet-class>
@@ -135,25 +131,6 @@
 		<servlet-name>sail_product</servlet-name>
 		<url-pattern>/view/sail_product/*</url-pattern>
 	</servlet-mapping>
-	<servlet>
-		<servlet-name>soldout_product</servlet-name>
-		<servlet-class>ProductController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>soldout_product</servlet-name>
-		<url-pattern>/view/soldout_product/*</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>limited_product</servlet-name>
-		<servlet-class>ProductController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>limited_product</servlet-name>
-		<url-pattern>/view/limited_product/*</url-pattern>
-	</servlet-mapping>
-	
-	
-	
 	
 	
 	<servlet>
@@ -240,5 +217,22 @@
 	<servlet-mapping>
 		<servlet-name>bbsInquiry</servlet-name>
 		<url-pattern>/view/bbs_inquiry/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>updateAccount</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateAccount</servlet-name>
+		<url-pattern>/update/account</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>orderDetail</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>orderDetail</servlet-name>
+		<url-pattern>/view/order_detail/*</url-pattern>
 	</servlet-mapping>
 </web-app>

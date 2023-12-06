@@ -18,7 +18,13 @@ public class MemberService {
 		dao.close(conn);
 		return user;
 	}
-	
+	public User getAccountByUid(String uid) {
+		conn = dao.getConnection();
+		member.setConnection(conn);
+		User user = member.getAccountByUid(uid);
+		dao.close(conn);
+		return user;
+	}
 	public User register(User user_info) {
 		conn = dao.getConnection();
 		member.setConnection(conn);
@@ -33,5 +39,11 @@ public class MemberService {
 		dao.close(conn);
 		if(isDuplicate) return true;
 		return false;
+	}
+	public void updateAccountInfo(User user) {
+		conn = dao.getConnection();
+		member.setConnection(conn);
+		member.updateAccountInfo(user);
+		dao.close(conn);
 	}
 }

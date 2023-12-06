@@ -14,10 +14,21 @@
 	<div class="container text-center d-block">
 <!-- 	    <h3 class="flex-sm-fill text-sm-center nav-link text-secondary py-5 text-center">상의</h3> -->
 	    <nav class="nav nav-pills flex-column flex-sm-row my-5">
+	    	<a class="flex-sm-fill text-sm-center nav-link text-secondary text-center" 
+				href="${pageContext.request.contextPath}${servletPath}?gender=${gender}&age=${age}&spcg=none&sbcg=${spcg}">전체</a>
 	    	<c:forEach var="product_category" items="${cate}" >
-				<a class="flex-sm-fill text-sm-center nav-link text-secondary text-center" 
-					href="${pageContext.request.contextPath}${servletPath}?gender=${gender}&age=${age}&age=&spcg=${product_category.getSuper_category()}&sbcg=${product_category.getSub_category()}">${product_category.getCategory_name()}</a>
+	    		<c:choose>
+		    		<c:when test="${gender eq 'man' && product_category.getCategory_name() eq '치마'}">
+						
+					</c:when>
+					<c:otherwise>
+						<a class="flex-sm-fill text-sm-center nav-link text-secondary text-center" 
+							href="${pageContext.request.contextPath}${servletPath}?gender=${gender}&age=${age}&spcg=${product_category.getSuper_category()}&sbcg=${product_category.getSub_category()}">${product_category.getCategory_name()}</a>
+					</c:otherwise>
+				</c:choose>
 	    	</c:forEach>
+	    	<a class="flex-sm-fill text-sm-center nav-link text-secondary text-center" 
+				href="${pageContext.request.contextPath}${servletPath}?gender=${gender}&age=${age}&spcg=none&sbcg=1">세일</a>
 	    </nav>
 	    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3">
 	    	<c:forEach var="product" items="${products.getProducts()}" varStatus="status">

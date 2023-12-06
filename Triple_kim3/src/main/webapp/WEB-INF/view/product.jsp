@@ -15,7 +15,7 @@
 	<jsp:include page="./modules/header.jsp" />
 	<!-- ajax를 이용해서 장바구니에 추가해야한다 Fu**-->
 
-    <div class="container text-center d-flex flex-row justify-content-center align-items-center h-75 w-100 py-5">
+    <div class="container text-center d-flex flex-row justify-content-center align-items-center w-100 py-5">
 
         <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 py-5 w-100 w-sm-100">
 
@@ -23,7 +23,7 @@
                 <img src="/${product.getImg_url() }" class="object-fit-cover" alt="">
             </div>
 
-            <div class="col my-auto">
+            <div class="col my-5">
 				<div class="col text-start">
                   <nav class="navbar bg-body-tertiary">
                     <div class="container-fluid">
@@ -200,9 +200,52 @@
                     <button type="button" class="btn btn-secondary btn-lg btn-basket">장바구니</button>
                 </div>
             </div>
-
+            <h3 class="container my-5 mx-0 text-start">리뷰</h3>
+            <div class="container w-100">
+				<table class="table my-5 text-start">
+		            <thead>
+		                <tr>
+		                    <th scope="col" style="width: 55%;">제목</th>
+		                    <th scope="col" style="width: 11%;">작성자</th>
+		                    <th scope="col" style="width: 11%;">별점</th>
+		                    <th scope="col" style="width: 14%;">작성일</th>
+		                </tr>
+		            </thead>
+		            <tbody>
+		            	<c:forEach var="item" items="${inquirys}" varStatus="status">
+		                <tr>
+		                    <td class="title text-start">
+		                        <a href="" style="display: block; width: 100%; height:100%;"
+		                        data-bs-toggle="modal" data-bs-target="#targetModal${status.index}">${item.getTitle() }</a>
+		                    </td>
+		                    <td class="writer">${item.getUid() }</td>
+		                    <td class="status">${item.getStatus() }</td>
+		                    <td class="write-date">${item.getDate()}</td>
+		                </tr>
+		                </c:forEach>
+		            </tbody>
+	        	</table>
+	        	<c:forEach var="temp" items="${inquirys}" varStatus="status">
+	        		<div class="modal fade" id="targetModal${status.index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	   					<div class="modal-dialog">
+	       					<div class="modal-content">
+	           					<div class="modal-header">
+	               					<h1 class="modal-title fs-5" id="exampleModalLabel">${temp.getTitle() }</h1>
+	               					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	          						</div>
+	           					<div class="modal-body">
+	               					...
+	           					</div>
+					            <div class="modal-footer">
+					                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					                <button type="button" class="btn btn-primary">Save changes</button>
+					            </div>
+	       					</div>
+	   					</div>
+					</div>
+	        	</c:forEach>
+			</div>
         </div>
-
     </div>
     <jsp:include page="./modules/footer.jsp" />
 </body>

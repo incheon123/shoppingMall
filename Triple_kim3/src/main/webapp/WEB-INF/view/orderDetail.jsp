@@ -8,12 +8,11 @@
 <meta charset="UTF-8">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<title>주문성공</title>
+<title>주문상세</title>
 </head>
 <body>
 	<jsp:include page="./modules/header.jsp" />
 	<div class="container d-block w-75 my-5">
-        <h2 class="text-center my-5">주문성공!</h2>
         <div class="container mx-0 my-0 px-0 py-0">
             <div class="flex-nowrap">
                 <span class="input-group-text justify-content-center my-2 bg-info" id="addon-wrapping" disabled>주문정보</span>
@@ -38,37 +37,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="container my-5 mx-0 px-0 py-0">
-            <div class="flex-nowrap">
-                <span class="input-group-text justify-content-center my-2 bg-info" id="addon-wrapping">결제 정보</span>
-            </div>
-            <div class="mb-3">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon3">결제번호</span>
-                    <span type="text" class="form-control payment_id" id="basic-url"
-                    aria-describedby="basic-addon3 basic-addon4" required disabled>${result.getPayment().getPayment_id() }</span>
-                </div>
-            </div>
-            <div class="mb-3">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon3">총결제금액</span>
-                    <span type="text" class="form-control payment_price" id="basic-url"
-                    aria-describedby="basic-addon3 basic-addon4" required disabled>${result.getPayment().getTotal() }</span>
-                </div>
-            </div>
-            <div class="mb-3">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon3">결제자</span>
-                    <span type="text" class="form-control payment_user" id="basic-url"
-                    aria-describedby="basic-addon3 basic-addon4" required disabled>${result.getPayment().getPayment_username() }</span>
-                    <span class="input-group-text" id="basic-addon3">결제 카드번호</span>
-                    <span type="text" class="form-control payment_card_num" id="basic-url"
-                    aria-describedby="basic-addon3 basic-addon4" required disabled>${result.getPayment().getPayment_card_number() }</span>
-                </div>
-            </div>
-        </div>
-
         <div class="container mx-0 my-5 px-0 py-0">
             <div class="flex-nowrap">
                 <span class="input-group-text justify-content-center bg-info" id="addon-wrapping">주문 상품 정보</span>

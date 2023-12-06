@@ -47,6 +47,7 @@ public class ProductController extends HttpServlet {
 			String spcg = request.getParameter("spcg");
 			String sbcg = request.getParameter("sbcg");
 			
+			
 			System.out.println(gender + " " + age + " " + spcg + " " + sbcg);
 			
 			ProductService service = new ProductService();
@@ -78,6 +79,7 @@ public class ProductController extends HttpServlet {
 				System.out.println(p);
 			}
 			
+			request.getSession().setAttribute("spcg", spcg.equals("none") ? sbcg : spcg);
 			request.getSession().setAttribute("age", age);
 			request.getSession().setAttribute("gender", gender);
 			request.getSession().setAttribute("cate", cate);
@@ -86,16 +88,7 @@ public class ProductController extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/products.jsp");
 			dispatcher.forward(request, response);
 			
-			
-			
-			
-		}else if(uri.equals("/Triple_kim3/view/sports/*")) {
-			//아직 스포츠 상품 추가안해서 구현안함
 		}else if(uri.equals("/Triple_kim3/view/sail_product")) {
-			int category = Integer.parseInt(request.getParameter("category"));
-		}else if(uri.equals("/Triple_kim3/view/limited_product")) {
-			int category = Integer.parseInt(request.getParameter("category"));
-		}else if(uri.equals("/Triple_kim3/view/soldout_product")) {
 			int category = Integer.parseInt(request.getParameter("category"));
 		}
 	}

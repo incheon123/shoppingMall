@@ -2,6 +2,8 @@ package com.svc;
 
 import com.beans.*;
 import java.sql.*;
+import java.util.ArrayList;
+
 import com.jdbc.*;
 import com.dao.*;
 
@@ -30,6 +32,25 @@ public class OrderService {
 		
 		return processResult;
 	}
+	public OrderResult getOrder(String oid) {
+		OrderResult result = null;
+		
+		conn = jdbc.getConnection();
+		orderDao.setConnection(conn);
+		result = orderDao.getOrder(oid);
+		jdbc.close(conn);
+		
+		return result;
+	}
 	
-	
+	public OrderResult getOrders(String uid){
+		OrderResult result = null;
+		
+		conn = jdbc.getConnection();
+		orderDao.setConnection(conn);
+		result = orderDao.getOrders(uid);
+		jdbc.close(conn);
+		
+		return result;
+	}
 }

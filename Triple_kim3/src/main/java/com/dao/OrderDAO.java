@@ -193,4 +193,42 @@ public class OrderDAO {
 		}
 		return total;
 	}
+	
+	public OrderResult getOrders(String uid) {
+		OrderResult orders = new OrderResult();
+		Order order = null;
+		ArrayList<Order> order_list = new ArrayList<>();
+		Payment payment = null;
+		String order_id = null;
+		try {
+			pstmt = conn.prepareStatement(
+					"SELECT "
+					+ "order_id, concat(concat(concat(substr(order_date, 0, 2), '년'),  concat(substr(order_date, 3, 2), '월')), concat(substr(order_date, 5, 2), '일')) as order_date, address "
+					+ "FROM user_order "
+					+ "WHERE order_user = ? "
+					);
+			pstmt.setString(1, uid);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				order = new Order();
+				payment = new Payment();
+				
+				order_id = rs.getString("order_id");
+				
+				order.setOrder_id(rs.getString("order_id"));
+				order.setOrder_date(rs.getString("order_date"));
+				order.setAddr1(rs.getString("address"));
+				
+				order_list.add(order);
+			}
+			orders.setOrders(order_list);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			dao.close(pstmt);
+			dao.close(rs);
+		}
+		
+		return orders;
+	}
 }

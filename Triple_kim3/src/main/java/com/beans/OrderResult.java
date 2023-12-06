@@ -6,6 +6,7 @@ import com.beans.*;
 
 public class OrderResult {
 	private Order order;
+	private ArrayList<Order> orders;
 	private Payment payment;
 	private ArrayList<OrderProduct> products;
 	
@@ -26,6 +27,12 @@ public class OrderResult {
 	}
 	public void setProducts(ArrayList<OrderProduct> products) {
 		this.products = products;
+	}
+	public ArrayList<Order> getOrders() {
+		return orders;
+	}
+	public void setOrders(ArrayList<Order> orders) {
+		this.orders = orders;
 	}
 	
 }

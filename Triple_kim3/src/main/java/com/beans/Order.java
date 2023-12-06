@@ -110,4 +110,14 @@ public class Order {
 	public void setPayment_totalPrice(String payment_totalPrice) {
 		this.payment_totalPrice = payment_totalPrice;
 	}
+	@Override
+	public String toString() {
+		return "Order [order_id=" + order_id + ", order_date=" + order_date + ", uid=" + uid + ", uname=" + uname
+				+ ", ptel=" + ptel + ", addr1=" + addr1 + ", addr2=" + addr2 + ", products=" + products
+				+ ", payment_user=" + payment_user + ", payment_method=" + payment_method + ", payment_card_company="
+				+ payment_card_company + ", payment_num=" + payment_num + ", payment_totalPrice=" + payment_totalPrice
+				+ "]";
+	}
+	
+	
 }
