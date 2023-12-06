@@ -101,9 +101,17 @@
 	                            	<span>재고량</span>
                             </li>
                           	<c:forEach var="item" items="${product.getSizes() }">
+                          		
 	                            <li class="dropdown-item dropdown-li d-flex flex-direction-row justify-content-around">
 	                            	<span class="shoes-size">${item.get(0)}</span>
-	                            	<span class="shoes-quantity">${item.get(1)}</span>
+	                            	<c:choose>
+		                            	<c:when test="${item.get(1) > 0}">
+		                            		<span class="shoes-quantity">${item.get(1)}</span>
+		                            	</c:when>
+		                            	<c:otherwise>
+		                            		<span class="shoes-quantity">품절</span>
+		                            	</c:otherwise>
+	                            	</c:choose>
 	                            </li>
                             </c:forEach>
                             
@@ -155,7 +163,7 @@
                           <span class="navbar-text delivery-price">
                             <fmt:formatNumber value='${product.getPrice() }' type="number" var="price" pattern="######"/>
 							<c:choose>
-								<c:when test='${price > 100000}'>
+								<c:when test='${price >= 100000}'>
 									0
 									<fmt:formatNumber value="0" type="number" var="deliveryPrice" pattern="######"/>
 								</c:when>
@@ -255,17 +263,29 @@
 		clsName = $(e.target).attr('class');
 		if(clsName != 'shoes-size' && clsName != 'shoes-quantity'){
 			let size = e.target.children[0].innerText
+			if(e.target.children[1].innerText === '품절'){
+				alert("해당 상품은 품절입니다");
+				return false;
+			}
 		    $(".submitBasket").val(size)
 		    $(".submitBasket").text(size)
 		}
 	})
 	$(document).on("click", ".shoes-size", (e) => {
 		size = e.target.parentElement.children[0].innerText
+		if(e.target.parentElement.children[1].innerText === '품절'){
+			alert("해당 상품은 품절입니다")
+			return false;
+		}
 		$(".submitBasket").val(size)
 	    $(".submitBasket").text(size)
 	})
 	$(document).on("click", ".shoes-quantity", (e) => {
 		size = e.target.parentElement.children[0].innerText
+		if(e.target.parentElement.children[1].innerText === '품절'){
+			alert("해당 상품은 품절입니다")
+			return false;
+		}
 		$(".submitBasket").val(size)
 	    $(".submitBasket").text(size)
 	})

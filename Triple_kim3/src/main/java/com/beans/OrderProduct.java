@@ -58,6 +58,10 @@ public class OrderProduct {
 	public void setTotalProductPrice(int totalProductPrice) {
 		this.totalProductPrice = totalProductPrice;
 	}
-	
-	
+	@Override
+	public String toString() {
+		return "OrderProduct [pid=" + pid + ", pname=" + pname + ", quantity=" + quantity + ", psize=" + psize
+				+ ", delivery=" + delivery + ", price=" + price + ", sail=" + sail + ", totalProductPrice="
+				+ totalProductPrice + "]";
+	}
 }

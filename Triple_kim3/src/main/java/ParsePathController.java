@@ -128,7 +128,11 @@ public class ParsePathController extends HttpServlet {
 			System.out.println(oid);
 			
 			OrderService os = new OrderService();
+			
+			request.getSession().setAttribute("order", os.getOrder(oid));
 			dispatcher = request.getRequestDispatcher("/WEB-INF/view/orderDetail.jsp");
+		}else if(url.equals("/view/write/review")) {
+			dispatcher = request.getRequestDispatcher("/WEB-INF/view/mypage/writereview.jsp");
 		}
 		
 		dispatcher.forward(request, response);

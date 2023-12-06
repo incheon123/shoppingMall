@@ -235,4 +235,24 @@
 		<servlet-name>orderDetail</servlet-name>
 		<url-pattern>/view/order_detail/*</url-pattern>
 	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>writeReview</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>writeReview</servlet-name>
+		<url-pattern>/view/write/review/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>processReview</servlet-name>
+		<servlet-class>ParsePathController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>processReview</servlet-name>
+		<url-pattern>/process/review</url-pattern>
+	</servlet-mapping>
 </web-app>

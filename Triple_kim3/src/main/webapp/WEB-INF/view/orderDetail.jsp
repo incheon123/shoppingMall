@@ -20,20 +20,20 @@
             <div class="input-group mb-3">
                 <span class="input-group-text" id="addon-wrapping">주문번호</span>
                 <span type="text" class="form-control order_id" placeholder="order_id" aria-label="order_id"
-                    aria-describedby="addon-wrapping" disabled>${result.getOrder().getOrder_id()}</span>
+                    aria-describedby="addon-wrapping" disabled>${order.getOrder().getOrder_id()}</span>
             </div>
             <div class="mb-3">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon3">주문일시</span>
                     <span type="text" class="form-control order_date" placeholder="order_date" aria-label="order_date"
-                        aria-describedby="addon-wrapping" disabled>${result.getOrder().getOrder_date() }</span>
+                        aria-describedby="addon-wrapping" disabled>${order.getOrder().getOrder_date() }</span>
                 </div>
             </div>
             <div class="row g-3">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon3">배송지</span>
                     <span type="text" class="form-control addr" placeholder="배송지" aria-label="order_date"
-                        aria-describedby="addon-wrapping" disabled>${result.getOrder().getAddr1() }</span>
+                        aria-describedby="addon-wrapping" disabled>${order.getOrder().getAddr1() }</span>
                 </div>
             </div>
         </div>
@@ -47,21 +47,22 @@
                         <th scope="col">상품명</th>
                         <th scope="col">수량</th>
                         <th scope="col">사이즈</th>
-                        <th scope="col">할인</th>
                         <th scope="col">가격</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
                 
-                <c:forEach var="product" items="${result.getProducts()}">
+                <c:forEach var="product" items="${order.getProducts()}">
                     <tr>    
-                        <th scope="row">
+                        <th scope="row" style="width: 30%;">
                             <a href="${pageContext.request.contextPath }" class="d-block">${product.getPname()}</a>
                         </th>
-                        <td class="quantity">${product.getQuantity() }</td>
-                        <td class="size">${product.getPsize()}</td>
-                        <td class="sail">${product.getSail()}</td>
-                        <td class="price">${product.getPrice()}</td>
+                        <td class="quantity" style="width: 10%;">${product.getQuantity() }</td>
+                        <td class="size" style="width: 10%;">${product.getPsize()}</td>
+                        <td class="price" style="width: 10%;">${product.getPrice()}</td>
+                        <td class="some_btn" style="width: 15%;">
+                        	<a href="${pageContext.request.contextPath}/view/write/review?oid=${order.getOrder().getOrder_id()}&pid=${product.getPid()}" class="btn bg-info text-light">리뷰 작성하기</a>
+                        </td>
                     </tr>
                    </c:forEach>
                     

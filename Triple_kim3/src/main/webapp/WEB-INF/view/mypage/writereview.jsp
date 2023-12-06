@@ -2,52 +2,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="../../css/writereview.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>리뷰작성</title>
+	<title>리뷰작성</title>
+	<style type="text/css">
+		.star{
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+    .star-count{
+        flex-grow: 1;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+    }
+        .star-count i{
+            margin-right: 5px;
+        }
+        .clicked{
+            color: yellow;
+            text-shadow: none;
+        }
+	</style>
 </head>
 <body>
 	<jsp:include page="../modules/header.jsp" />
-	<main>
-        <div class="review_container">
-            <h2>리뷰 작성</h2>
-            <form action="#" method="post">
-                <div class="first"> <!-- flex -->
-                    <div class="title_container"> <!-- flex -->
-                        <div class="title_inner_container">
-                            <h3>제목</h3>
-                            <input type="text" name="title" class="title">
-                        </div>
-                    </div>
-                    <div class="name_container">
-                        <span class="name" name="user_name">opportunity13</span>
-                    </div>
-                </div>
-                <div class="second"> <!-- flex -->
-                    <div class="second_inner_container">
-                        <div class="second_ele_container">
-                            <h3>별점</h3>
-                            <div class="star_container">
-                                <span class="one" name="star">☆</span>
-                                <span class="two" name="star">☆</span>
-                                <span class="three" name="star">☆</span>
-                                <span class="four" name="star">☆</span>
-                                <span class="five" name="star">☆</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="third"> 
-                    <textarea name="description" cols="50" rows="25" placeholder="내용"></textarea>
-                </div>
-                <input type="file" name="file_upload" class="file_upload">
-                <div class="button_container">
-                    <input type="submit" name="write">
-                    <input type="button" name="cancel" value="취소">
-                </div>
-            </form>
-        </div>
-    </main>
+		<div class="container w-75 px-0">
+     		<h2 class="mx-0 my-3">리뷰 작성</h2>
+     	</div>
+        <form action="process/review" method="post" class="container text-center w-75 my-5 border">
+            <div class="row my-3" >
+ 				<div class="col">
+  					<input type="text" name='title' class="form-control" placeholder="제목" aria-label="title" required>
+ 				</div>
+ 				<div class="col">
+    				<input type="text" name='user_id' class="form-control" placeholder="" aria-label="user_id" required>
+  				</div>
+			</div>
+			<div class="container text-start border my-3">
+				<div class="star-count my-1">
+	                <input id="starRating" type="text" style="display:none;" name="starRating">
+	                <i class="star fa-solid fa-star" style="font-size:20px;"></i>
+	                <i class="star fa-solid fa-star" style="font-size:20px;"></i>
+	                <i class="star fa-solid fa-star" style="font-size:20px;"></i>
+	                <i class="star fa-solid fa-star" style="font-size:20px;"></i>
+	                <i class="star fa-solid fa-star" style="font-size:20px;"></i>
+            	</div>
+			</div>
+			<div class="container text-start my-3 py-3">
+				<textarea class="form-control" style="resize: none; height: 150px;"></textarea>
+			</div>
+			<div class="container text-end my-5">
+				<input type="submit" class="btn bg-info" value="작성하기">
+				<input type="button" class="btn bg-warning" value="취소하기">
+			</div>
+        </form>
+        
     <jsp:include page="../modules/footer.jsp" />
 </body>
+
+<script type="text/javascript">
+let count = 0;
+function setCount(stat){
+    count = stat
+}
+
+let star = document.getElementsByClassName("star");
+let rating = document.getElementById("starRating");
+
+for(let i = 0; i < star.length; i++){
+
+    star[i].addEventListener("click", () => {
+        const ORIGINAL_CLASSNAME = star[i].className;
+
+
+        for(let k = 0; k < 5; k++){
+            star[k].className = 'star fa-solid fa-star';
+            setCount(0)
+        }
+
+        let c = 0;
+        //별을 클릭한 경우
+        for (let j = 0; j < i + 1; j++) {
+            star[j].className = 'star fa-solid fa-star clicked'
+            setCount(i + 1);
+            c = i + 1;
+        }
+        rating.value = c;
+    })
+}
+</script>
+
 </html>

@@ -33,11 +33,20 @@ public class OrderService {
 		return processResult;
 	}
 	public OrderResult getOrder(String oid) {
-		OrderResult result = null;
+		
+		OrderResult result = new OrderResult();
+		Order order = null;
+		ArrayList<OrderProduct> products = null;
 		
 		conn = jdbc.getConnection();
 		orderDao.setConnection(conn);
-		result = orderDao.getOrder(oid);
+		
+		order = orderDao.getOrderById(oid);
+		products = orderDao.getProductsById(oid);
+		
+		result.setOrder(order);
+		result.setProducts(products);
+		
 		jdbc.close(conn);
 		
 		return result;

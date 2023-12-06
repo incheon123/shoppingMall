@@ -69,6 +69,8 @@ public class OrderDAO {
 			
 			pstmt.executeUpdate();
 			
+			conn.prepareStatement("commit work").execute();
+			
 			orderResult.setOrder(getOrderById(order_id));
 			orderResult.setPayment(getPaymentById(payment_id));
 			orderResult.setProducts(getProductsById(order_id));
@@ -87,7 +89,7 @@ public class OrderDAO {
 		try {
 			pstmt = conn.prepareStatement(
 					"select \n"
-					+ "p.product_id, concat(lp.product_name, concat(' ', lp.product_color)) as product_name, od.quantity, od.product_size, p.sail, p.price - (p.price * (p.sail * 0.01)) as totalOrderPrice\n"
+					+ "p.product_id, concat(lp.product_name, concat(' ', lp.product_color)) as product_name, od.quantity, od.product_size, p.sail, p.price - (p.price * (p.sail * 0.01)) as totalOrderPrice, od.price \n"
 					+ "from order_detail od, product p, logistic_product lp\n"
 					+ "where od.order_id = ?\n"
 					+ "    AND od.product_id = p.product_id\n"
@@ -106,7 +108,10 @@ public class OrderDAO {
 				product.setQuantity(rs.getInt("quantity"));
 				product.setPsize(rs.getInt("product_size"));
 				product.setSail(rs.getInt("sail"));
+				product.setPrice(rs.getInt("price"));
 				product.setTotalProductPrice(rs.getInt("totalOrderPrice"));
+				
+				System.out.println(product);
 				
 				products.add(product);
 			}
@@ -121,12 +126,13 @@ public class OrderDAO {
 	}
 	public Payment getPaymentById(String payment_id) {
 		Payment payment = null;
+		System.out.println("pid : " + payment_id);
 		try {
 			pstmt = conn.prepareStatement(
 					"select "
 					+ "* "
 					+ "FROM payment "
-					+ "WHERE order_id = ?"
+					+ "WHERE payment_id = ?"
 					);
 			pstmt.setString(1, payment_id);
 			
@@ -138,6 +144,7 @@ public class OrderDAO {
 				payment.setTotal(rs.getInt("payment_price"));
 				payment.setPayment_username(rs.getString("payment_username"));
 				payment.setPayment_card_number(rs.getString("payment_card_num"));
+				System.out.println(payment);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -231,4 +238,5 @@ public class OrderDAO {
 		
 		return orders;
 	}
+	
 }

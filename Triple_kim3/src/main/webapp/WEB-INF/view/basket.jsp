@@ -16,6 +16,7 @@
 <body>
 	<jsp:include page="./modules/header.jsp" />
     <section class="container cart w-75">
+    	<form method="POST" action="checkOrder">
         <table class="cart__list">
              <thead>
                  <tr>
@@ -121,6 +122,7 @@
             <button class="cart__bigorderbtn left">쇼핑 계속하기</button>
             <button type="submit" class="cart__bigorderbtn right">주문하기</button>
         </div>
+        </form>
     </section>
     <jsp:include page="./modules/footer.jsp" />
 </body>
